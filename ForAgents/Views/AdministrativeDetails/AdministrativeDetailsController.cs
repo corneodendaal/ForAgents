@@ -30,6 +30,16 @@ namespace CorneTest.Controllers
             TempData.Keep("category");
             return View();
         }
+
+        public ActionResult LegalDisclaimer()
+        {
+            return View();
+        }
+
+        public ActionResult POPIAct()
+        {
+            return View();
+        }
         [HttpPost]
         public IActionResult Sale(IFormFile fileIDDocument, IFormFile fileProofOfResidence, IFormFile fileSARSDocument, IFormFile fileBankDocument)
         {

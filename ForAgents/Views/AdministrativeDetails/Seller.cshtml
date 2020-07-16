@@ -278,6 +278,12 @@
                                 <div class="col cell-seller-2" id="cell-seller-2-column"><label id="cell-seller-2-label" class="cell-seller-2-label" for="cell-seller-2-label">Mobile</label><input class="form-control cell-seller-2-input" type="tel" id="cell-seller-2-input" minlength="3" maxlength="15" name="cell-seller-2-input" value="0835777737"></div>
                                 <div class="col tel-seller-2-column" id="tel-seller-2-column">
                                     <label id="tel-seller-2-label" class="tel-seller-2-label" for="tel-seller-2-label">Tel (h+o)</label><input class="form-control tel-seller-2-input" type="tel" id="tel-seller-2-input" name="tel-seller-2-input" placeholder="Home phone or Office number" maxlength="15" minlength="3" value="0121231234">
+
+
+                                    Telephone: <input type="text" name="phone" id="phone" placeholder="(123) 456-7890" required="required" title="e.g (123) 456-7890" pattern="^\([0-9]{3}\)\s[0-9]{3}-[0-9]{4}$">
+
+
+
                                 </div>
                             </div>
                         </div>
@@ -300,6 +306,57 @@
 </html>
 <script src="~/js/jquery.min.js"></script>
 <script>
+
+
+
+
+    function validate_int(myEvento) {
+        if ((myEvento.charCode >= 48 && myEvento.charCode <= 57) || myEvento.keyCode == 9 || myEvento.keyCode == 10 || myEvento.keyCode == 13 || myEvento.keyCode == 8 || myEvento.keyCode == 116 || myEvento.keyCode == 46 || (myEvento.keyCode <= 40 && myEvento.keyCode >= 37)) {
+            dato = true;
+        } else {
+            dato = false;
+        }
+        return dato;
+    }
+
+    function phone_number_mask() {
+        var myMask = "(___) ___-____";
+        var myCaja = document.getElementById("phone");
+        var myText = "";
+        var myNumbers = [];
+        var myOutPut = ""
+        var theLastPos = 1;
+        myText = myCaja.value;
+        //get numbers
+        for (var i = 0; i < myText.length; i++) {
+            if (!isNaN(myText.charAt(i)) && myText.charAt(i) != " ") {
+                myNumbers.push(myText.charAt(i));
+            }
+        }
+        //write over mask
+        for (var j = 0; j < myMask.length; j++) {
+            if (myMask.charAt(j) == "_") { //replace "_" by a number 
+                if (myNumbers.length == 0)
+                    myOutPut = myOutPut + myMask.charAt(j);
+                else {
+                    myOutPut = myOutPut + myNumbers.shift();
+                    theLastPos = j + 1; //set caret position
+                }
+            } else {
+                myOutPut = myOutPut + myMask.charAt(j);
+            }
+        }
+        document.getElementById("phone").value = myOutPut;
+        document.getElementById("phone").setSelectionRange(theLastPos, theLastPos);
+    }
+
+    document.getElementById("phone").onkeypress = validate_int;
+    document.getElementById("phone").onkeyup = phone_number_mask;
+
+
+
+
+
     $('input[type=radio][name=typeProperty]').change(function () {
         var radios = document.getElementsByName('typeProperty');
         for (var i = 0, length = radios.length; i < length; i++) {
