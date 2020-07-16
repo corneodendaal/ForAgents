@@ -1,0 +1,149 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Walls";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Wallsheadingdiv">
+                            <div class="form-row row-cols-1">
+                                <div class="col walls-heading-column" id="walls-heading-column"><label class="col-form-label walls-heading-label" id="walls-heading-label" for="walls-heading-label"><strong>Walls</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col walls-please-select-all-check-box-column" id="walls-please-select-all-check-box-column">
+                                <label id="walls-please-select-all-check-box-label" class="walls-please-select-all-check-box-label" for="walls-please-select-all-check-box-label">Please select all that apply:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="walls-facebrick-check" name="walls-facebrick-check" checked="checked" /></div><label for="walls-facebrick-check" class="col-md-10 control-label">Facebrick</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="walls-plaster-check" name="walls-plaster-check" /></div><label for="walls-plaster-check" class="col-md-10 control-label">Plaster</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertWallInformation();
+
+        window.location.href = "/AdministrativeDetails/Windows";
+    });
+
+    function InsertWallInformation() {
+        var wall = {};
+
+        wall.ListingId = @TempData["listingId"];
+        wall.Facebrick = $("#walls-facebrick-check").is(":checked");
+        wall.Plaster = $("#walls-plaster-check").is(":checked");
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertWallInformation", "AdministrativeDetails")',
+                data: {wall:wall},
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

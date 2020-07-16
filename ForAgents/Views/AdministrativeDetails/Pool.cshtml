@@ -1,0 +1,198 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Pool";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Poolheadingdiv">
+                            <div class="form-row row-cols-1 Poolheadingrow">
+                                <div class="col pool-heading-column" id="pool-heading-column"><label class="col-form-label pool-heading-label" id="pool-heading-label"><strong>Pool</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col pool-please-select-all-check-box-column-1" id="pool-please-select-all-check-box-column-1">
+                                <label id="pool-please-select-all-check-box-label" class="pool-please-select-all-check-box-label" for="pool-please-select-all-check-box-label">Please select all that apply:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-salt-chlorinated-check" name="pool-salt-chlorinated-check" /></div><label for="pool-salt-chlorinated-check" class="col-md-10 control-label">Salt Chlorinated</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-standard-chemicals-check" name="pool-standard-chemicals-check" /></div><label for="pool-standard-chemicals-check" class="col-md-10 control-label">Standard Chemicals</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-cleaner-check" name="pool-cleaner-check" /></div><label for="pool-cleaner-check" class="col-md-10 control-label">Cleaner</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-cover-check" name="pool-cover-check" /></div><label for="pool-cover-check" class="col-md-10 control-label">Cover</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-net-check" name="pool-net-check" /></div><label for="pool-net-check" class="col-md-10 control-label">Net</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-electric-heated-check" name="pool-electric-heated-check" /></div><label for="pool-electric-heated-check" class="col-md-10 control-label">Electric Heated</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-solar-heated-check" name="pool-solar-heated-check" /></div><label for="pool-solar-heated-check" class="col-md-10 control-label">Solar Heated</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-fence-check" name="pool-fence-check" /></div><label for="pool-fence-check" class="col-md-10 control-label">Pool Fence</label>
+                                </div>
+                            </div>
+                            <div class="col potypeol-please-select-all-check-box-column" id="type-please-select-all-check-box-column-2">
+                                <label id="pool-please-select-all-check-box-label-1" class="pool-please-select-all-check-box-label" for="pool-please-select-all-check-box-label">Type:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-fibre-glass-check" name="pool-fibre-glass-check" /></div><label for="pool-fibre-glass-check" class="col-md-10 control-label">Fibre Glass</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-marbelite-check" name="pool-marbelite-check" checked="checked" /></div><label for="pool-marbelite-check" class="col-md-10 control-label">Marbelite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="pool-gunite-check" name="pool-gunite-check" /></div><label for="pool-gunite-check" class="col-md-10 control-label">Gunite</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="pool-comments-column">
+                            <div class="form-group" id="pool-column-3">
+                                <label id="pool-comments-column-label" class="pool-comments-column-label" for="pool-comments-input">Comments</label><textarea class="form-control pool-comments-input"
+                                                                                                                                                              id="pool-comments-input" placeholder="Please explain " required="" minlength="1" name="pool-comments-input">Comments about the pool</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertPoolInformation();
+
+        window.location.href = "/AdministrativeDetails/Boundry";
+    });
+
+
+    function InsertPoolInformation() {
+        var pool = {};
+
+
+        pool.ListingId = @TempData["listingId"];
+        pool.SaltChlorinated = $("#pool-salt-chlorinated-check").is(":checked")
+        pool.StandardChemicals = $("#pool-standard-chemicals-check").is(":checked")
+        pool.Cleaner = $("#pool-cleaner-check").is(":checked")
+        pool.Cover = $("#pool-cover-check").is(":checked")
+        pool.Net = $("#pool-net-check").is(":checked")
+        pool.ElectricHeated = $("#pool-electric-heated-check").is(":checked")
+        pool.SolarHeated = $("#pool-solar-heated-check").is(":checked")
+        pool.Fence = $("#pool-fence-check").is(":checked")
+        pool.FibreGlass = $("#pool-fibre-glass-check").is(":checked")
+        pool.Marbelite = $("#pool-marbelite-check").is(":checked")
+        pool.Gunite = $("#pool-gunite-check").is(":checked")
+        pool.Comments = $("#pool-comments-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertPoolInformation", "AdministrativeDetails")',
+                data: {pool:pool},
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+
+</script>

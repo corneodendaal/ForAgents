@@ -1,0 +1,72 @@
+﻿@using CorneTest.Models
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+
+    <style>
+        input.larger {
+            width: 20px;
+            height: 20px;
+            border-radius:2px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page">
+                    <div class="form-row row-cols-1 admin_detailsheading">
+                        <div class="col administrative-details-heading-row" id="administrative-details-heading-row"><label class="col-form-label administrative-details-heading-text-area" id="administrative-details-heading-text-area" for="administrative-details-heading-text-area"><strong>ADMINISTRATIVE DETAILS</strong><br></label></div>
+                        <div class="col">
+                            <div class="form-group">
+                                <p id="legal-disclaimer-read-through-text" class="legal-disclaimer-read-through-text">Please read through the Legal Disclaimer and the POPI ACT before you continue with the form.</p>
+                            </div>
+                        </div>
+                        <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="legal-disclaimer-read-through-button" style="padding: 6px 50px;" asp-area="" asp-controller="AdministrativeDetails" asp-action="LegalDisclaimer">Legal Disclaimer</a></div>
+                        <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="legal-disclaimer-read-through-popi-button" style="padding: 6px 50px;" asp-area="" asp-controller="AdministrativeDetails" asp-action="POPIAct">POPI Act</a></div>
+                        <div class="col">
+                            <div class="form-group">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <div class="form-check" data-toggle="tooltip" data-bs-tooltip="" id="i-agree-to-terms-form-check" title="You must agree to continue"><input class="form-check-input larger" type="checkbox" id="Agree-tick" name="Agree-tick" required=""><label class="form-check-label" for="formCheck-106" style="font-size: 12px;">I have read and agreed to the items listed in the Legal Disclaimer and the POPI Act</label></div>
+                                    </div>
+                                    <div><inpyt type="text" itemid="category"></inpyt></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+        </section>
+
+    </main>
+</body>
+
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('#Agree-tick').change(function () {
+        var agreeChecked = $('input[name="Agree-tick"]:checked').length > 0;
+        if (agreeChecked) {
+            window.location.href = "/AdministrativeDetails/PropertyDetails";
+        }
+    });
+
+</script>

@@ -1,0 +1,578 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Living Areas";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="LivingAreasInformationheading Div">
+                            <div class="form-row row-cols-1 LivingAreasInformation">
+                                <div class="col living-areas-information-heading-column" id="living-areas-information-heading-column"><label class="col-form-label living-areas-information-heading-label" id="living-areas-information-heading-label"><strong>Living Areas Information</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <i class="fas fa-couch"><label style="font-weight:normal; margin-left:1em; margin-right:1em;">Living Areas</label></i>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="input-field" id="living-areas-number-of-living-areas" type="number" placeholder="# Living Areas" name="living-areas-number-of-living-areas" max="5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <i class="fa fa-book"><label style="font-weight:normal; margin-left:1em; margin-right:1em;">Study</label></i>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="input-field" id="living-areas-study-check" type="checkbox" name="living-areas-study-check">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="living-area-1-column" style="display:none">
+                                <label id="living-areas-information-living-area-1-label" class="living-areas-information-living-area-1-label" for="living-areas-information-living-area-1-label"><br>Living Area 1:<br><br></label>
+                                <div class="form-group living-area-1-type-column" id="living-area-1-type-column">
+                                    <label id="living-area-1-type-comments-label" class="living-area-1-type-comments-label" for="living-area-1-type-comments-input">Type:</label><textarea class="form-control living-area-1-type-comments-input"
+                                                                                                                                                                                           id="living-area-1-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-1-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-tiled-check" name="living-area-1-tiled-check" /></div><label for="living-area-1-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-wood-check" name="living-area-1-wood-check" /></div><label for="living-area-1-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-carpet-check" name="living-area-1-carpet-check" /></div><label for="living-area-1-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-under-floor-heating-check" name="living-area-1-under-floor-heating-check" /></div><label for="living-area-1-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-fire-place-gas-check" name="living-area-1-fire-place-gas-check" /></div><label for="living-area-1-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-fire-place-wood-check" name="living-area-1-fire-place-wood-check" /></div><label for="living-area-1-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-air-conditioning-check" name="living-area-1-air-conditioning-check" /></div><label for="living-area-1-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-fan-check" name="living-area-1-fan-check" /></div><label for="living-area-1-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-surround-sound-check" name="living-area-1-surround-sound-check" /></div><label for="living-area-1-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-upstairs-check" name="living-area-1-upstairs-check" /></div><label for="living-area-1-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-1-downstairs-check" name="living-area-1-downstairs-check" /></div><label for="living-area-1-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-1-comments-column" id="living-area-1-comments-column" style="padding: 10px;">
+                                    <label id="living-area-1-comments-label" class="living-area-1-comments-label" for="living-area-1-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-1-comments-input" id="living-area-1-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-1-comments-input"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col" id="living-area-2-column" style="display:none">
+                                <label id="living-areas-information-living-area-2-label" class="living-areas-information-living-area-2-label" for="living-areas-information-living-area-2-label"><br>Living Area 2:<br><br></label>
+                                <div class="form-group living-area-2-type-column" id="living-area-2-type-column">
+                                    <label id="living-area-2-type-comments-label" class="living-area-2-type-comments-label" for="living-area-2-type-comments-input">Type:</label><textarea class="form-control living-area-2-type-comments-input"
+                                                                                                                                                                                           id="living-area-2-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-2-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-tiled-check" name="living-area-2-tiled-check" /></div><label for="living-area-2-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-wood-check" name="living-area-2-wood-check" /></div><label for="living-area-2-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-carpet-check" name="living-area-2-carpet-check" /></div><label for="living-area-2-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-under-floor-heating-check" name="living-area-2-under-floor-heating-check" /></div><label for="living-area-2-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-fire-place-gas-check" name="living-area-2-fire-place-gas-check" /></div><label for="living-area-2-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-fire-place-wood-check" name="living-area-2-fire-place-wood-check" /></div><label for="living-area-2-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-air-conditioning-check" name="living-area-2-air-conditioning-check" /></div><label for="living-area-2-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-fan-check" name="living-area-2-fan-check" /></div><label for="living-area-2-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-surround-sound-check" name="living-area-2-surround-sound-check" /></div><label for="living-area-2-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-upstairs-check" name="living-area-2-upstairs-check" /></div><label for="living-area-2-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-2-downstairs-check" name="living-area-2-downstairs-check" /></div><label for="living-area-2-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-2-comments-column" id="living-area-2-comments-column" style="padding: 10px;">
+                                    <label id="living-area-2-comments-label" class="living-area-2-comments-label" for="living-area-2-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-2-comments-input" id="living-area-2-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-2-comments-input"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="living-area-3-column" style="display:none">
+                                <label id="living-areas-information-living-area-3-label" class="living-areas-information-living-area-3-label" for="living-areas-information-living-area-3-label"><br>Living Area 3:<br><br></label>
+                                <div class="form-group living-area-3-type-column" id="living-area-3-type-column">
+                                    <label id="living-area-3-type-comments-label" class="living-area-3-type-comments-label" for="living-area-3-type-comments-input">Type:</label><textarea class="form-control living-area-3-type-comments-input"
+                                                                                                                                                                                           id="living-area-3-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-3-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-tiled-check" name="living-area-3-tiled-check" /></div><label for="living-area-3-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-wood-check" name="living-area-3-wood-check" /></div><label for="living-area-3-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-carpet-check" name="living-area-3-carpet-check" /></div><label for="living-area-3-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-under-floor-heating-check" name="living-area-3-under-floor-heating-check" /></div><label for="living-area-3-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-fire-place-gas-check" name="living-area-3-fire-place-gas-check" /></div><label for="living-area-3-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-fire-place-wood-check" name="living-area-3-fire-place-wood-check" /></div><label for="living-area-3-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-air-conditioning-check" name="living-area-3-air-conditioning-check" /></div><label for="living-area-3-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-fan-check" name="living-area-3-fan-check" /></div><label for="living-area-3-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-surround-sound-check" name="living-area-3-surround-sound-check" /></div><label for="living-area-3-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-upstairs-check" name="living-area-3-upstairs-check" /></div><label for="living-area-3-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-3-downstairs-check" name="living-area-3-downstairs-check" /></div><label for="living-area-3-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-3-comments-column" id="living-area-3-comments-column" style="padding: 10px;">
+                                    <label id="living-area-3-comments-label" class="living-area-3-comments-label" for="living-area-3-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-3-comments-input" id="living-area-3-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-3-comments-input"></textarea>
+                                </div>
+                            </div>
+
+
+                            <div class="col" id="living-area-4-column" style="display:none">
+                                <label id="living-areas-information-living-area-4-label" class="living-areas-information-living-area-4-label" for="living-areas-information-living-area-4-label"><br>Living Area 4:<br><br></label>
+                                <div class="form-group living-area-4-type-column" id="living-area-4-type-column">
+                                    <label id="living-area-4-type-comments-label" class="living-area-4-type-comments-label" for="living-area-4-type-comments-input">Type:</label><textarea class="form-control living-area-4-type-comments-input"
+                                                                                                                                                                                           id="living-area-4-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-4-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-tiled-check" name="living-area-4-tiled-check" /></div><label for="living-area-4-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-wood-check" name="living-area-4-wood-check" /></div><label for="living-area-4-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-carpet-check" name="living-area-4-carpet-check" /></div><label for="living-area-4-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-under-floor-heating-check" name="living-area-4-under-floor-heating-check" /></div><label for="living-area-4-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-fire-place-gas-check" name="living-area-4-fire-place-gas-check" /></div><label for="living-area-4-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-fire-place-wood-check" name="living-area-4-fire-place-wood-check" /></div><label for="living-area-4-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-air-conditioning-check" name="living-area-4-air-conditioning-check" /></div><label for="living-area-4-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-fan-check" name="living-area-4-fan-check" /></div><label for="living-area-4-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-surround-sound-check" name="living-area-4-surround-sound-check" /></div><label for="living-area-4-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-upstairs-check" name="living-area-4-upstairs-check" /></div><label for="living-area-4-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-4-downstairs-check" name="living-area-4-downstairs-check" /></div><label for="living-area-4-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-4-comments-column" id="living-area-4-comments-column" style="padding: 10px;">
+                                    <label id="living-area-4-comments-label" class="living-area-4-comments-label" for="living-area-4-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-4-comments-input" id="living-area-4-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-4-comments-input"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="living-area-5-column" style="display:none">
+                                <label id="living-areas-information-living-area-5-label" class="living-areas-information-living-area-5-label" for="living-areas-information-living-area-5-label"><br>Living Area 5:<br><br></label>
+                                <div class="form-group living-area-5-type-column" id="living-area-5-type-column">
+                                    <label id="living-area-5-type-comments-label" class="living-area-5-type-comments-label" for="living-area-5-type-comments-input">Type:</label><textarea class="form-control living-area-5-type-comments-input"
+                                                                                                                                                                                           id="living-area-5-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-5-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-tiled-check" name="living-area-5-tiled-check" /></div><label for="living-area-5-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-wood-check" name="living-area-5-wood-check" /></div><label for="living-area-5-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-carpet-check" name="living-area-5-carpet-check" /></div><label for="living-area-5-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-under-floor-heating-check" name="living-area-5-under-floor-heating-check" /></div><label for="living-area-5-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-fire-place-gas-check" name="living-area-5-fire-place-gas-check" /></div><label for="living-area-5-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-fire-place-wood-check" name="living-area-5-fire-place-wood-check" /></div><label for="living-area-5-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-air-conditioning-check" name="living-area-5-air-conditioning-check" /></div><label for="living-area-5-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-fan-check" name="living-area-5-fan-check" /></div><label for="living-area-5-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-surround-sound-check" name="living-area-5-surround-sound-check" /></div><label for="living-area-5-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-upstairs-check" name="living-area-5-upstairs-check" /></div><label for="living-area-5-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-5-downstairs-check" name="living-area-5-downstairs-check" /></div><label for="living-area-5-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-5-comments-column" id="living-area-5-comments-column" style="padding: 10px;">
+                                    <label id="living-area-5-comments-label" class="living-area-5-comments-label" for="living-area-5-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-5-comments-input" id="living-area-5-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-5-comments-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="living-area-study-column" style="display:none">
+                                <label id="living-areas-information-living-area-study-label" class="living-areas-information-living-area-study-label" for="living-areas-information-living-area-study-label"><br>Study:<br><br></label>
+                                <div class="form-group living-area-study-type-column" id="living-area-study-type-column">
+                                    <label id="living-area-study-type-comments-label" class="living-area-study-type-comments-label" for="living-area-study-type-comments-input">Type:</label><textarea class="form-control living-area-study-type-comments-input"
+                                                                                                                                                                                                       id="living-area-study-type-comments-input" placeholder="Please explain " minlength="1" name="living-area-study-type-comments-input"></textarea>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-tiled-check" name="living-area-study-tiled-check" /></div><label for="living-area-study-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-wood-check" name="living-area-study-wood-check" /></div><label for="living-area-study-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-carpet-check" name="living-area-study-carpet-check" /></div><label for="living-area-study-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-under-floor-heating-check" name="living-area-study-under-floor-heating-check" /></div><label for="living-area-study-under-floor-heating-check" class="col-md-10 control-label">Under Floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-fire-place-gas-check" name="living-area-study-fire-place-gas-check" /></div><label for="living-area-study-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Gas</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-fire-place-wood-check" name="living-area-study-fire-place-wood-check" /></div><label for="living-area-study-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-air-conditioning-check" name="living-area-study-air-conditioning-check" /></div><label for="living-area-study-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-fan-check" name="living-area-study-fan-check" /></div><label for="living-area-study-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-surround-sound-check" name="living-area-study-surround-sound-check" /></div><label for="living-area-study-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-upstairs-check" name="living-area-study-upstairs-check" /></div><label for="living-area-study-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="living-area-study-downstairs-check" name="living-area-study-downstairs-check" /></div><label for="living-area-study-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group living-area-study-comments-column" id="living-area-study-comments-column" style="padding: 10px;">
+                                    <label id="living-area-study-comments-label" class="living-area-study-comments-label" for="living-area-study-comments-input">Comments:</label>
+                                    <textarea class="form-control living-area-study-comments-input" id="living-area-study-comments-input" placeholder="Please explain "
+                                              minlength="1" name="living-area-study-comments-input"></textarea>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertLivingAreas();
+
+        window.location.href = "/AdministrativeDetails/Bedrooms";
+    });
+
+    $("#living-areas-number-of-living-areas").change(function () {
+        $("#living-area-1-column").css("display", "none");
+        $("#living-area-2-column").css("display", "none");
+        $("#living-area-3-column").css("display", "none")
+        $("#living-area-4-column").css("display", "none")
+        $("#living-area-5-column").css("display", "none")
+
+
+        var max = $("#living-areas-number-of-living-areas").attr('max');
+        if ($("#living-areas-number-of-living-areas").val() > max) {
+            $("#living-areas-number-of-living-areas").val(max);
+        }
+        if ($("#living-areas-number-of-living-areas").val() == "1") {
+            console.log("Ome");
+            $("#living-area-1-column").css("display", "block");
+        } else if ($("#living-areas-number-of-living-areas").val() == "2") {
+            console.log("tow");
+            $("#living-area-1-column").css("display", "block");
+            $("#living-area-2-column").css("display", "block");
+        } else if ($("#living-areas-number-of-living-areas").val() == "3") {
+            console.log("tow");
+            $("#living-area-1-column").css("display", "block");
+            $("#living-area-2-column").css("display", "block");
+            $("#living-area-3-column").css("display", "block")
+        } else if ($("#living-areas-number-of-living-areas").val() == "4") {
+            console.log("tow");
+            $("#living-area-1-column").css("display", "block");
+            $("#living-area-2-column").css("display", "block");
+            $("#living-area-3-column").css("display", "block")
+            $("#living-area-4-column").css("display", "block")
+        }
+        else if ($("#living-areas-number-of-living-areas").val() == "5") {
+            console.log("tow");
+            $("#living-area-1-column").css("display", "block");
+            $("#living-area-2-column").css("display", "block");
+            $("#living-area-3-column").css("display", "block")
+            $("#living-area-4-column").css("display", "block")
+            $("#living-area-5-column").css("display", "block")
+        }
+
+        var numberLivingAreas = $("#living-areas-number-of-living-areas").val();
+        localStorage.setItem("numLivingAreas", numberLivingAreas);
+        $("#listing-information-living-area-input").val(numberLivingAreas);
+    });
+
+    $('#living-areas-study-check').change(function () {
+        var showStudy = $('input[name="living-areas-study-check"]:checked').length > 0;
+        if (showStudy) {
+            $("#living-area-study-column").css("display", "block");
+            $("#listings-information-study-column-input").val("1");
+            localStorage.setItem("study", 1);
+        }
+        else {
+            $("#living-area-study-column").css("display", "none");
+            $("#listings-information-study-column-input").val("");
+        }
+    });
+
+    function InsertLivingAreas() {
+        var livingAreas = {};
+
+        livingAreas.listingId = @TempData["listingId"];
+
+        livingAreas.LivingArea1TypeComments = $("#living-area-1-type-comments-input").val();
+        livingAreas.LivingArea1Tiled = $("#living-area-1-tiled-check").is(":checked");
+        livingAreas.LivingArea1Wood = $("#living-area-1-wood-check").is(":checked");
+        livingAreas.LivingArea1Carpet = $("#living-area-1-carpet-check").is(":checked");
+        livingAreas.LivingArea1UnderFloorHeating = $("#living-area-1-under-floor-heating-check").is(":checked");
+        livingAreas.LivingArea1FirePlaceGas = $("#living-area-1-fire-place-gas-check").is(":checked");
+        livingAreas.LivingArea1FirePlaceWood = $("#living-area-1-fire-place-wood-check").is(":checked");
+        livingAreas.LivingArea1AirConditioning = $("#living-area-1-air-conditioning-check").is(":checked");
+        livingAreas.LivingArea1Fan = $("#living-area-1-fan-check").is(":checked");
+        livingAreas.LivingArea1SurroundSound = $("#living-area-1-surround-sound-check").is(":checked");
+        livingAreas.LivingArea1Upstairs = $("#living-area-1-upstairs-check").is(":checked");
+        livingAreas.LivingArea1Downstairs = $("#living-area-1-downstairs-check").is(":checked");
+        livingAreas.LivingArea1Comments = $("#living-area-1-comments-input").val();
+
+        livingAreas.LivingArea2TypeComments = $("#living-area-2-type-comments-input").val();
+        livingAreas.LivingArea2Tiled = $("#living-area-2-tiled-check").is(":checked");
+        livingAreas.LivingArea2Wood = $("#living-area-2-wood-check").is(":checked");
+        livingAreas.LivingArea2Carpet = $("#living-area-2-carpet-check").is(":checked");
+        livingAreas.LivingArea2UnderFloorHeating = $("#living-area-2-under-floor-heating-check").is(":checked");
+        livingAreas.LivingArea2FirePlaceGas = $("#living-area-2-fire-place-gas-check").is(":checked");
+        livingAreas.LivingArea2FirePlaceWood = $("#living-area-2-fire-place-wood-check").is(":checked");
+        livingAreas.LivingArea2AirConditioning = $("#living-area-2-air-conditioning-check").is(":checked");
+        livingAreas.LivingArea2Fan = $("#living-area-2-fan-check").is(":checked");
+        livingAreas.LivingArea2SurroundSound = $("#living-area-2-surround-sound-check").is(":checked");
+        livingAreas.LivingArea2Upstairs = $("#living-area-2-upstairs-check").is(":checked");
+        livingAreas.LivingArea2Downstairs = $("#living-area-2-downstairs-check").is(":checked");
+        livingAreas.LivingArea2Comments = $("#living-area-2-comments-input").val();
+
+        livingAreas.LivingArea3TypeComments = $("#living-area-3-type-comments-input").val();
+        livingAreas.LivingArea3Tiled = $("#living-area-3-tiled-check").is(":checked");
+        livingAreas.LivingArea3Wood = $("#living-area-3-wood-check").is(":checked");
+        livingAreas.LivingArea3Carpet = $("#living-area-3-carpet-check").is(":checked");
+        livingAreas.LivingArea3UnderFloorHeating = $("#living-area-3-under-floor-heating-check").is(":checked");
+        livingAreas.LivingArea3FirePlaceGas = $("#living-area-3-fire-place-gas-check").is(":checked");
+        livingAreas.LivingArea3FirePlaceWood = $("#living-area-3-fire-place-wood-check").is(":checked");
+        livingAreas.LivingArea3AirConditioning = $("#living-area-3-air-conditioning-check").is(":checked");
+        livingAreas.LivingArea3Fan = $("#living-area-3-fan-check").is(":checked");
+        livingAreas.LivingArea3SurroundSound = $("#living-area-3-surround-sound-check").is(":checked");
+        livingAreas.LivingArea3Upstairs = $("#living-area-3-upstairs-check").is(":checked");
+        livingAreas.LivingArea3Downstairs = $("#living-area-3-downstairs-check").is(":checked");
+        livingAreas.LivingArea3Comments = $("#living-area-3-comments-input").val();
+
+        livingAreas.LivingArea4TypeComments = $("#living-area-4-type-comments-input").val();
+        livingAreas.LivingArea4Tiled = $("#living-area-4-tiled-check").is(":checked");
+        livingAreas.LivingArea4Wood = $("#living-area-4-wood-check").is(":checked");
+        livingAreas.LivingArea4Carpet = $("#living-area-4-carpet-check").is(":checked");
+        livingAreas.LivingArea4UnderFloorHeating = $("#living-area-4-under-floor-heating-check").is(":checked");
+        livingAreas.LivingArea4FirePlaceGas = $("#living-area-4-fire-place-gas-check").is(":checked");
+        livingAreas.LivingArea4FirePlaceWood = $("#living-area-4-fire-place-wood-check").is(":checked");
+        livingAreas.LivingArea4AirConditioning = $("#living-area-4-air-conditioning-check").is(":checked");
+        livingAreas.LivingArea4Fan = $("#living-area-4-fan-check").is(":checked");
+        livingAreas.LivingArea4SurroundSound = $("#living-area-4-surround-sound-check").is(":checked");
+        livingAreas.LivingArea4Upstairs = $("#living-area-4-upstairs-check").is(":checked");
+        livingAreas.LivingArea4Downstairs = $("#living-area-4-downstairs-check").is(":checked");
+        livingAreas.LivingArea4Comments = $("#living-area-4-comments-input").val();
+
+        livingAreas.LivingArea5TypeComments = $("#living-area-5-type-comments-input").val();
+        livingAreas.LivingArea5Tiled = $("#living-area-5-tiled-check").is(":checked");
+        livingAreas.LivingArea5Wood = $("#living-area-5-wood-check").is(":checked");
+        livingAreas.LivingArea5Carpet = $("#living-area-5-carpet-check").is(":checked");
+        livingAreas.LivingArea5UnderFloorHeating = $("#living-area-5-under-floor-heating-check").is(":checked");
+        livingAreas.LivingArea5FirePlaceGas = $("#living-area-5-fire-place-gas-check").is(":checked");
+        livingAreas.LivingArea5FirePlaceWood = $("#living-area-5-fire-place-wood-check").is(":checked");
+        livingAreas.LivingArea5AirConditioning = $("#living-area-5-air-conditioning-check").is(":checked");
+        livingAreas.LivingArea5Fan = $("#living-area-5-fan-check").is(":checked");
+        livingAreas.LivingArea5SurroundSound = $("#living-area-5-surround-sound-check").is(":checked");
+        livingAreas.LivingArea5Upstairs = $("#living-area-5-upstairs-check").is(":checked");
+        livingAreas.LivingArea5Downstairs = $("#living-area-5-downstairs-check").is(":checked");
+        livingAreas.LivingArea5Comments = $("#living-area-5-comments-input").val();
+
+        livingAreas.LivingAreaStudyTypeComments = $("#living-area-study-type-comments-input").val();
+        livingAreas.LivingAreaStudyTiled = $("#living-area-study-tiled-check").is(":checked");
+        livingAreas.LivingAreaStudyWood = $("#living-area-study-wood-check").is(":checked");
+        livingAreas.LivingAreaStudyCarpet = $("#living-area-study-carpet-check").is(":checked");
+        livingAreas.LivingAreaStudyUnderFloorHeating = $("#living-area-study-under-floor-heating-check").is(":checked");
+        livingAreas.LivingAreaStudyFirePlaceGas = $("#living-area-study-fire-place-gas-check").is(":checked");
+        livingAreas.LivingAreaStudyFirePlaceWood = $("#living-area-study-fire-place-wood-check").is(":checked");
+        livingAreas.LivingAreaStudyAirConditioning = $("#living-area-study-air-conditioning-check").is(":checked");
+        livingAreas.LivingAreaStudyFan = $("#living-area-study-fan-check").is(":checked");
+        livingAreas.LivingAreaStudySurroundSound = $("#living-area-study-surround-sound-check").is(":checked");
+        livingAreas.LivingAreaStudyUpstairs = $("#living-area-study-upstairs-check").is(":checked");
+        livingAreas.LivingAreaStudyDownstairs = $("#living-area-study-downstairs-check").is(":checked");
+        livingAreas.LivingAreaStudyComments = $("#living-area-study-comments-input").val();
+
+        $.ajax(
+            {
+                async: false,
+            type: "POST",
+            url: '@Url.Action("InsertLivingAreasInformation", "AdministrativeDetails")',
+                data: { livingAreas: livingAreas},
+            success: function (result) {
+            },
+                error: function (error) {
+            }
+        });
+    }
+
+
+
+
+</script>

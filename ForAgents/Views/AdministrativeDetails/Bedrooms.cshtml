@@ -1,0 +1,638 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Bedrooms";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="BedroomInformationheadingdiv">
+                            <div class="form-row row-cols-1 Bedroom(s)informationcolumn">
+                                <div class="col bedrooms-information-heading-column"
+                                     id="bedrooms-information-heading-column">
+                                    <label class="col-form-label bedrooms-information-heading-label"
+                                           id="bedrooms-information-heading-label"><strong>Bedroom(s) Information</strong><br></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <i class="fa fa-bed"><label style="font-weight:normal; margin-left:1em; margin-right:1em;">Bedrooms</label></i>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="input-field" id="bedrooms-number-of-bedrooms" type="number" placeholder="# Bedrooms" name="bedrooms-number-of-bedrooms" max="6">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bedrooms-information-main-bedroom-col" style="display:none">
+                                <label id="bedrooms-information-main-bedroom-label"
+                                       class="bedrooms-information-main-bedroom-label"><br>Main Bedroom:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-tiled-check" name="bedrooms-information-main-bedroom-tiled-check" /></div><label for="bedrooms-information-main-bedroom-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-wood-check" name="bedrooms-information-main-bedroom-wood-check" /></div><label for="bedrooms-information-main-bedroom-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-carpet-check" name="bedrooms-information-main-bedroom-carpet-check" /></div><label for="bedrooms-information-main-bedroom-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-under-floor-heating-check" name="bedrooms-information-main-bedroom-under-floor-heating-check" /></div><label for="bedrooms-information-main-bedroom-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-air-conditioning-check" name="bedrooms-information-main-bedroom-air-conditioning-check" /></div><label for="bedrooms-information-main-bedroom-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-fan-check" name="bedrooms-information-main-bedroom-fan-check" /></div><label for="bedrooms-information-main-bedroom-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-built-in-wardrobe-check" name="bedrooms-information-main-bedroom-built-in-wardrobe-check" /></div><label for="bedrooms-information-main-bedroom-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-walk-in-closet-check" name="bedrooms-information-main-bedroom-walk-in-closet-check" /></div><label for="bedrooms-information-main-bedroom-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-en-suite-check" name="bedrooms-information-main-bedroom-en-suite-check" /></div><label for="bedrooms-information-main-bedroom-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-surround-sound-check" name="bedrooms-information-main-bedroom-surround-sound-check" /></div><label for="bedrooms-information-main-bedroom-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-fire-place-gas-check" name="bedrooms-information-main-bedroom-fire-place-gas-check" /></div><label for="bedrooms-information-main-bedroom-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-fire-place-wood-check" name="bedrooms-information-main-bedroom-fire-place-wood-check" /></div><label for="bedrooms-information-main-bedroom-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-upstairs-check" name="bedrooms-information-main-bedroom-upstairs-check" /></div><label for="bedrooms-information-main-bedroom-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-main-bedroom-downstairs-check" name="bedrooms-information-main-bedroom-downstairs-check" /></div><label for="bedrooms-information-main-bedroom-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-main-bedroom-comments-column"
+                                     id="bedrooms-information-main-bedroom-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-main-bedroom-label"
+                                           class="bedrooms-information-main-bedroom-label"
+                                           for="bedrooms-information-main-bedroom-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-main-bedroom-input"
+                                              id="bedrooms-information-main-bedroom-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-main-bedroom-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bedrooms-information-bedroom-2-col" style="display:none">
+                                <label id="bedrooms-information-bedroom-2-label"
+                                       class="bedrooms-information-bedroom-2-label"><br>Bedroom 2:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-tiled-check" name="bedrooms-information-bedroom-2-tiled-check" /></div><label for="bedrooms-information-bedroom-2-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-wood-check" name="bedrooms-information-bedroom-2-wood-check" /></div><label for="bedrooms-information-bedroom-2-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-carpet-check" name="bedrooms-information-bedroom-2-carpet-check" /></div><label for="bedrooms-information-bedroom-2-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-under-floor-heating-check" name="bedrooms-information-bedroom-2-under-floor-heating-check" /></div><label for="bedrooms-information-bedroom-2-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-air-conditioning-check" name="bedrooms-information-bedroom-2-air-conditioning-check" /></div><label for="bedrooms-information-bedroom-2-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-fan-check" name="bedrooms-information-bedroom-2-fan-check" /></div><label for="bedrooms-information-bedroom-2-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-built-in-wardrobe-check" name="bedrooms-information-bedroom-2-built-in-wardrobe-check" /></div><label for="bedrooms-information-bedroom-2-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-walk-in-closet-check" name="bedrooms-information-bedroom-2-walk-in-closet-check" /></div><label for="bedrooms-information-bedroom-2-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-en-suite-check" name="bedrooms-information-bedroom-2-en-suite-check" /></div><label for="bedrooms-information-bedroom-2-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-surround-sound-check" name="bedrooms-information-bedroom-2-surround-sound-check" /></div><label for="bedrooms-information-bedroom-2-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-fire-place-gas-check" name="bedrooms-information-bedroom-2-fire-place-gas-check" /></div><label for="bedrooms-information-bedroom-2-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-fire-place-wood-check" name="bedrooms-information-bedroom-2-fire-place-wood-check" /></div><label for="bedrooms-information-bedroom-2-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-upstairs-check" name="bedrooms-information-bedroom-2-upstairs-check" /></div><label for="bedrooms-information-bedroom-2-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-2-downstairs-check" name="bedrooms-information-bedroom-2-downstairs-check" /></div><label for="bedrooms-information-bedroom-2-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-bedroom-2-comments-column"
+                                     id="bedrooms-information-bedroom-2-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-bedroom-2-label"
+                                           class="bedrooms-information-bedroom-2-label"
+                                           for="bedrooms-information-bedroom-2-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-bedroom-2-input"
+                                              id="bedrooms-information-bedroom-2-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-bedroom-2-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bedrooms-information-bedroom-3-col" style="display:none">
+                                <label id="bedrooms-information-bedroom-3-label"
+                                       class="bedrooms-information-bedroom-3-label"><br>Bedroom 3:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-tiled-check" name="bedrooms-information-bedroom-3-tiled-check" /></div><label for="bedrooms-information-bedroom-3-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-wood-check" name="bedrooms-information-bedroom-3-wood-check" /></div><label for="bedrooms-information-bedroom-3-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-carpet-check" name="bedrooms-information-bedroom-3-carpet-check" /></div><label for="bedrooms-information-bedroom-3-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-under-floor-heating-check" name="bedrooms-information-bedroom-3-under-floor-heating-check" /></div><label for="bedrooms-information-bedroom-3-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-air-conditioning-check" name="bedrooms-information-bedroom-3-air-conditioning-check" /></div><label for="bedrooms-information-bedroom-3-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-fan-check" name="bedrooms-information-bedroom-3-fan-check" /></div><label for="bedrooms-information-bedroom-3-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-built-in-wardrobe-check" name="bedrooms-information-bedroom-3-built-in-wardrobe-check" /></div><label for="bedrooms-information-bedroom-3-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-walk-in-closet-check" name="bedrooms-information-bedroom-3-walk-in-closet-check" /></div><label for="bedrooms-information-bedroom-3-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-en-suite-check" name="bedrooms-information-bedroom-3-en-suite-check" /></div><label for="bedrooms-information-bedroom-3-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-surround-sound-check" name="bedrooms-information-bedroom-3-surround-sound-check" /></div><label for="bedrooms-information-bedroom-3-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-fire-place-gas-check" name="bedrooms-information-bedroom-3-fire-place-gas-check" /></div><label for="bedrooms-information-bedroom-3-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-fire-place-wood-check" name="bedrooms-information-bedroom-3-fire-place-wood-check" /></div><label for="bedrooms-information-bedroom-3-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-upstairs-check" name="bedrooms-information-bedroom-3-upstairs-check" /></div><label for="bedrooms-information-bedroom-3-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-3-downstairs-check" name="bedrooms-information-bedroom-3-downstairs-check" /></div><label for="bedrooms-information-bedroom-3-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-bedroom-3-comments-column"
+                                     id="bedrooms-information-bedroom-3-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-bedroom-3-label"
+                                           class="bedrooms-information-bedroom-3-label"
+                                           for="bedrooms-information-bedroom-3-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-bedroom-3-input"
+                                              id="bedrooms-information-bedroom-3-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-bedroom-3-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bedrooms-information-bedroom-4-col" style="display:none">
+                                <label id="bedrooms-information-bedroom-4-label"
+                                       class="bedrooms-information-bedroom-4-label"><br>Bedroom 4:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-tiled-check" name="bedrooms-information-bedroom-4-tiled-check" /></div><label for="bedrooms-information-bedroom-4-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-wood-check" name="bedrooms-information-bedroom-4-wood-check" /></div><label for="bedrooms-information-bedroom-4-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-carpet-check" name="bedrooms-information-bedroom-4-carpet-check" /></div><label for="bedrooms-information-bedroom-4-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-under-floor-heating-check" name="bedrooms-information-bedroom-4-under-floor-heating-check" /></div><label for="bedrooms-information-bedroom-4-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-air-conditioning-check" name="bedrooms-information-bedroom-4-air-conditioning-check" /></div><label for="bedrooms-information-bedroom-4-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-fan-check" name="bedrooms-information-bedroom-4-fan-check" /></div><label for="bedrooms-information-bedroom-4-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-built-in-wardrobe-check" name="bedrooms-information-bedroom-4-built-in-wardrobe-check" /></div><label for="bedrooms-information-bedroom-4-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-walk-in-closet-check" name="bedrooms-information-bedroom-4-walk-in-closet-check" /></div><label for="bedrooms-information-bedroom-4-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-en-suite-check" name="bedrooms-information-bedroom-4-en-suite-check" /></div><label for="bedrooms-information-bedroom-4-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-surround-sound-check" name="bedrooms-information-bedroom-4-surround-sound-check" /></div><label for="bedrooms-information-bedroom-4-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-fire-place-gas-check" name="bedrooms-information-bedroom-4-fire-place-gas-check" /></div><label for="bedrooms-information-bedroom-4-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-fire-place-wood-check" name="bedrooms-information-bedroom-4-fire-place-wood-check" /></div><label for="bedrooms-information-bedroom-4-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-upstairs-check" name="bedrooms-information-bedroom-4-upstairs-check" /></div><label for="bedrooms-information-bedroom-4-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-4-downstairs-check" name="bedrooms-information-bedroom-4-downstairs-check" /></div><label for="bedrooms-information-bedroom-4-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-bedroom-4-comments-column"
+                                     id="bedrooms-information-bedroom-4-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-bedroom-4-label"
+                                           class="bedrooms-information-bedroom-4-label"
+                                           for="bedrooms-information-bedroom-4-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-bedroom-4-input"
+                                              id="bedrooms-information-bedroom-4-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-bedroom-4-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bedrooms-information-bedroom-5-col" style="display:none">
+                                <label id="bedrooms-information-bedroom-5-label"
+                                       class="bedrooms-information-bedroom-5-label"><br>Bedroom 5:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-tiled-check" name="bedrooms-information-bedroom-5-tiled-check" /></div><label for="bedrooms-information-bedroom-5-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-wood-check" name="bedrooms-information-bedroom-5-wood-check" /></div><label for="bedrooms-information-bedroom-5-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-carpet-check" name="bedrooms-information-bedroom-5-carpet-check" /></div><label for="bedrooms-information-bedroom-5-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-under-floor-heating-check" name="bedrooms-information-bedroom-5-under-floor-heating-check" /></div><label for="bedrooms-information-bedroom-5-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-air-conditioning-check" name="bedrooms-information-bedroom-5-air-conditioning-check" /></div><label for="bedrooms-information-bedroom-5-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-fan-check" name="bedrooms-information-bedroom-5-fan-check" /></div><label for="bedrooms-information-bedroom-5-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-built-in-wardrobe-check" name="bedrooms-information-bedroom-5-built-in-wardrobe-check" /></div><label for="bedrooms-information-bedroom-5-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-walk-in-closet-check" name="bedrooms-information-bedroom-5-walk-in-closet-check" /></div><label for="bedrooms-information-bedroom-5-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-en-suite-check" name="bedrooms-information-bedroom-5-en-suite-check" /></div><label for="bedrooms-information-bedroom-5-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-surround-sound-check" name="bedrooms-information-bedroom-5-surround-sound-check" /></div><label for="bedrooms-information-bedroom-5-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-fire-place-gas-check" name="bedrooms-information-bedroom-5-fire-place-gas-check" /></div><label for="bedrooms-information-bedroom-5-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-fire-place-wood-check" name="bedrooms-information-bedroom-5-fire-place-wood-check" /></div><label for="bedrooms-information-bedroom-5-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-upstairs-check" name="bedrooms-information-bedroom-5-upstairs-check" /></div><label for="bedrooms-information-bedroom-5-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-5-downstairs-check" name="bedrooms-information-bedroom-5-downstairs-check" /></div><label for="bedrooms-information-bedroom-5-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-bedroom-5-comments-column"
+                                     id="bedrooms-information-bedroom-5-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-bedroom-5-label"
+                                           class="bedrooms-information-bedroom-5-label"
+                                           for="bedrooms-information-bedroom-5-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-bedroom-5-input"
+                                              id="bedrooms-information-bedroom-5-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-bedroom-5-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bedrooms-information-bedroom-6-col" style="display:none">
+                                <label id="bedrooms-information-bedroom-6-label"
+                                       class="bedrooms-information-bedroom-6-label"><br>Bedroom 6:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-tiled-check" name="bedrooms-information-bedroom-6-tiled-check" /></div><label for="bedrooms-information-bedroom-6-tiled-check" class="col-md-10 control-label">Tiled</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-wood-check" name="bedrooms-information-bedroom-6-wood-check" /></div><label for="bedrooms-information-bedroom-6-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-carpet-check" name="bedrooms-information-bedroom-6-carpet-check" /></div><label for="bedrooms-information-bedroom-6-carpet-check" class="col-md-10 control-label">Carpet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-under-floor-heating-check" name="bedrooms-information-bedroom-6-under-floor-heating-check" /></div><label for="bedrooms-information-bedroom-6-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-air-conditioning-check" name="bedrooms-information-bedroom-6-air-conditioning-check" /></div><label for="bedrooms-information-bedroom-6-air-conditioning-check" class="col-md-10 control-label">Air Conditioning</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-fan-check" name="bedrooms-information-bedroom-6-fan-check" /></div><label for="bedrooms-information-bedroom-6-fan-check" class="col-md-10 control-label">Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-built-in-wardrobe-check" name="bedrooms-information-bedroom-6-built-in-wardrobe-check" /></div><label for="bedrooms-information-bedroom-6-built-in-wardrobe-check" class="col-md-10 control-label">Built-in Wardrobe</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-walk-in-closet-check" name="bedrooms-information-bedroom-6-walk-in-closet-check" /></div><label for="bedrooms-information-bedroom-6-walk-in-closet-check" class="col-md-10 control-label">Walk-in Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-en-suite-check" name="bedrooms-information-bedroom-6-en-suite-check" /></div><label for="bedrooms-information-bedroom-6-en-suite-check" class="col-md-10 control-label">En-suite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-surround-sound-check" name="bedrooms-information-bedroom-6-surround-sound-check" /></div><label for="bedrooms-information-bedroom-6-surround-sound-check" class="col-md-10 control-label">Surround Sound</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-fire-place-gas-check" name="bedrooms-information-bedroom-6-fire-place-gas-check" /></div><label for="bedrooms-information-bedroom-6-fire-place-gas-check" class="col-md-10 control-label">Fire Place - Has</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-fire-place-wood-check" name="bedrooms-information-bedroom-6-fire-place-wood-check" /></div><label for="bedrooms-information-bedroom-6-fire-place-wood-check" class="col-md-10 control-label">Fire Place - Wood</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-upstairs-check" name="bedrooms-information-bedroom-6-upstairs-check" /></div><label for="bedrooms-information-bedroom-6-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bedrooms-information-bedroom-6-downstairs-check" name="bedrooms-information-bedroom-6-downstairs-check" /></div><label for="bedrooms-information-bedroom-6-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bedrooms-information-bedroom-6-comments-column"
+                                     id="bedrooms-information-bedroom-6-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bedrooms-information-bedroom-6-label"
+                                           class="bedrooms-information-bedroom-6-label"
+                                           for="bedrooms-information-bedroom-6-label">Comments:</label>
+                                    <textarea class="form-control bedrooms-information-bedroom-6-input"
+                                              id="bedrooms-information-bedroom-6-input"
+                                              placeholder="Please explain "
+                                              minlength="1"
+                                              name="bedrooms-information-bedroom-6-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#bedrooms-number-of-bedrooms").change(function () {
+        $("#bedrooms-information-main-bedroom-col").css("display", "none");
+        $("#bedrooms-information-bedroom-2-col").css("display", "none");
+        $("#bedrooms-information-bedroom-3-col").css("display", "none");
+        $("#bedrooms-information-bedroom-4-col").css("display", "none");
+        $("#bedrooms-information-bedroom-5-col").css("display", "none");
+        $("#bedrooms-information-bedroom-6-col").css("display", "none");
+
+        var max = $("#bedrooms-number-of-bedrooms").attr('max');
+        if ($("#bedrooms-number-of-bedrooms").val() > max) {
+            $("#bedrooms-number-of-bedrooms").val(max);
+        }
+        if ($("#bedrooms-number-of-bedrooms").val() == "1") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+        } else if ($("#bedrooms-number-of-bedrooms").val() == "2") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+            $("#bedrooms-information-bedroom-2-col").css("display", "block");
+        } else if ($("#bedrooms-number-of-bedrooms").val() == "3") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+            $("#bedrooms-information-bedroom-2-col").css("display", "block");
+            $("#bedrooms-information-bedroom-3-col").css("display", "block");
+        } else if ($("#bedrooms-number-of-bedrooms").val() == "4") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+            $("#bedrooms-information-bedroom-2-col").css("display", "block");
+            $("#bedrooms-information-bedroom-3-col").css("display", "block");
+            $("#bedrooms-information-bedroom-4-col").css("display", "block")
+        } else if ($("#bedrooms-number-of-bedrooms").val() == "5") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+            $("#bedrooms-information-bedroom-2-col").css("display", "block");
+            $("#bedrooms-information-bedroom-3-col").css("display", "block");
+            $("#bedrooms-information-bedroom-4-col").css("display", "block")
+            $("#bedrooms-information-bedroom-5-col").css("display", "block")
+        } else if ($("#bedrooms-number-of-bedrooms").val() == "6") {
+            $("#bedrooms-information-main-bedroom-col").css("display", "block");
+            $("#bedrooms-information-bedroom-2-col").css("display", "block");
+            $("#bedrooms-information-bedroom-3-col").css("display", "block");
+            $("#bedrooms-information-bedroom-4-col").css("display", "block")
+            $("#bedrooms-information-bedroom-5-col").css("display", "block")
+            $("#bedrooms-information-bedroom-6-col").css("display", "block")
+        }
+
+        var NumberOfBedrooms = $("#bedrooms-number-of-bedrooms").val();
+        localStorage.setItem("numBedrooms", NumberOfBedrooms);
+        $("#listing-information-bedroom-input").val(NumberOfBedrooms);
+    });
+
+    $("#next-features-button").click(function () {
+        InsertBedrooms();
+
+        window.location.href = "/AdministrativeDetails/Bathrooms";
+    });
+
+    function InsertBedrooms() {
+        var bedrooms = {}
+
+        bedrooms.listingId = @TempData["listingId"];
+        bedrooms.BedroomMainTiled = $("#bedrooms-information-main-bedroom-tiled-check").is(":checked");
+        bedrooms.BedroomMainWood = $("#bedrooms-information-main-bedroom-wood-check").is(":checked");
+        bedrooms.BedroomMainCarpet = $("#bedrooms-information-main-bedroom-carpet-check").is(":checked");
+        bedrooms.BedroomMainUnderFloorHeating = $("#bedrooms-information-main-bedroom-under-floor-heating-check").is(":checked");
+        bedrooms.BedroomMainAirConditioning = $("#bedrooms-information-main-bedroom-air-conditioning-check").is(":checked");
+        bedrooms.BedroomMainFan = $("#bedrooms-information-main-bedroom-fan-check").is(":checked");
+        bedrooms.BedroomMainBuiltInWardrobe = $("#bedrooms-information-main-bedroom-built-in-wardrobe-check").is(":checked");
+        bedrooms.BedroomMainWalkInCloset = $("#bedrooms-information-main-bedroom-walk-in-closet-check").is(":checked");
+        bedrooms.BedroomMainEnSuite = $("#bedrooms-information-main-bedroom-en-suite-check").is(":checked");
+        bedrooms.BedroomMainSurroundSound = $("#bedrooms-information-main-bedroom-surround-sound-check").is(":checked");
+        bedrooms.BedroomMainFirePlaceGas = $("#bedrooms-information-main-bedroom-fire-place-gas-check").is(":checked");
+        bedrooms.BedroomMainFirePlaceWood = $("#bedrooms-information-main-bedroom-fire-place-wood-check").is(":checked");
+        bedrooms.BedroomMainUpstairs = $("#bedrooms-information-main-bedroom-upstairs-check").is(":checked");
+        bedrooms.BedroomMainDownstairs = $("#bedrooms-information-main-bedroom-downstairs-check").is(":checked");
+        bedrooms.BedroomMainComments = $("#bedrooms-information-main-bedroom-input").val();
+
+        bedrooms.Bedroom2Tiled = $("#bedrooms-information-bedroom-2-tiled-check").is(":checked");
+        bedrooms.Bedroom2Wood = $("#bedrooms-information-bedroom-2-wood-check").is(":checked");
+        bedrooms.Bedroom2Carpet = $("#bedrooms-information-bedroom-2-carpet-check").is(":checked");
+        bedrooms.Bedroom2UnderFloorHeating = $("#bedrooms-information-bedroom-2-under-floor-heating-check").is(":checked");
+        bedrooms.Bedroom2AirConditioning = $("#bedrooms-information-bedroom-2-air-conditioning-check").is(":checked");
+        bedrooms.Bedroom2Fan = $("#bedrooms-information-bedroom-2-fan-check").is(":checked");
+        bedrooms.Bedroom2BuiltInWardrobe = $("#bedrooms-information-bedroom-2-built-in-wardrobe-check").is(":checked");
+        bedrooms.Bedroom2WalkInCloset = $("#bedrooms-information-bedroom-2-walk-in-closet-check").is(":checked");
+        bedrooms.Bedroom2EnSuite = $("#bedrooms-information-bedroom-2-en-suite-check").is(":checked");
+        bedrooms.Bedroom2SurroundSound = $("#bedrooms-information-bedroom-2-surround-sound-check").is(":checked");
+        bedrooms.Bedroom2FirePlaceGas = $("#bedrooms-information-bedroom-2-fire-place-gas-check").is(":checked");
+        bedrooms.Bedroom2FirePlaceWood = $("#bedrooms-information-bedroom-2-fire-place-wood-check").is(":checked");
+        bedrooms.Bedroom2Upstairs = $("#bedrooms-information-bedroom-2-upstairs-check").is(":checked");
+        bedrooms.Bedroom2Downstairs = $("#bedrooms-information-bedroom-2-downstairs-check").is(":checked");
+        bedrooms.Bedroom2Comments = $("#bedrooms-information-bedroom-2-input").val();
+
+        bedrooms.Bedroom3Tiled = $("#bedrooms-information-bedroom-3-tiled-check").is(":checked");
+        bedrooms.Bedroom3Wood = $("#bedrooms-information-bedroom-3-wood-check").is(":checked");
+        bedrooms.Bedroom3Carpet = $("#bedrooms-information-bedroom-3-carpet-check").is(":checked");
+        bedrooms.Bedroom3UnderFloorHeating = $("#bedrooms-information-bedroom-3-under-floor-heating-check").is(":checked");
+        bedrooms.Bedroom3AirConditioning = $("#bedrooms-information-bedroom-3-air-conditioning-check").is(":checked");
+        bedrooms.Bedroom3Fan = $("#bedrooms-information-bedroom-3-fan-check").is(":checked");
+        bedrooms.Bedroom3BuiltInWardrobe = $("#bedrooms-information-bedroom-3-built-in-wardrobe-check").is(":checked");
+        bedrooms.Bedroom3WalkInCloset = $("#bedrooms-information-bedroom-3-walk-in-closet-check").is(":checked");
+        bedrooms.Bedroom3EnSuite = $("#bedrooms-information-bedroom-3-en-suite-check").is(":checked");
+        bedrooms.Bedroom3SurroundSound = $("#bedrooms-information-bedroom-3-surround-sound-check").is(":checked");
+        bedrooms.Bedroom3FirePlaceGas = $("#bedrooms-information-bedroom-3-fire-place-gas-check").is(":checked");
+        bedrooms.Bedroom3FirePlaceWood = $("#bedrooms-information-bedroom-3-fire-place-wood-check").is(":checked");
+        bedrooms.Bedroom3Upstairs = $("#bedrooms-information-bedroom-3-upstairs-check").is(":checked");
+        bedrooms.Bedroom3Downstairs = $("#bedrooms-information-bedroom-3-downstairs-check").is(":checked");
+        bedrooms.Bedroom3Comments = $("#bedrooms-information-bedroom-3-input").val();
+
+        bedrooms.Bedroom4Tiled = $("#bedrooms-information-bedroom-4-tiled-check").is(":checked");
+        bedrooms.Bedroom4Wood = $("#bedrooms-information-bedroom-4-wood-check").is(":checked");
+        bedrooms.Bedroom4Carpet = $("#bedrooms-information-bedroom-4-carpet-check").is(":checked");
+        bedrooms.Bedroom4UnderFloorHeating = $("#bedrooms-information-bedroom-4-under-floor-heating-check").is(":checked");
+        bedrooms.Bedroom4AirConditioning = $("#bedrooms-information-bedroom-4-air-conditioning-check").is(":checked");
+        bedrooms.Bedroom4Fan = $("#bedrooms-information-bedroom-4-fan-check").is(":checked");
+        bedrooms.Bedroom4BuiltInWardrobe = $("#bedrooms-information-bedroom-4-built-in-wardrobe-check").is(":checked");
+        bedrooms.Bedroom4WalkInCloset = $("#bedrooms-information-bedroom-4-walk-in-closet-check").is(":checked");
+        bedrooms.Bedroom4EnSuite = $("#bedrooms-information-bedroom-4-en-suite-check").is(":checked");
+        bedrooms.Bedroom4SurroundSound = $("#bedrooms-information-bedroom-4-surround-sound-check").is(":checked");
+        bedrooms.Bedroom4FirePlaceGas = $("#bedrooms-information-bedroom-4-fire-place-gas-check").is(":checked");
+        bedrooms.Bedroom4FirePlaceWood = $("#bedrooms-information-bedroom-4-fire-place-wood-check").is(":checked");
+        bedrooms.Bedroom4Upstairs = $("#bedrooms-information-bedroom-4-upstairs-check").is(":checked");
+        bedrooms.Bedroom4Downstairs = $("#bedrooms-information-bedroom-4-downstairs-check").is(":checked");
+        bedrooms.Bedroom4Comments = $("#bedrooms-information-bedroom-4-input").val();
+
+        bedrooms.Bedroom5Tiled = $("#bedrooms-information-bedroom-5-tiled-check").is(":checked");
+        bedrooms.Bedroom5Wood = $("#bedrooms-information-bedroom-5-wood-check").is(":checked");
+        bedrooms.Bedroom5Carpet = $("#bedrooms-information-bedroom-5-carpet-check").is(":checked");
+        bedrooms.Bedroom5UnderFloorHeating = $("#bedrooms-information-bedroom-5-under-floor-heating-check").is(":checked");
+        bedrooms.Bedroom5AirConditioning = $("#bedrooms-information-bedroom-5-air-conditioning-check").is(":checked");
+        bedrooms.Bedroom5Fan = $("#bedrooms-information-bedroom-5-fan-check").is(":checked");
+        bedrooms.Bedroom5BuiltInWardrobe = $("#bedrooms-information-bedroom-5-built-in-wardrobe-check").is(":checked");
+        bedrooms.Bedroom5WalkInCloset = $("#bedrooms-information-bedroom-5-walk-in-closet-check").is(":checked");
+        bedrooms.Bedroom5EnSuite = $("#bedrooms-information-bedroom-5-en-suite-check").is(":checked");
+        bedrooms.Bedroom5SurroundSound = $("#bedrooms-information-bedroom-5-surround-sound-check").is(":checked");
+        bedrooms.Bedroom5FirePlaceGas = $("#bedrooms-information-bedroom-5-fire-place-gas-check").is(":checked");
+        bedrooms.Bedroom5FirePlaceWood = $("#bedrooms-information-bedroom-5-fire-place-wood-check").is(":checked");
+        bedrooms.Bedroom5Upstairs = $("#bedrooms-information-bedroom-5-upstairs-check").is(":checked");
+        bedrooms.Bedroom5Downstairs = $("#bedrooms-information-bedroom-5-downstairs-check").is(":checked");
+        bedrooms.Bedroom5Comments = $("#bedrooms-information-bedroom-5-input").val();
+
+        bedrooms.Bedroom6Tiled = $("#bedrooms-information-bedroom-6-tiled-check").is(":checked");
+        bedrooms.Bedroom6Wood = $("#bedrooms-information-bedroom-6-wood-check").is(":checked");
+        bedrooms.Bedroom6Carpet = $("#bedrooms-information-bedroom-6-carpet-check").is(":checked");
+        bedrooms.Bedroom6UnderFloorHeating = $("#bedrooms-information-bedroom-6-under-floor-heating-check").is(":checked");
+        bedrooms.Bedroom6AirConditioning = $("#bedrooms-information-bedroom-6-air-conditioning-check").is(":checked");
+        bedrooms.Bedroom6Fan = $("#bedrooms-information-bedroom-6-fan-check").is(":checked");
+        bedrooms.Bedroom6BuiltInWardrobe = $("#bedrooms-information-bedroom-6-built-in-wardrobe-check").is(":checked");
+        bedrooms.Bedroom6WalkInCloset = $("#bedrooms-information-bedroom-6-walk-in-closet-check").is(":checked");
+        bedrooms.Bedroom6EnSuite = $("#bedrooms-information-bedroom-6-en-suite-check").is(":checked");
+        bedrooms.Bedroom6SurroundSound = $("#bedrooms-information-bedroom-6-surround-sound-check").is(":checked");
+        bedrooms.Bedroom6FirePlaceGas = $("#bedrooms-information-bedroom-6-fire-place-gas-check").is(":checked");
+        bedrooms.Bedroom6FirePlaceWood = $("#bedrooms-information-bedroom-6-fire-place-wood-check").is(":checked");
+        bedrooms.Bedroom6Upstairs = $("#bedrooms-information-bedroom-6-upstairs-check").is(":checked");
+        bedrooms.Bedroom6Downstairs = $("#bedrooms-information-bedroom-6-downstairs-check").is(":checked");
+        bedrooms.Bedroom6Comments = $("#bedrooms-information-bedroom-6-input").val();
+
+        $.ajax(
+            {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertBedroomsInformation", "AdministrativeDetails")',
+                data: { bedrooms:bedrooms },
+            success: function (result) {
+            },
+            error: function (error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

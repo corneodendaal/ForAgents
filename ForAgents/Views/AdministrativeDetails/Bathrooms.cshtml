@@ -1,0 +1,568 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Bathrooms";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="BathroomsInformationdiv">
+                            <div class="form-row row-cols-1 BedroomsInformationlabelheadingrow">
+                                <div class="col bathrooms-information-heading-column"
+                                     id="bathrooms-information-heading-column">
+                                    <label class="col-form-label bathrooms-information-heading-column"
+                                           id="bathrooms-information-heading-column">Bathroom(s) Information<br></label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <i class="fa fa-bath"><label style="font-weight:normal; margin-left:1em; margin-right:1em;">Bathrooms</label></i>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="input-field" id="bathrooms-number-of-bathrooms" type="number" placeholder="# Bathrooms" name="bathrooms-number-of-bathrooms" max="5">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-4">
+                                <i class="fas fa-restroom"><label style="font-weight:normal; margin-left:1em; margin-right:1em;">Guest Bathroom</label></i>
+                            </div>
+                            <div class="col-md-8">
+                                <input class="input-field" id="bathrooms-guest-bathroom-check" type="checkbox" name="bathrooms-guest-bathroom-check">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bathrooms-information-main-column" style="display:none">
+                                <label id="bathrooms-information-main-label"
+                                       class="bathrooms-information-main-label"><br>Main Bathroom:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-toilet-check" name="bathrooms-information-main-bathroom-toilet-check" /></div><label for="bathrooms-information-main-bathroom-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-hand-wash-basin-check" name="bathrooms-information-main-bathroom-hand-wash-basin-check" /></div><label for="bathrooms-information-main-bathroom-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-bath-check" name="bathrooms-information-main-bathroom-bath-check" /></div><label for="bathrooms-information-main-bathroom-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-shower-check" name="bathrooms-information-main-bathroom-shower-check" /></div><label for="bathrooms-information-main-bathroom-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-bidet-check" name="bathrooms-information-main-bathroom-bidet-check" /></div><label for="bathrooms-information-main-bathroom-bidet-check" class="col-md-10 control-label">Bidet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-under-floor-heating-check" name="bathrooms-information-main-bathroom-under-floor-heating-check" /></div><label for="bathrooms-information-main-bathroom-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-heating-system-check" name="bathrooms-information-main-bathroom-heating-system-check" /></div><label for="bathrooms-information-main-bathroom-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-closet-check" name="bathrooms-information-main-bathroom-closet-check" /></div><label for="bathrooms-information-main-bathroom-closet-check" class="col-md-10 control-label">Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-heated-towel-rail-check" name="bathrooms-information-main-bathroom-heated-towel-rail-check" /></div><label for="bathrooms-information-main-bathroom-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-upstairs-check" name="bathrooms-information-main-bathroom-upstairs-check" /></div><label for="bathrooms-information-main-bathroom-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-main-bathroom-downstairs-check" name="bathrooms-information-main-bathroom-downstairs-check" /></div><label for="bathrooms-information-main-bathroom-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-main-bathroom-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-main-bathroom-comments-label"
+                                           class="bathrooms-information-main-bathroom-comments-label"
+                                           for="bathrooms-information-main-bathroom-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-main-bathroom-comments-input"
+                                              id="bathrooms-information-main-bathroom-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bathrooms-information-bathroom-2-column" style="display:none">
+                                <label id="bathrooms-information-bathroom-2-label"
+                                       class="bathrooms-information-bathroom-2-label"><br>Bathroom 2:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-toilet-check" name="bathrooms-information-bathroom-2-toilet-check" /></div><label for="bathrooms-information-bathroom-2-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-hand-wash-basin-check" name="bathrooms-information-bathroom-2-hand-wash-basin-check" /></div><label for="bathrooms-information-bathroom-2-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-bath-check" name="bathrooms-information-bathroom-2-bath-check" /></div><label for="bathrooms-information-bathroom-2-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-shower-check" name="bathrooms-information-bathroom-2-shower-check" /></div><label for="bathrooms-information-bathroom-2-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-bidet-check" name="bathrooms-information-bathroom-2-bidet-check" /></div><label for="bathrooms-information-bathroom-2-bidet-check" class="col-md-10 control-label">Bidet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-under-floor-heating-check" name="bathrooms-information-bathroom-2-under-floor-heating-check" /></div><label for="bathrooms-information-bathroom-2-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-heating-system-check" name="bathrooms-information-bathroom-2-heating-system-check" /></div><label for="bathrooms-information-bathroom-2-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-closet-check" name="bathrooms-information-bathroom-2-closet-check" /></div><label for="bathrooms-information-bathroom-2-closet-check" class="col-md-10 control-label">Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-heated-towel-rail-check" name="bathrooms-information-bathroom-2-heated-towel-rail-check" /></div><label for="bathrooms-information-bathroom-2-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-upstairs-check" name="bathrooms-information-bathroom-2-upstairs-check" /></div><label for="bathrooms-information-bathroom-2-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-2-downstairs-check" name="bathrooms-information-bathroom-2-downstairs-check" /></div><label for="bathrooms-information-bathroom-2-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-bathroom-2-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-bathroom-2-comments-label"
+                                           class="bathrooms-information-bathroom-2-comments-label"
+                                           for="bathrooms-information-bathroom-2-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-bathroom-2-comments-input"
+                                              id="bathrooms-information-bathroom-2-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bathrooms-information-bathroom-3-column" style="display:none">
+                                <label id="bathrooms-information-bathroom-3-label"
+                                       class="bathrooms-information-bathroom-3-label"><br>Bathroom 3:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-toilet-check" name="bathrooms-information-bathroom-3-toilet-check" /></div><label for="bathrooms-information-bathroom-3-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-hand-wash-basin-check" name="bathrooms-information-bathroom-3-hand-wash-basin-check" /></div><label for="bathrooms-information-bathroom-3-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-bath-check" name="bathrooms-information-bathroom-3-bath-check" /></div><label for="bathrooms-information-bathroom-3-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-shower-check" name="bathrooms-information-bathroom-3-shower-check" /></div><label for="bathrooms-information-bathroom-3-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-bidet-check" name="bathrooms-information-bathroom-3-bidet-check" /></div><label for="bathrooms-information-bathroom-3-bidet-check" class="col-md-10 control-label">Bidet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-under-floor-heating-check" name="bathrooms-information-bathroom-3-under-floor-heating-check" /></div><label for="bathrooms-information-bathroom-3-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-heating-system-check" name="bathrooms-information-bathroom-3-heating-system-check" /></div><label for="bathrooms-information-bathroom-3-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-closet-check" name="bathrooms-information-bathroom-3-closet-check" /></div><label for="bathrooms-information-bathroom-3-closet-check" class="col-md-10 control-label">Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-heated-towel-rail-check" name="bathrooms-information-bathroom-3-heated-towel-rail-check" /></div><label for="bathrooms-information-bathroom-3-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-upstairs-check" name="bathrooms-information-bathroom-3-upstairs-check" /></div><label for="bathrooms-information-bathroom-3-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-3-downstairs-check" name="bathrooms-information-bathroom-3-downstairs-check" /></div><label for="bathrooms-information-bathroom-3-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-bathroom-3-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-bathroom-3-comments-label"
+                                           class="bathrooms-information-bathroom-3-comments-label"
+                                           for="bathrooms-information-bathroom-3-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-bathroom-3-comments-input"
+                                              id="bathrooms-information-bathroom-3-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bathrooms-information-bathroom-4-column" style="display:none">
+                                <label id="bathrooms-information-bathroom-4-label"
+                                       class="bathrooms-information-bathroom-4-label"><br>Bathroom 4:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-toilet-check" name="bathrooms-information-bathroom-4-toilet-check" /></div><label for="bathrooms-information-bathroom-4-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-hand-wash-basin-check" name="bathrooms-information-bathroom-4-hand-wash-basin-check" /></div><label for="bathrooms-information-bathroom-4-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-bath-check" name="bathrooms-information-bathroom-4-bath-check" /></div><label for="bathrooms-information-bathroom-4-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-shower-check" name="bathrooms-information-bathroom-4-shower-check" /></div><label for="bathrooms-information-bathroom-4-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-bidet-check" name="bathrooms-information-bathroom-4-bidet-check" /></div><label for="bathrooms-information-bathroom-4-bidet-check" class="col-md-10 control-label">Bidet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-under-floor-heating-check" name="bathrooms-information-bathroom-4-under-floor-heating-check" /></div><label for="bathrooms-information-bathroom-4-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-heating-system-check" name="bathrooms-information-bathroom-4-heating-system-check" /></div><label for="bathrooms-information-bathroom-4-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-closet-check" name="bathrooms-information-bathroom-4-closet-check" /></div><label for="bathrooms-information-bathroom-4-closet-check" class="col-md-10 control-label">Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-heated-towel-rail-check" name="bathrooms-information-bathroom-4-heated-towel-rail-check" /></div><label for="bathrooms-information-bathroom-4-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-upstairs-check" name="bathrooms-information-bathroom-4-upstairs-check" /></div><label for="bathrooms-information-bathroom-4-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-4-downstairs-check" name="bathrooms-information-bathroom-4-downstairs-check" /></div><label for="bathrooms-information-bathroom-4-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-bathroom-4-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-bathroom-4-comments-label"
+                                           class="bathrooms-information-bathroom-4-comments-label"
+                                           for="bathrooms-information-bathroom-4-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-bathroom-4-comments-input"
+                                              id="bathrooms-information-bathroom-4-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col" id="bathrooms-information-bathroom-5-column" style="display:none">
+                                <label id="bathrooms-information-bathroom-5-label"
+                                       class="bathrooms-information-bathroom-5-label"><br>Bathroom 5:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-toilet-check" name="bathrooms-information-bathroom-5-toilet-check" /></div><label for="bathrooms-information-bathroom-5-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-hand-wash-basin-check" name="bathrooms-information-bathroom-5-hand-wash-basin-check" /></div><label for="bathrooms-information-bathroom-5-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-bath-check" name="bathrooms-information-bathroom-5-bath-check" /></div><label for="bathrooms-information-bathroom-5-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-shower-check" name="bathrooms-information-bathroom-5-shower-check" /></div><label for="bathrooms-information-bathroom-5-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-bidet-check" name="bathrooms-information-bathroom-5-bidet-check" /></div><label for="bathrooms-information-bathroom-5-bidet-check" class="col-md-10 control-label">Bidet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-under-floor-heating-check" name="bathrooms-information-bathroom-5-under-floor-heating-check" /></div><label for="bathrooms-information-bathroom-5-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-heating-system-check" name="bathrooms-information-bathroom-5-heating-system-check" /></div><label for="bathrooms-information-bathroom-5-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-closet-check" name="bathrooms-information-bathroom-5-closet-check" /></div><label for="bathrooms-information-bathroom-5-closet-check" class="col-md-10 control-label">Closet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-heated-towel-rail-check" name="bathrooms-information-bathroom-5-heated-towel-rail-check" /></div><label for="bathrooms-information-bathroom-5-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-upstairs-check" name="bathrooms-information-bathroom-5-upstairs-check" /></div><label for="bathrooms-information-bathroom-5-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-bathroom-5-downstairs-check" name="bathrooms-information-bathroom-5-downstairs-check" /></div><label for="bathrooms-information-bathroom-5-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-bathroom-5-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-bathroom-5-comments-label"
+                                           class="bathrooms-information-bathroom-5-comments-label"
+                                           for="bathrooms-information-bathroom-5-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-bathroom-5-comments-input"
+                                              id="bathrooms-information-bathroom-5-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                            <div class="col" id="bathrooms-information-guest-bathroom-column" style="display:none">
+                                <label id="bathrooms-information-guest-bathroom-label"
+                                       class="bathrooms-information-guest-bathroom-label"><br>Guest Bathroom:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-toilet-check" name="bathrooms-information-guest-bathroom-toilet-check" /></div><label for="bathrooms-information-guest-bathroom-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-hand-wash-basin-check" name="bathrooms-information-guest-bathroom-hand-wash-basin-check" /></div><label for="bathrooms-information-guest-bathroom-hand-wash-basin-check" class="col-md-10 control-label">Hand-wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-under-floor-heating-check" name="bathrooms-information-guest-bathroom-under-floor-heating-check" /></div><label for="bathrooms-information-guest-bathroom-under-floor-heating-check" class="col-md-10 control-label">Under-floor Heating</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-heating-system-check" name="bathrooms-information-guest-bathroom-heating-system-check" /></div><label for="bathrooms-information-guest-bathroom-heating-system-check" class="col-md-10 control-label">Heating System</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-heated-towel-rail-check" name="bathrooms-information-guest-bathroom-heated-towel-rail-check" /></div><label for="bathrooms-information-guest-bathroom-heated-towel-rail-check" class="col-md-10 control-label">Heating Towel Rail</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-upstairs-check" name="bathrooms-information-guest-bathroom-upstairs-check" /></div><label for="bathrooms-information-guest-bathroom-upstairs-check" class="col-md-10 control-label">Upstairs</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="bathrooms-information-guest-bathroom-downstairs-check" name="bathrooms-information-guest-bathroom-downstairs-check" /></div><label for="bathrooms-information-guest-bathroom-downstairs-check" class="col-md-10 control-label">Downstairs</label>
+                                </div>
+                                <div class="form-group bathrooms-comments-column"
+                                     id="bathrooms-information-guest-bathroom-comments-column"
+                                     style="padding: 10px;">
+                                    <label id="bathrooms-information-guest-bathroom-comments-label"
+                                           class="bathrooms-information-guest-bathroom-comments-label"
+                                           for="bathrooms-information-guest-bathroom-comments-label">Comments:</label>
+                                    <textarea class="form-control bathrooms-information-guest-bathroom-comments-input"
+                                              id="bathrooms-information-guest-bathroom-comments-input"
+                                              placeholder="Please explain"
+                                              minlength="1"
+                                              name="bathroom-type-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#bathrooms-number-of-bathrooms").change(function () {
+        $("#bathrooms-information-main-column").css("display", "none");
+        $("#bathrooms-information-bathroom-2-column").css("display", "none");
+        $("#bathrooms-information-bathroom-3-column").css("display", "none");
+        $("#bathrooms-information-bathroom-4-column").css("display", "none");
+        $("#bathrooms-information-bathroom-5-column").css("display", "none");
+        //$("#bathrooms-information-guest-bathroom-column").css("display", "none");
+
+
+        var max = $("#bathrooms-number-of-bathrooms").attr('max');
+        if ($("#bathrooms-number-of-bathrooms").val() > max) {
+            $("#bathrooms-number-of-bathrooms").val(max);
+        }
+        if ($("#bathrooms-number-of-bathrooms").val() == "1") {
+            $("#bathrooms-information-main-column").css("display", "block");
+        } else if ($("#bathrooms-number-of-bathrooms").val() == "2") {
+            $("#bathrooms-information-main-column").css("display", "block");
+            $("#bathrooms-information-bathroom-2-column").css("display", "block");
+        } else if ($("#bathrooms-number-of-bathrooms").val() == "3") {
+            $("#bathrooms-information-main-column").css("display", "block");
+            $("#bathrooms-information-bathroom-2-column").css("display", "block");
+            $("#bathrooms-information-bathroom-3-column").css("display", "block");
+        } else if ($("#bathrooms-number-of-bathrooms").val() == "4") {
+            $("#bathrooms-information-main-column").css("display", "block");
+            $("#bathrooms-information-bathroom-2-column").css("display", "block");
+            $("#bathrooms-information-bathroom-3-column").css("display", "block");
+            $("#bathrooms-information-bathroom-4-column").css("display", "block");
+        } else if ($("#bathrooms-number-of-bathrooms").val() == "5") {
+            $("#bathrooms-information-main-column").css("display", "block");
+            $("#bathrooms-information-bathroom-2-column").css("display", "block");
+            $("#bathrooms-information-bathroom-3-column").css("display", "block");
+            $("#bathrooms-information-bathroom-4-column").css("display", "block");
+            $("#bathrooms-information-bathroom-5-column").css("display", "block");
+        }
+        var numberOfBathrooms = $("#bathrooms-number-of-bathrooms").val();
+        localStorage.setItem("numBathrooms", numberOfBathrooms);
+        $("#listing-information-bathrooms-input").val(numberOfBathrooms);
+    });
+    $('#bathrooms-guest-bathroom-check').change(function () {
+        var showGuestBathroom = $('input[name="bathrooms-guest-bathroom-check"]:checked').length > 0;
+        if (showGuestBathroom) {
+            $("#bathrooms-information-guest-bathroom-column").css("display", "block");
+            var numberOfBathrooms = $("#bathrooms-number-of-bathrooms").val();
+            numberOfBathrooms = parseInt(numberOfBathrooms) + 1;
+            localStorage.setItem("numBathrooms", numberOfBathrooms);
+            $("#listing-information-bathrooms-input").val(numberOfBathrooms);
+        } else {
+            $("#bathrooms-information-guest-bathroom-column").css("display", "none");
+            var numberOfBathrooms = $("#bathrooms-number-of-bathrooms").val();
+            numberOfBathrooms = parseInt(numberOfBathrooms) - 1;
+            localStorage.setItem("numBathrooms", numberOfBathrooms);
+            $("#listing-information-bathrooms-input").val(numberOfBathrooms);
+        }
+
+    });
+
+
+    $("#next-features-button").click(function () {
+        InsertBathrooms();
+
+        window.location.href = "/AdministrativeDetails/ExcludedIncluded";
+    });
+
+    function InsertBathrooms() {
+        var bathrooms = {}
+
+        bathrooms.listingId = @TempData["listingId"];
+        bathrooms.BathroomMainToilet = $("#bathrooms-information-main-bathroom-toilet-check").is(":checked");
+        bathrooms.BathroomMainHandWashBasin = $("#bathrooms-information-main-bathroom-hand-wash-basin-check").is(":checked");
+        bathrooms.BathroomMainBath = $("#bathrooms-information-main-bathroom-bath-check").is(":checked");
+        bathrooms.BathroomMainShower = $("#bathrooms-information-main-bathroom-shower-check").is(":checked");
+        bathrooms.BathroomMainBidet = $("#bathrooms-information-main-bathroom-bidet-check").is(":checked");
+        bathrooms.BathroomMainUnderFloorHeating = $("#bathrooms-information-main-bathroom-under-floor-heating-check").is(":checked");
+        bathrooms.BathroomMainHeatingSystem = $("#bathrooms-information-main-bathroom-heating-system-check").is(":checked");
+        bathrooms.BathroomMainCloset = $("#bathrooms-information-main-bathroom-closet-check").is(":checked");
+        bathrooms.BathroomMainHeatedTowelRail = $("#bathrooms-information-main-bathroom-heated-towel-rail-check").is(":checked");
+        bathrooms.BathroomMainUpstairs = $("#bathrooms-information-main-bathroom-upstairs-check").is(":checked");
+        bathrooms.BathroomMainDownstairs = $("#bathrooms-information-main-bathroom-downstairs-check").is(":checked");
+        bathrooms.BathroomMainComments = $("#bathrooms-information-main-bathroom-comments-input").val();
+
+        bathrooms.Bathroom2Toilet = $("#bathrooms-information-bathroom-2-toilet-check").is(":checked");
+        bathrooms.Bathroom2HandWashBasin = $("#bathrooms-information-bathroom-2-hand-wash-basin-check").is(":checked");
+        bathrooms.Bathroom2Bath = $("#bathrooms-information-bathroom-2-bath-check").is(":checked");
+        bathrooms.Bathroom2Shower = $("#bathrooms-information-bathroom-2-shower-check").is(":checked");
+        bathrooms.Bathroom2Bidet = $("#bathrooms-information-bathroom-2-bidet-check").is(":checked");
+        bathrooms.Bathroom2UnderFloorHeating = $("#bathrooms-information-bathroom-2-under-floor-heating-check").is(":checked");
+        bathrooms.Bathroom2HeatingSystem = $("#bathrooms-information-bathroom-2-heating-system-check").is(":checked");
+        bathrooms.Bathroom2Closet = $("#bathrooms-information-bathroom-2-closet-check").is(":checked");
+        bathrooms.Bathroom2HeatedTowelRail = $("#bathrooms-information-bathroom-2-heated-towel-rail-check").is(":checked");
+        bathrooms.Bathroom2Upstairs = $("#bathrooms-information-bathroom-2-upstairs-check").is(":checked");
+        bathrooms.Bathroom2Downstairs = $("#bathrooms-information-bathroom-2-downstairs-check").is(":checked");
+        bathrooms.Bathroom2Comments = $("#bathrooms-information-bathroom-2-comments-input").val();
+
+        bathrooms.Bathroom3Toilet = $("#bathrooms-information-bathroom-3-toilet-check").is(":checked");
+        bathrooms.Bathroom3HandWashBasin = $("#bathrooms-information-bathroom-3-hand-wash-basin-check").is(":checked");
+        bathrooms.Bathroom3Bath = $("#bathrooms-information-bathroom-3-bath-check").is(":checked");
+        bathrooms.Bathroom3Shower = $("#bathrooms-information-bathroom-3-shower-check").is(":checked");
+        bathrooms.Bathroom3Bidet = $("#bathrooms-information-bathroom-3-bidet-check").is(":checked");
+        bathrooms.Bathroom3UnderFloorHeating = $("#bathrooms-information-bathroom-3-under-floor-heating-check").is(":checked");
+        bathrooms.Bathroom3HeatingSystem = $("#bathrooms-information-bathroom-3-heating-system-check").is(":checked");
+        bathrooms.Bathroom3Closet = $("#bathrooms-information-bathroom-3-closet-check").is(":checked");
+        bathrooms.Bathroom3HeatedTowelRail = $("#bathrooms-information-bathroom-3-heated-towel-rail-check").is(":checked");
+        bathrooms.Bathroom3Upstairs = $("#bathrooms-information-bathroom-3-upstairs-check").is(":checked");
+        bathrooms.Bathroom3Downstairs = $("#bathrooms-information-bathroom-3-downstairs-check").is(":checked");
+        bathrooms.Bathroom3Comments = $("#bathrooms-information-bathroom-3-comments-input").val();
+
+        bathrooms.Bathroom4Toilet = $("#bathrooms-information-bathroom-4-toilet-check").is(":checked");
+        bathrooms.Bathroom4HandWashBasin = $("#bathrooms-information-bathroom-4-hand-wash-basin-check").is(":checked");
+        bathrooms.Bathroom4Bath = $("#bathrooms-information-bathroom-4-bath-check").is(":checked");
+        bathrooms.Bathroom4Shower = $("#bathrooms-information-bathroom-4-shower-check").is(":checked");
+        bathrooms.Bathroom4Bidet = $("#bathrooms-information-bathroom-4-bidet-check").is(":checked");
+        bathrooms.Bathroom4UnderFloorHeating = $("#bathrooms-information-bathroom-4-under-floor-heating-check").is(":checked");
+        bathrooms.Bathroom4HeatingSystem = $("#bathrooms-information-bathroom-4-heating-system-check").is(":checked");
+        bathrooms.Bathroom4Closet = $("#bathrooms-information-bathroom-4-closet-check").is(":checked");
+        bathrooms.Bathroom4HeatedTowelRail = $("#bathrooms-information-bathroom-4-heated-towel-rail-check").is(":checked");
+        bathrooms.Bathroom4Upstairs = $("#bathrooms-information-bathroom-4-upstairs-check").is(":checked");
+        bathrooms.Bathroom4Downstairs = $("#bathrooms-information-bathroom-4-downstairs-check").is(":checked");
+        bathrooms.Bathroom4Comments = $("#bathrooms-information-bathroom-4-comments-input").val();
+
+        bathrooms.Bathroom5Toilet = $("#bathrooms-information-bathroom-5-toilet-check").is(":checked");
+        bathrooms.Bathroom5HandWashBasin = $("#bathrooms-information-bathroom-5-hand-wash-basin-check").is(":checked");
+        bathrooms.Bathroom5Bath = $("#bathrooms-information-bathroom-5-bath-check").is(":checked");
+        bathrooms.Bathroom5Shower = $("#bathrooms-information-bathroom-5-shower-check").is(":checked");
+        bathrooms.Bathroom5Bidet = $("#bathrooms-information-bathroom-5-bidet-check").is(":checked");
+        bathrooms.Bathroom5UnderFloorHeating = $("#bathrooms-information-bathroom-5-under-floor-heating-check").is(":checked");
+        bathrooms.Bathroom5HeatingSystem = $("#bathrooms-information-bathroom-5-heating-system-check").is(":checked");
+        bathrooms.Bathroom5Closet = $("#bathrooms-information-bathroom-5-closet-check").is(":checked");
+        bathrooms.Bathroom5HeatedTowelRail = $("#bathrooms-information-bathroom-5-heated-towel-rail-check").is(":checked");
+        bathrooms.Bathroom5Upstairs = $("#bathrooms-information-bathroom-5-upstairs-check").is(":checked");
+        bathrooms.Bathroom5Downstairs = $("#bathrooms-information-bathroom-5-downstairs-check").is(":checked");
+        bathrooms.Bathroom5Comments = $("#bathrooms-information-bathroom-5-comments-input").val();
+
+        bathrooms.BathroomGuestToilet = $("#bathrooms-information-guest-bathroom-toilet-check").is(":checked");
+        bathrooms.BathroomGuestHandWashBasin = $("#bathrooms-information-guest-bathroom-hand-wash-basin-check").is(":checked");
+        bathrooms.BathroomGuestUnderFloorHeating = $("#bathrooms-information-guest-bathroom-under-floor-heating-check").is(":checked");
+        bathrooms.BathroomGuestHeatingSystem = $("#bathrooms-information-guest-bathroom-heating-system-check").is(":checked");
+        bathrooms.BathroomGuestHeatedTowelRail = $("#bathrooms-information-guest-bathroom-heated-towel-rail-check").is(":checked");
+        bathrooms.BathroomGuestUpstairs = $("#bathrooms-information-guest-bathroom-upstairs-check").is(":checked");
+        bathrooms.BathroomGuestDownstairs = $("#bathrooms-information-guest-bathroom-downstairs-check").is(":checked");
+        bathrooms.BathroomGuestComments = $("#bathrooms-information-guest-bathroom-comments-input").val();
+
+        $.ajax(
+            {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertBathroomsInformation", "AdministrativeDetails")',
+                data: { bathrooms: bathrooms },
+            success: function (result) {
+            },
+            error: function (error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

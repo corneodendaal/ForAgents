@@ -1,0 +1,163 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Security";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Securityheading div">
+                            <div class="form-row row-cols-1 Securityheadingdiv">
+                                <div class="col security-heading-ccolumn" id="security-heading-ccolumn"><label class="col-form-label security-heading-label" id="security-heading-label"><strong>Security</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="col security-please-select-all-check-box-column" id="security-please-select-all-check-box-column">
+                                    <label id="security-please-select-all-check-box-label" class="security-please-select-all-check-box-label" for="security-please-select-all-check-box-label">Please select all that apply:</label>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="security-alarm-check" name="security-alarm-check" /></div><label for="security-alarm-check" class="col-md-10 control-label">Alarm</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="security-burglar-proofing-check" name="security-burglar-proofing-check" checked="checked" /></div><label for="security-burglar-proofing-check" class="col-md-10 control-label">Burglar Proofing</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="security-security-gates-check" name="security-security-gates-check" /></div><label for="security-security-gates-check" class="col-md-10 control-label">Security Gates</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="security-passive-beams-check" name="security-passive-beams-check" checked="checked" /></div><label for="security-passive-beams-check" class="col-md-10 control-label">Passive Beams</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="security-intercom-check" name="security-intercom-check" /></div><label for="security-intercom-check" class="col-md-10 control-label">Intercom</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="security-comments-column">
+                            <div class="form-group kitchen-type-column" id="kitchen-type-column-3">
+                                <label id="security-comments-label" class="security-comments-label" for="security-comments-label">Comments</label><textarea class="form-control security-comments-input" id="security-comments-input"
+                                                                                                                                                            placeholder="Please explain " required="" minlength="1" name="security-comments-input">These are Security Comments</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertSecurityInformation();
+
+        window.location.href = "/AdministrativeDetails/Garages";
+    });
+
+    function InsertSecurityInformation() {
+        var security = {};
+        security.ListingId = @TempData["listingId"];
+        security.Alarm = $("#security-alarm-check").is(":checked");
+        security.BurglarProofing = $("#security-burglar-proofing-check").is(":checked");
+        security.SecurityGates = $("#security-security-gates-check").is(":checked");
+        security.PassiveBeams = $("#security-passive-beams-check").is(":checked");
+        security.Intercom = $("#security-intercom-check").is(":checked");
+        security.SecurityComments = $("#security-comments-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertSecurityInformation", "AdministrativeDetails")',
+                data: { security: security },
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

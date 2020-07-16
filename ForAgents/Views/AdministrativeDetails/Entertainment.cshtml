@@ -1,0 +1,189 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Entertainment";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="entertainmentheading div">
+                            <div class="form-row row-cols-1">
+                                <div class="col entertainment-heading-column" id="entertainment-heading-column"><label class="col-form-label entertainment-heading-label" id="entertainment-heading-label" for="Entertainment-heading-label"><strong>Entertainment</strong><br></label></div>
+                            </div>
+
+                        </div>
+                        <div class="col entertainment-please-select-all-check-box-column" id="entertainment-please-select-all-check-box-column">
+                            <label id="entertainment-please-select-all-check-box-label" class="entertainment-please-select-all-check-box-label">Please select all that apply:</label>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-covered-patio-check" name="entertainment-covered-patio-check" /></div><label for="entertainment-covered-patio-check" class="col-md-10 control-label">Covered Patio</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-enclosed-patio-check" name="entertainment-enclosed-patio-check" /></div><label for="entertainment-enclosed-patio-check" class="col-md-10 control-label">Enclosed Patio</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-boma-check" name="entertainment-boma-check" /></div><label for="entertainment-boma-check" class="col-md-10 control-label">Boma</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-gas-barbeque-check" name="entertainment-gas-barbeque-check" /></div><label for="entertainment-gas-barbeque-check" class="col-md-10 control-label">Gas Barbeque</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-wood-barbeque-check" name="entertainment-wood-barbeque-check" /></div><label for="entertainment-wood-barbeque-check" class="col-md-10 control-label">Wood Barbeque</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-bar-check" name="entertainment-bar-check" /></div><label for="entertainment-bar-check" class="col-md-10 control-label">Bar</label>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-wine-cellar-check" name="entertainment-wine-cellar-check" /></div><label for="entertainment-wine-cellar-check" class="col-md-10 control-label">Wine Cellar</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-jacuzzi-check" name="entertainment-jacuzzi-check" /></div><label for="entertainment-jacuzzi-check" class="col-md-10 control-label">Jacuzzi</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-sauna-check" name="entertainment-sauna-check" /></div><label for="entertainment-sauna-check" class="col-md-10 control-label">Sauna</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-gym-check" name="entertainment-gym-check" /></div><label for="entertainment-gym-check" class="col-md-10 control-label">Gym</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="entertainment-pool-check" name="entertainment-pool-check" /></div><label for="entertainment-pool-check" class="col-md-10 control-label">Pool</label>
+                                    </div>
+                                </div>
+                                <label id="entertainment-comments-column-label" class="entertainment-comments-column-label" for="entertainment-comments-input">Comments</label><textarea class="form-control entertainment-comments-input" id="entertainment-comments-input" placeholder="Please explain ">These are entertainment comments</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertEntertainmentInformation();
+
+        window.location.href = "/AdministrativeDetails/Security";
+    });
+
+    function InsertEntertainmentInformation() {
+        var entertainment = {};
+
+        entertainment.ListingId =  @TempData["listingId"];
+        entertainment.CoveredPatio = $("#entertainment-covered-patio-check").is(":checked");
+        entertainment.EnclosedPatio = $("#entertainment-enclosed-patio-check").is(":checked");
+        entertainment.Boma = $("#entertainment-boma-check").is(":checked");
+        entertainment.GasBarbeque = $("#entertainment-gas-barbeque-check").is(":checked");
+        entertainment.WoodBarbeque = $("#entertainment-wood-barbeque-check").is(":checked");
+        entertainment.Bar = $("#entertainment-bar-check").is(":checked");
+        entertainment.WineCellar = $("#entertainment-wine-cellar-check").is(":checked");
+        entertainment.Jacuzzi = $("#entertainment-jacuzzi-check").is(":checked");
+        entertainment.Sauna = $("#entertainment-sauna-check").is(":checked");
+        entertainment.Gym = $("#entertainment-gym-check").is(":checked");
+        entertainment.Pool = $("#entertainment-pool-check").is(":checked");
+        entertainment.EntertainmentComments = $("#entertainment-comments-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertEntertainmentInformation", "AdministrativeDetails")',
+                data:{ entertainment: entertainment },
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

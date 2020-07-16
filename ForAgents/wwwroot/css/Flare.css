@@ -1,0 +1,776 @@
+/*.col.bedroom(s).informationheading {
+}*/
+
+@media (min-width: 300px) {
+  .Seller1-First.Name.text-area {
+    padding: 12px;
+  }
+}
+
+.col-form-label.Bathroom.Information_Field_Label {
+  font-weight: bold;
+}
+
+.Type-tick-box-label {
+  font-style: italic;
+}
+
+.Source-tick-box-label {
+  font-style: italic;
+}
+
+.Specify-Source-label {
+  font-style: italic;
+}
+
+.col.Listings.information.heading {
+  padding-top: 10px;
+  padding-bottom: 0;
+}
+
+.col.Administrative.detailsheading {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-row.Seller1_textheading_formgroup {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-row.seller2_detailstextheading {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-row > .Priceheading {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.col.Listings.informationheading {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.col.Building.Informationheading {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-row > .col, featuresheading {
+}
+
+.featuresheading.div {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.kitchenheading.div {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Sequence-number-label {
+  font-style: italic;
+}
+
+.form-group.typeofapplicabletokitchen {
+  font-style: italic;
+}
+
+.form-group.typeofwoodkitchenexplain {
+  font-style: italic;
+}
+
+.form-row > .col, spaceforselection {
+  padding-top: 10px;
+}
+
+.form-row > .col, finisheskitchencolumn {
+  padding-bottom: 10px;
+}
+
+.entertainmentheading.div {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-row.row-cols-1.Securityheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Garagesheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Wallsheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Windowsheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Roofheadingrowdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Ceilingheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Poolheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Boundryheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Gardenheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Defectsheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.Extraheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.LivingAreasInformationheading Div {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.BedroomInformationheadingdiv {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+.form-group.Explainalldefectstectformgroup {
+  padding-top: 10px;
+}
+
+.BathroomsInformationdiv {
+  font-size: 21px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.ExcludedOrIncludedheadingdiv {
+  font-size: 21px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+.form-group.InclusionsOrExclusionsexplained {
+  padding-top: 10px;
+}
+
+.form-row.Bathroom5andGuestbathroomcheckbx {
+  padding-bottom: 10px;
+}
+
+.form-row.Bedroom5and6checkbox {
+  padding-bottom: 10px;
+}
+
+.form-row > .col, Bedroom5and6checkboxcolumn {
+  padding-bottom: 10px;
+}
+
+.BedroomInformationheadingdiv {
+  padding-top: 10px;
+}
+
+.Introductiontext {
+  font-size: 25px;
+  font-weight: bolder;
+}
+
+.portfolio-block{
+    margin-top:0;
+}
+
+.portfolio-block.block-intro p {
+    font-weight: bolder;
+}
+
+.adminingediv {
+}
+
+.rounded-circle.adminimage {
+  align-items: center;
+}
+
+.adminingediv {
+  padding-top: 100px;
+}
+
+.formasbodyhomepage {
+  padding-top: 100px;
+}
+
+.Introduction.to.section-homepage {
+  padding-top: 100px;
+  text-align: center;
+}
+
+.Introduction to section-homepage, h2 {
+  font-size: 56px;
+  font-weight: bold;
+}
+
+.Introduction to section-homepage, h1 {
+  font-size: 35px;
+  font-weight: 400;
+}
+
+.img-fluid, .img-thumbnail {
+  padding-bottom: 10px;
+}
+
+.Introduction.to.section-homepage {
+  background-color: #4fc9f8;
+}
+
+.img-fluid, .img-thumbnail {
+  padding-bottom: 10px;
+}
+
+/*.portfolio-block-agent{
+    padding-top:0px;
+}*/
+.portfolio-block.photography {
+  padding-top: 100px;
+  padding-bottom: 0px;
+}
+
+.portfolio-block.skills {
+  padding-top: 0px;
+}
+.portfolio-block.hire-me {
+    padding-top: 0px;
+}
+
+Introduction to section-homepageh2dark, h2 {
+  color: #fff;
+}
+
+.Introduction.to.section-homepageh1dark, h1 {
+  color: #fff;
+}
+
+.form-row > .col, .form-row > [class*=col-] {
+}
+
+#administrative-details-heading-row {
+  text-align: center;
+  font-size: 21px;
+  font-weight: bolder;
+}
+
+#sequence-number-label {
+  font-style: italic;
+}
+
+#stand-number-label-id {
+  font-style: italic;
+}
+
+#type-checkbox-label-heading {
+  font-style: italic;
+}
+
+#source-tick-box-label-id {
+  font-style: italic;
+}
+
+#specify-source-label-id {
+  font-style: italic;
+}
+
+#street-address-1-label {
+  font-style: italic;
+}
+
+#address-line-2-label-id {
+  font-style: italic;
+}
+
+#city-label-text-area-id {
+  font-style: italic;
+}
+
+#state-province-region-label-id {
+  font-style: italic;
+}
+
+#zip-code-label-id {
+  font-style: italic;
+}
+
+#seller-1-details-heading-row-id {
+  font-weight: bolder;
+  font-size: 21px;
+}
+
+#surname-seller-1-label-id {
+  font-style: italic;
+}
+
+#seller-1-first-name-text-area-id {
+  font-style: italic;
+}
+
+#cell-seller-1-label-id {
+  font-style: italic;
+}
+
+#tel-seller-1-label-id {
+  font-style: italic;
+}
+
+#e-mail-seller-1-label-id {
+  font-style: italic;
+}
+
+#id-number-seller-1-label-id {
+  font-style: italic;
+}
+
+#postal-address-seller-1-label-text-area {
+  font-style: italic;
+}
+#building-information-reason-for-selling-label {
+    font-style: italic;
+}
+
+#copy-of-id-doc-or-passport-seller-1-label-id {
+    font-style: italic;
+}
+
+#proof-of-residence-seller-1-label-id {
+  font-style: italic;
+}
+
+.label-italic{
+    font-style:italic;
+}
+#copy-of-sars-doc-seller-1-label-id {
+    font-style: italic;
+}
+
+#copy-of-bank-doc-seller-1-column-label-id {
+    font-style: italic;
+}
+
+#surname-seller-2-label-id {
+  font-style: italic;
+}
+
+#first-name-seller-2-label-id {
+  font-style: italic;
+}
+
+#cell-seller-2-label-id {
+  font-style: italic;
+}
+
+#tel-seller-2-label-id {
+  font-style: italic;
+}
+
+#e-mail-seller-2-label-id {
+  font-style: italic;
+}
+
+#id-number-seller-2-label-id {
+  font-style: italic;
+}
+
+#postal-address-seller-2-label-id {
+  font-style: italic;
+}
+
+#price-heading-column-id {
+  font-size: 21px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#market-price-label-id {
+}
+
+#id-number-seller-2-label {
+  font-style: italic;
+}
+
+#cell-seller-2-label {
+  font-style: italic;
+}
+
+#tel-seller-2-label {
+  font-style: italic;
+}
+
+#surname-seller-2-label {
+  font-style: italic;
+}
+
+#first-name-seller-2-label {
+  font-style: italic;
+}
+
+#copy-of-bank-doc-seller-1-label {
+  font-style: italic;
+}
+
+#proof-of-residence-seller-1-label {
+  font-style: italic;
+}
+
+#id-number-seller-1-label {
+  font-style: italic;
+}
+
+#e-mail-seller-1-label {
+  font-style: italic;
+}
+
+#cell-seller-1-label {
+  font-style: italic;
+}
+
+#tel-seller-1-label {
+  font-style: italic;
+}
+
+#seller-1-first-name-text-area {
+  font-style: italic;
+}
+
+#surname-seller-1-label {
+  font-style: italic;
+}
+
+#zip-code-label {
+  font-style: italic;
+}
+
+#city-label-text-area {
+  font-style: italic;
+}
+
+#state-province-region-label {
+  font-style: italic;
+}
+
+#address-line-2-label {
+  font-style: italic;
+}
+
+#specify-source-label {
+  font-style: italic;
+}
+
+#source-tick-box-label {
+  font-style: italic;
+}
+
+#stand-number-label {
+  font-style: italic;
+}
+
+#listings-information-heading-column {
+  font-size: 21px;
+  text-align: center;
+  font-weight: bolder;
+}
+
+#price-heading-column {
+    font-weight: bolder;
+    font-size: 21px;
+    text-align: center;
+}
+
+#building-information-heading-column {
+  font-weight: bolder;
+  font-size: 21px;
+  text-align: center;
+}
+
+#building-information-facing-checkbox-label {
+  font-style: italic;
+}
+
+#kitchen-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#kitchen-finishes-check-box-label {
+  font-style: italic;
+}
+
+#kitchen-appliances-check-box-label {
+  font-style: italic;
+}
+
+#kitchen-space-for-check-box-label {
+  font-style: italic;
+}
+
+#entertainment-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#security-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#garages-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#windows-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#roof-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#ceiling-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#pool-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#boundry-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#garden-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#defects-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#extra-please-select-all-check-box-label {
+  font-style: italic;
+}
+
+#extra-please-select-all-accomodation-check-box-label {
+  font-style: italic;
+}
+
+#extra-please-select-all-staff-check-box-label {
+  font-style: italic;
+}
+
+#withdrawn-label {
+  font-weight: bold;
+}
+
+#withdrawn-comments {
+  font-style: italic;
+}
+
+#Rented-label {
+  font-weight: bold;
+}
+
+#Rented-until {
+  font-style: italic;
+}
+
+#Rented-amount {
+  font-style: italic;
+}
+
+#Rented-comments {
+  font-style: italic;
+}
+
+#sold-label {
+  font-weight: bold;
+}
+
+#sold-date {
+  font-style: italic;
+}
+
+#sold-price {
+  font-style: italic;
+}
+
+#sold-comments {
+  font-style: italic;
+}
+
+#date-label {
+  font-style: italic;
+}
+
+.typcn.typcn-pen.border-success {
+  font-size: 50px;
+}
+
+.form-check-label {
+  font-size: larger;
+}
+
+#modal1dontacceptbutton {
+  background-color: #000;
+}
+
+#date-label-1 {
+  font-style: italic;
+}
+
+#Website-terms-subheading-1 {
+  font-weight: bolder;
+}
+
+.row {
+}
+
+p {
+}
+
+#Content-label {
+  font-weight: bolder;
+}
+
+#Post-label {
+  font-weight: bolder;
+}
+
+#Provider-Service-and-Your-Service-label {
+  font-weight: bolder;
+}
+
+#Our-Service-label {
+  font-weight: bolder;
+}
+
+#Our-website-label {
+  font-weight: bolder;
+}
+
+#Our-service-label {
+  font-weight: bolder;
+}
+
+#Provider-label-text {
+  font-weight: bolder;
+}
+
+#Our-website-label-text {
+  font-weight: bolder;
+}
+
+#Notes-Paragraph-specific-main-list {
+  font-weight: bolder;
+}
+
+#Notes-Paragraph-specific-sub-list-3 {
+  font-weight: normal;
+}
+
+#navbar-gradient-header {
+  background: linear-gradient(120deg,#7f70f5,#0ea0ff);
+  color: #fff;
+}
+
+#introduction-to-section-home-page {
+  background-color: #4fc9f8;
+  padding-top: 100px;
+  text-align: center;
+}
+
+#seller-1-regsistration-number-label {
+  font-style: italic;
+}
+
+#legal-entity-seller-1-label {
+  font-style: italic;
+}
+
+#seller-2-regsistration-number-label {
+  font-style: italic;
+}
+
+#e-mail-seller-2-label {
+  font-style: italic;
+}
+
+#postal-address-seller-2-label {
+  font-style: italic;
+}
+
+#post-label {
+  font-weight: bolder;
+}
+
+#Content-label-text {
+  font-weight: bolder;
+}
+
+#provider-service-and-your-service-label {
+  font-weight: bolder;
+}
+
+#our-service-label {
+  font-weight: bolder;
+}
+
+#our-Website-label {
+  font-weight: bolder;
+}
+
+/*input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}*/

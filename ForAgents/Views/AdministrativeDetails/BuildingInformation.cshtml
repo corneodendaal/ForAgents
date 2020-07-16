@@ -1,0 +1,176 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Building Information";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div>
+                            <div class="form-row row-cols-1"><div class="col price-heading-column" id="price-heading-column"><label class="col-form-label price-heading-text-area" id="price-heading-text-area" for="price-heading-text-area"><strong>BUILDING INFORMATION</strong><br></label></div></div>
+                        </div>
+                        <div class="form-group building-information-buildings-m2-column" id="building-information-buildings-m2-column"><label id="building-information-buildings-m2-label" class="building-information-buildings-m2-label" for="building-information-buildings-m2-label">Buildings</label><input class="form-control building-information-buildings-m2-input" id="building-information-buildings-m2-input" placeholder="m²" required="" minlength="1" name="building-information-buildings-m2-input" value="200" /></div>
+                        <div class="form-group building-information-stand-m2-column" id="building-information-stand-m2-column"><label id="building-information-stand-m2-label" class="building-information-stand-m2-label" for="building-information-stand-m2-label">Stand</label><input class="form-control building-information-stand-m2-input" id="building-information-stand-m2-input" placeholder="m²" required="" minlength="1" name="building-information-stand-m2-input" value="1200000" /></div>
+                        @*<div class="form-group building-information-year-build-column" id="building-information-year-build-column"><label id="building-information-year-build-label" class="building-information-year-build-label" for="building-information-year-build-label">Year Build</label><input class="form-control building-information-year-build-input" id="building-information-year-build-input" type="date" required="" name="building-information-year-build-input" value="1990-01-01"></div>*@
+                        <div class="form-group">
+                            <div class="form-row row-cols-1">
+                                <div class="col building-information-furnished-checkbox-row" id="building-information-furnished-checkbox-row">
+                                    <label id="building-information-furnished-checkbox-label" class="building-information-furnished-checkbox-label" for="building-information-furnished-checkbox-label">Furnished</label>
+                                    <div class="form-check type-fully-furnished-tick" id="type-fully-furnished-tick"><input class="form-check-input" type="radio" id="fully-furnished-check" value="Fully" name="furnished"><label class="form-check-label" for="fully-furnished-check">Fully Furnished</label></div>
+                                    <div class="form-check type-semi-furnished-tick" id="type-semi-furnished-tick"><input class="form-check-input" type="radio" id="semi-furnished-check" value="Semi" name="furnished"><label class="form-check-label" for="semi-furnished-check">Semi Furnished</label></div>
+                                    <div class="form-check type-not-furnished-tick" id="type-not-furnished-tick"><input class="form-check-input" type="radio" id="not-furnished-check" value="Not" name="furnished" checked="checked"><label class="form-check-label" for="not-furnished-check">Not Furnished</label></div>
+                                    <input type="hidden" id="property-furnished-hidden" name="property-furnished-hidden" value="Not" />
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group">
+                            <div class="form-row row-cols-1">
+                                <div class="col building-information-facing-checkbox-row" id="building-information-facing-checkbox-row">
+                                    <label id="building-information-facing-checkbox-label" class="building-information-facing-checkbox-label" for="building-information-facing-checkbox-label">Facing</label>
+                                    <div class="form-check type-north-tick" id="type-north-tick"><input class="form-check-input" type="radio" id="chkNorth" value="North" name="typeFacing" checked="checked"><label class="form-check-label" for="chkNorth">North</label></div>
+                                    <div class="form-check type-north-tick" id="type-south-tick"><input class="form-check-input" type="radio" id="chkSouth" value="South" name="typeFacing"><label class="form-check-label" for="chkSouth">South</label></div>
+                                    <div class="form-check type-north-tick" id="type-east-tick"><input class="form-check-input" type="radio" id="chkEast" value="East" name="typeFacing"><label class="form-check-label" for="chkEast">East</label></div>
+                                    <div class="form-check type-north-tick" id="type-west-tick"><input class="form-check-input" type="radio" id="chkWest" value="West" name="typeFacing"><label class="form-check-label" for="chkWest">West</label></div>
+                                    <input type="hidden" id="property-facing-hidden" name="property-facing-hidden" value="North" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-furnished-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=furnished]').change(function () {
+        var radios = document.getElementsByName('furnished');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-furnished-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertBuildingInformation();
+
+        console.log("@TempData["category"]");
+
+        //window.location.href = "/AdministrativeDetails/StaffTenant";
+        if ("@TempData["category"]" == "Sales") {
+            window.location.href = "/AdministrativeDetails/StaffTenant";
+            }
+            else if ("@TempData["category"]" == "Rental") {
+            window.location.href = "/AdministrativeDetails/StaffTenantRental";
+            }
+    });
+
+    function InsertBuildingInformation() {
+        var building = {};
+
+        building.ListingId = @TempData["listingId"];
+        building.SqmBuilding = $("#building-information-buildings-m2-input").val();
+        building.SqmStand = $("#building-information-stand-m2-input").val();
+        //building.DateBuilt = $("#building-information-year-build-input").val();
+        building.Facing = $("#property-facing-hidden").val();
+        building.Furnished = $("#property-furnished-hidden").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertBuildingInformation", "AdministrativeDetails")',
+                data: {building:building},
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+</script>

@@ -1,0 +1,244 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Bathrooms";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="historyheading div">
+                            <div class="form-row row-cols-1 historynheadingrow">
+                                <div class="col property-history-heading-column"
+                                     id="property-history-heading-column">
+                                    <label class="col-form-label property-history-heading-text-area"
+                                           id="property-history-heading-text-area"
+                                           for="history-heading-text-area"><strong>Property History</strong><br></label>
+                                </div>
+                            </div>
+                        </div>
+                        @*<div class="form-row">
+                            <div class="col" id="property-history-section">
+                                <label id="history-sold-label"
+                                       class="history-sold-label"
+                                       for="history-sold-input"><br>Sold:<br></label>
+                                <div class="form-group history-sold-date-column"
+                                     id="history-sold-date-column">
+                                    <label id="history-sold-date"
+                                           class="history-sold-date"
+                                           for="history-sold-date-input">Date Sold:</label>
+                                    <input class="form-control history-sold-date-input"
+                                           id="history-sold-date-input"
+                                           type="date"
+                                           name="history-sold-date-input">
+                                </div>
+                                <div class="form-group history-sold-price-column"
+                                     id="history-sold-price-column">
+                                    <label id="history-sold-price-label"
+                                           class="history-sold-price-label"
+                                           for="history-sold-price-input">Price Sold:</label>
+                                    <input class="form-control history-sold-price-input"
+                                           type="number"
+                                           id="history-sold-price-input"
+                                           name="history-sold-price-input"
+                                           min="1" placeholder="R">
+                                </div>
+                                <div class="form-group history-sold-comments-column"
+                                     id="history-sold-comments-column">
+                                    <label id="history-sold-comments-label"
+                                           class="history-sold-comments-label"
+                                           for="history-sold-comments-input">Comments:</label>
+                                    <textarea class="form-control history-sold-comments-input"
+                                              id="history-sold-comments-input"
+                                              placeholder="Please explain " minlength="1"
+                                              name="history-sold-comments-input"></textarea>
+                                </div>
+                            </div>
+                        </div>*@
+                        <div class="form-row">
+                            <div class="col"
+                                 id="history-rented-column">
+                                <label id="history-rented-label"
+                                       class="history-rented-label"
+                                       for="history-rented-input">Rented:<br></label>
+                                <div class="form-group history-rented-until-row"
+                                     id="history-rented-until-row">
+                                    <label id="history-rented-until-label"
+                                           class="history-rented-until-label"
+                                           for="history-rented-until-input">
+                                        Rented
+                                        Until:
+                                    </label>
+                                    <input class="form-control history-rented-until-input"
+                                           id="history-rented-until-input"
+                                           type="date"
+                                           name="history-rented-until-input">
+                                </div>
+                                <div class="form-group history-rental-gross-amount-row"
+                                     id="history-rental-gross-amount-row">
+                                    <label id="history-rented-amount-label"
+                                           class="history-rented-amount-label"
+                                           for="history-rented-amount-input">
+                                        Rental
+                                        Gross
+                                        Amount:
+                                    </label>
+                                    <input class="form-control history-rented-amount-input"
+                                           type="number"
+                                           id="history-rented-amount-input"
+                                           name="history-rented-amount-input"
+                                           placeholder="R">
+                                </div>
+                                <div class="form-group history-rented-comments-column"
+                                     id="history-rented-comments-column">
+                                    <label id="history-rented-comments-label"
+                                           class="history-rented-comments-label"
+                                           for="history-rented-comments-input">Comments:</label>
+                                    <textarea class="form-control history-rented-comments-input"
+                                              id="history-rented-comments-input"
+                                              placeholder="Please explain "
+                                              name="history-rented-comments-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col"
+                                 id="history-withdrawn-column">
+                                <label id="history-withdrawn-label"
+                                       class="history-withdrawn-label"
+                                       for="history-withdrawn-label">Withdrawn:<br></label>
+                                <div class="form-group withdrawn-type-column-4"
+                                     id="withdrawn-type-column-4">
+                                    <label id="history-withdrawn-comments-label"
+                                           class="history-withdrawn-comments-label"
+                                           for="history-withdrawn-comments-input">Comments:</label>
+                                    <textarea class="form-control history-withdrawn-comments-input"
+                                              id="history-withdrawn-comments-input"
+                                              placeholder="Please explain "
+                                              name="history-withdrawn-comments-input"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertHistory();
+
+        window.location.href = "/AdministrativeDetails/Index";
+    });
+
+    function InsertHistory() {
+        var history = {};
+
+        history.ListingId = @TempData["listingId"];
+        history.DateSold = $("#history-sold-date-input").val();
+        history.PriceSold = $("#history-sold-price-input").val();
+        history.SoldComments = $("#history-sold-comments-input").val();
+        history.DateRented = $("#history-rented-until-input").val();
+        history.RentalGrossAmount = $("#history-rented-amount-input").val();
+        history.RentalComments = $("#history-rented-comments-input").val();
+        history.WidthdrawnCommentsd = $("#history-withdrawn-comments-input").val();
+
+        $.ajax(
+            {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertHistory", "AdministrativeDetails")',
+                data: { history: history },
+            success: function (result) {
+            },
+            error: function (error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

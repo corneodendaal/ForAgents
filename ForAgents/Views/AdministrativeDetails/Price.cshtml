@@ -1,0 +1,139 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Price";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div>
+                            <div class="form-row row-cols-1"><div class="col price-heading-column" id="price-heading-column"><label class="col-form-label price-heading-text-area" id="price-heading-text-area" for="price-heading-text-area"><strong>PRICE</strong><br></label></div></div>
+                        </div>
+                        <div class="form-group market-price-row" id="market-price-row"><label id="market-price-label" class="market-price-label" for="market-price-label">Market</label><input class="form-control market-price-input nospin" type="number" id="market-price-input" name="market-price-input" min="1" placeholder="R" value="1600000"></div>
+                        <div class="form-group nett-price-row" id="nett-price-row"><label id="nett-price-label" class="nett-price-label" for="nett-price-label">Nett</label><input class="form-control nett-price-input nospin" type="number" id="nett-price-input" name="nett-price-input" min="1" placeholder="R" value="1600000"></div>
+                        <div class="form-group agent-fee-net-row" id="agent-fee-net-row"> <label id="agent-fee-net-label" class="agent-fee-net-label" for="agent-fee-net-label">Agent Fee&nbsp;</label><input class="form-control agent-fee-input-area nospin" type="text" id="agent-fee-input-area" placeholder="Monetary Value or Percentage Value" name="agent-fee-input-area" value="10000"></div>
+                        <div class="form-group"><label id="levies-pm-label" class="levies-pm-label" for="levies-pm-label">Levies (pm)</label><input class="form-control levies-pm-input nospin" type="number" id="levies-pm-input" name="levies-pm-input" min="1" placeholder="R" value="123"></div>
+                        <div class="form-group rates-pm-row" id="rates-pm-row"><label id="rates-pm-label" class="rates-pm-label" for="rates-pm-label">Rates (pm)</label><input class="form-control rates-pm-input nospin" type="number" id="rates-pm-input" name="rates-pm-input" min="1" placeholder="R" value="1600"></div>
+                        <div class="form-group water-electricty-pm-row" id="water-electricty-pm-row"><label id="water-electricty-pm-label" class="water-electricty-pm-label" for="water-electricty-pm-label">Water And Electricity</label><input class="form-control water-electricty-pm-input nospin" type="number" id="water-electricity-pm-input" name="water-electricity-pm-input" min="1" placeholder="R" value="1600"></div>
+                    </div>
+
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-buidlingInformation-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-buidlingInformation-button").click(function () {
+        InsertPrice();
+
+        window.location.href = "/AdministrativeDetails/BuildingInformation";
+    });
+
+    function InsertPrice() {
+        var price = {};
+
+        price.ListingId = @TempData["listingId"];
+        price.MarketPrice = $("#market-price-input").val();
+        price.NettPrice = $("#nett-price-input").val();
+        price.AgentFee = $("#agent-fee-input-area").val();
+        price.Levies = $("#levies-pm-input").val();
+        price.Rates = $("#rates-pm-input").val();
+        price.WaterElectricity = $("#water-electricity-pm-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertPrice", "AdministrativeDetails")',
+                data: { price: price },
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    };
+
+
+
+</script>

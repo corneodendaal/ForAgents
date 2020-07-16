@@ -1,0 +1,178 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Boundry";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Defectsheadingdiv">
+                            <div class="form-row row-cols-1 Defectsheadingrow">
+                                <div class="col defects-heading-column" id="defects-heading-column"><label class="col-form-label defects-heading-label" id="defects-heading-label" for="defects-heading-label"><strong>Defects</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col defects-please-select-all-check-box-column" id="defects-please-select-all-check-box-column">
+                                <label id="defects-please-select-all-check-box-label" class="defects-please-select-all-check-box-label" for="defects-please-select-all-check-box-label">Please select all that apply:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-cracks-check" name="defects-cracks-check" /></div><label for="defects-cracks-check" class="col-md-10 control-label">Cracks</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-leaks-check" name="defects-leaks-check" /></div><label for="defects-leaks-check" class="col-md-10 control-label">Leaks</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-damp-check" name="defects-damp-check" /></div><label for="defects-damp-check" class="col-md-10 control-label">Damp</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-electricity-check" name="defects-electricity-check" /></div><label for="defects-electricity-check" class="col-md-10 control-label">Electricity</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-plumbing-check" name="defects-plumbing-check" /></div><label for="defects-plumbing-check" class="col-md-10 control-label">Plumbing</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-none-visible-check" name="defects-none-visible-check" /></div><label for="defects-none-visible-check" class="col-md-10 control-label">None Visible</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="defects-other-check" name="defects-other-check" /></div><label for="defects-other-check" class="col-md-10 control-label">Other</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col" id="defects-comments-column">
+                            <div class="form-group" id="defects-column-3">
+                                <label id="defects-comments-column-label" class="defects-comments-column-label" for="defects-comments-input">Comments</label><textarea class="form-control defects-comments-input"
+                                                                                                                                                                       id="defects-comments-input" placeholder="Please explain " required="" minlength="1" name="defects-comments-input">Comments about defects</textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertDefects();
+
+        window.location.href = "/AdministrativeDetails/ExtraAccommodation";
+    });
+
+
+    function InsertDefects() {
+        var defects = {};
+
+        defects.listingId = @TempData["listingId"];
+        defects.Cracks = $("#defects-cracks-check").is(":checked")
+        defects.Leaks = $("#defects-leaks-check").is(":checked")
+        defects.Damp = $("#defects-damp-check").is(":checked")
+        defects.Electricity = $("#defects-electricity-check-check").is(":checked")
+        defects.Plumbing = $("#defects-plumbing").is(":checked")
+        defects.NoneVisible = $("#defects-none-visible-check").is(":checked")
+        defects.Other = $("#defects-other-check").is(":checked")
+        defects.Comments = $("#defects-comments-input").val();
+
+        $.ajax(
+            {
+                async: false,
+            type: "POST",
+            url: '@Url.Action("InsertDefectsInformation", "AdministrativeDetails")',
+                data: {defects:defects},
+            success: function (result) {
+            },
+                error: function (error) {
+            }
+        });
+    }
+
+
+
+
+
+
+</script>

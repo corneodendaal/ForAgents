@@ -1,0 +1,269 @@
+﻿@using CorneTest.Models
+
+@{
+    //ViewData["Title"] = "Property Details";
+    ViewBag.Title = "Property Details";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="ownerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div>
+                            <div class="form-row row-cols-1 owner1_textheading_formgroup">
+                                <div class="col owner-1-details-heading-row" id="owner-1-details-heading-row"><label class="col-form-label owner-1-details-heading-text-area" id="owner-1-details-heading-text-area" for="owner-1-details-heading-row"><strong>OWNER 1 DETAILS</strong><br><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" id="owner-num-1" name="owner-num-1" value="1" />
+                            <div class="form-row row-cols-2">
+                                <div class="col legal-entity-owner-1-column" id="legal-entity-owner-1-column"><label id="legal-entity-owner-1-label" class="legal-entity-owner-1-label" for="legal-entity-owner-1-input">Legal Entity</label><input class="form-control legal-entity-owner-1-input" id="legal-entity-owner-1-input" name="legal-entity-owner-1-input" minlength="2" required="" value="Owner" /></div>
+                                <div class="col owner-1-first-name-column" id="owner-1-first-name-column">
+                                    <label id="owner-1-regsistration-number-label" class="owner-1-regsistration-number-label" for="owner-1-regsistration-number-label">Registration Number</label><input class="form-control owner-1-first-name-text-area-input" id="owner-1-registration-number-text-area-input" minlength="2" name="owner-1-registration-number-text-area-input" required="" value="123/2020/abc" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col surname-owner-1-column" id="surname-owner-1-column"><label id="surname-owner-1-label" class="surname-owner-1-label" for="surname-owner-1-label">Surname&nbsp;</label><input class="form-control surname-owner-1-input" id="surname-owner-1-input" name="surname-owner-1-input" minlength="2" required="" value="Meyer" /></div>
+                                <div class="col owner-1-first-name-column" id="owner-1-first-name-column"><label id="owner-1-first-name-text-area" class="owner-1-first-name-text-area" for="owner-1-first-name-text-area-input">First Name</label><input class="form-control owner-1-first-name-text-area-input" id="owner-1-first-name-text-area-input" minlength="2" name="owner-1-first-name-text-area-input" required="" value="Conrad" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col owner-1-cell-label-column" id="owner-1-cell-label-column"><label id="cell-owner-1-label" class="cell-owner-1-label" for="cell-owner-1-label">Mobile</label><input class="form-control cell-owner-1-input" type="tel" id="cell-owner-1-input" minlength="3" maxlength="15" name="cell-owner-1-input" required="" value="071-904-2585"></div>
+                                <div class="col tel-owner-1-column" id="tel-owner-1-column"><label id="tel-owner-1-label" class="tel-owner-1-label" for="tel-owner-1-label">Tel&nbsp;</label><input class="form-control tel-owner-1-input" type="tel" id="tel-owner-1-input" name="tel-owner-1-input" placeholder="Home phone or Office number" maxlength="15" minlength="3" required="" value="012-123-4567"></div>
+                            </div>
+                        </div>
+                        <div class="form-group e-mail-owner-1-column" id="e-mail-owner-1-column"><label id="e-mail-owner-1-label" class="e-mail-owner-1-label" for="e-mail-owner-1-label">e-mail</label><input class="form-control e-mail-owner-1-input" type="email" id="e-mail-owner-1-input" name="e-mail-owner-1-input" value="con.meyer@gmail.com"></div>
+                        <div class="form-group id-number-owner-1-column" id="id-number-owner-1-column">
+                            <label id="id-number-owner-1-label" class="id-number-owner-1-label" for="id-number-owner-1-label">ID&nbsp; Number / Social Security Number / Passport Number</label><input class="form-control id-number-owner-1-input nospin" type="number" id="id-number-owner-1-input" required="" name="id-number-owner-1-input" value="5606300123456">
+                        </div>
+                        <div class="form-group postal-address-owner-1-column" id="postal-address-owner-1-column"><label id="postal-address-owner-1-label-text-area" class="postal-address-owner-1-label">Postal Address</label><textarea class="form-control postal-address-owner-1-input" id="postal-address-owner-1-input" name="postal-address-owner-1-input" required="">PO Box 430, Derdepoort Park, 0030</textarea></div>
+                        @*==================*@
+                        @*CORNE: FILE UPLOAD STILL TO BE DONE*@
+                        @*ID DOCUMENT*@
+                        <div class="form-group copy-of-id-doc-or-passport-owner-1-column" id="copy-of-id-doc-or-passport-owner-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-id-doc-or-passport-owner-1-label-id" class="copy-of-id-doc-or-passport-owner-1-label" for="copy-of-id-doc-or-passport-owner-1-label">Copy of ID document (SA citizens) or Passport (Foreign Nationals)</label>
+                                <input class="form-control" name="fileIDDocument" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input id="UploadIDDocument" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+                        @*PROOF OF RESIDENCE*@
+                        <div class="form-group proof-of-residence-owner-1-column" id="proof-of-residence-owner-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="proof-of-residence-owner-1-label-id" class="proof-of-residence-owner-1-label" for="proof-of-residence-owner-1-label">Proof of residence (must be no older than 3 months)</label>
+                                <input class="form-control" name="fileProofOfResidence" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input id="UploadProofOfResidence" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+                        @*COPY OF SARS DOCUMENT*@
+                        <div class="form-group copy-of-sars-doc-owner-1-column" id="copy-of-sars-doc-owner-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-sars-doc-owner-1-label-id" class="copy-of-sars-doc-owner-1-label" for="copy-of-sars-doc-owner-1-label">Copy of SARS document confirming income tax number</label>
+                                <input class="form-control" name="fileCopyOfSARS" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input id="UploadCopyOfSARS" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+                        @*COPY OF BANK DOC*@
+                        <div class="form-group copy-of-bank-doc-owner-1-column" id="copy-of-bank-doc-owner-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-bank-doc-owner-1-label-id" class="copy-of-bank-doc-owner-1-label" for="copy-of-bank-doc-owner-1-label">Copy of SARS document confirming income tax number</label>
+                                <input class="form-control" name="fileCopyOfBankDoc" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input id="UploadCopyOfBankDoc" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+
+                        @*==================*@
+
+                        <div class="form-group building-information-reason-for-selling-column" id="building-information-reason-for-selling-column">
+                            <label id="building-information-reason-for-selling-label" class="building-information-reason-for-selling-label" for="building-information-reason-for-selling-label">Reason For Selling</label><textarea class="form-control building-information-reason-for-selling-input" id="building-information-reason-for-selling-input" placeholder="Please explain " required="" minlength="1" name="building-information-reason-for-selling-input">This is my reason for selling</textarea>
+                        </div>
+                        <hr />
+                        @*owner 2 DETAILS*@
+                        <div class="owner2detailsdiv">
+                            <div class="form-row row-cols-1 owner2_detailstextheading">
+                                <div class="col owner-2-details-heading-column" id="owner-2-details-heading-column"><label class="col-form-label owner-2-details-heading-text-area" id="owner-2-details-heading-text-area" for="owner-2-details-heading-text-area"><strong>OWNER 2 DETAILS</strong><br><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col legal-entity-owner-2-label" id="legal-entity-owner-2-label">
+                                    <label id="legal-entity-owner-2-label" class="legal-entity-owner-2-label" for="legal-entity-owner-2-input">Legal Entity</label><input class="form-control legal-entity-owner-2-input" id="legal-entity-owner-2-input" name="legal-entity-owner-2-input" minlength="2" required="" value="Co-Owner" />
+                                </div>
+                                <div class="col owner-2-regsistration-number-column" id="owner-2-regsistration-number-column">
+                                    <label id="owner-2-regsistration-number-label" class="owner-2-regsistration-number-label" for="owner-2-regsistration-number-label">Registration Number</label><input class="form-control owner-2-regsistration-number-input" id="owner-2-regsistration-number-input" minlength="2" name="owner-2-regsistration-number-input" required="" value="123/2020/123abc" />
+                                </div>
+                            </div>
+                            <div class="form-row row-cols-2">
+                                <div class="col surname-owner-2-column-id" id="surname-owner-2-column"><label id="surname-owner-2-label" class="surname-owner-2-label" for="surname-owner-2-label">Surname&nbsp;</label><input class="form-control surname-owner-2-input" id="surname-owner-2-input" name="surname-owner-2-input" minlength="2" value="Odendaal" /></div>
+                                <div class="col first-name-owner-2-column" id="first-name-owner-2-column"><label id="first-name-owner-2-label" class="first-name-owner-2-label" for="first-name-owner-2-label">First Name</label><input class="form-control first-name-owner-2-input" id="first-name-owner-2-input" minlength="2" name="first-name-owner-2-input" value="Corne" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col cell-owner-2" id="cell-owner-2-column"><label id="cell-owner-2-label" class="cell-owner-2-label" for="cell-owner-2-label">Mobile</label><input class="form-control cell-owner-2-input" type="tel" id="cell-owner-2-input" minlength="3" maxlength="15" name="cell-owner-2-input" value="0835777737"></div>
+                                <div class="col tel-owner-2-column" id="tel-owner-2-column">
+                                    <label id="tel-owner-2-label" class="tel-owner-2-label" for="tel-owner-2-label">Tel (h+o)</label><input class="form-control tel-owner-2-input" type="tel" id="tel-owner-2-input" name="tel-owner-2-input" placeholder="Home phone or Office number" maxlength="15" minlength="3" value="0121231234">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group e-mail-owner-2-row" id="e-mail-owner-2-row"><label id="e-mail-owner-2-label" class="e-mail-owner-2-label" for="e-mail-owner-2-label">e-mail</label><input class="form-control e-mail-owner-2-input" type="email" id="e-mail-owner-2-input" name="e-mail-owner-2-input" value="corne.odendaal@gmail.com"></div>
+                        <div class="form-group id-number-owner-2-row" id="id-number-owner-2-row"><label id="id-number-owner-2-label" class="id-number-owner-2-label" for="id-number-owner-2-label">ID Number</label><input class="form-control id-number-owner-2-input nospin" type="number" id="id-number-owner-2-input" name="id-number-owner-2-input" value="6710120001011"></div>
+                        <div class="form-group postal-address-owner-2-row" id="postal-address-owner-2-row">
+                            <label id="postal-address-owner-2-label" class="postal-address-owner-2-label" for="postal-address-owner-2-label">Postal Address</label><textarea class="form-control postal-address-owner-2-input" id="postal-address-owner-2-input" name="postal-address-owner-2-input">PO Box 430, Derdepoort Park, 0035</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-price-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-price-button").click(function () {
+        InsertownerDetails();
+        if ("@TempData["category"]" == "Sales") {
+            window.location.href = "/AdministrativeDetails/Price";
+        }
+            else if ("@TempData["category"]" == "Rental") {
+                window.location.href = "/AdministrativeDetails/PriceRental";
+            }
+    });
+
+    function InsertownerDetails() {
+        var owner = {};
+
+        owner.ListingId = @TempData["listingId"];
+        owner.ownerNum1 = 1;
+        owner.LegalEntityowner1 = $("#legal-entity-owner-1-input").val();
+        owner.RegistrationNumberowner1 = $("#owner-1-registration-number-text-area-input").val();
+        owner.Surnameowner1 = $("#surname-owner-1-input").val();
+        owner.FirstNameowner1 = $("#owner-1-first-name-text-area-input").val();
+        owner.Mobileowner1 = $("#cell-owner-1-input").val();
+        owner.Phoneowner1 = $("#tel-owner-1-input").val();
+        owner.Emailowner1 = $("#e-mail-owner-1-input").val();
+        owner.Idowner1 = $("#id-number-owner-1-input").val();
+        owner.PostAddressowner1 = $("#postal-address-owner-1-input").val();
+        owner.ownerNum2 = 2;
+        owner.LegalEntityowner2 = $("#legal-entity-owner-2-input").val();
+        owner.RegistrationNumberowner2 = $("#owner-2-regsistration-number-input").val();
+        owner.Surnameowner2 = $("#surname-owner-2-input").val();
+        owner.FirstNameowner2 = $("#first-name-owner-2-input").val();
+        owner.Mobileowner2 = $("#cell-owner-2-input").val();
+        owner.Phoneowner2 = $("#tel-owner-2-input").val();
+        owner.Emailowner2 = $("#e-mail-owner-2-input").val();
+        owner.Idowner2 = $("#id-number-owner-2-input").val();
+        owner.PostAddressowner2 = $("#postal-address-owner-2-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertownerDetails", "AdministrativeDetails")',
+                data: { owner: owner },
+                success: function (result) {
+                    $("#UploadIDDocument").click();
+            },
+                error: function (xhr, status, error) {
+                    $("#UploadIDDocument").click();
+            }
+        });
+    };
+</script>

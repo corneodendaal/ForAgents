@@ -1,0 +1,249 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Kitchen";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="kitchenheading div">
+                            <div class="form-row row-cols-1 Kitchenheadingrow">
+                                <div class="col kitchen-heading-column" id="kitchen-heading-column"><label class="col-form-label kitchen-heading-text-area" id="kitchen-heading-text-area" for="kitchen-heading-text-area"><strong>Kitchen</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-1">
+                                <div class="col kitchen-please-select-all-check-box-column" id="kitchen-please-select-all-check-box-column">
+                                    <label id="kitchen-please-select-all-check-box-label" class="kitchen-please-select-all-check-box-label" for="kitchen-please-select-all-check-box-label">Please select all that apply to the kitchen</label>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-seperate-laundry-check" name="kitchen-seperate-laundry-check" checked="checked" /></div><label for="kitchen-seperate-laundry-check" class="col-md-10 control-label">Separate Laundry</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-seperate-scullery-check" name="kitchen-seperate-scullery-check" /></div><label for="kitchen-seperate-scullery-check" class="col-md-10 control-label">Separate Scullery</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-walk-in-pantry-check" name="kitchen-walk-in-pantry-check" checked="checked" /></div><label for="kitchen-walk-in-pantry-check" class="col-md-10 control-label">Walk-in Pantry</label>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-patry-cupboard-check" name="kitchen-patry-cupboard-check" /></div><label for="kitchen-patry-cupboard-check" class="col-md-10 control-label">Pantry Cupboard</label>
+                                    </div>
+                                    <div class="form-group kitchen-comments-column" id="kitchen-comments-column">
+                                        <label id="kitchen-comments-column-label" class="kitchen-comments-column-label" for="kitchen-comments-input">Comments</label><textarea class="form-control kitchen-comments-column-input" id="kitchen-comments-input"
+                                                                                                                                                                               placeholder="Please explain " required="" minlength="1" name="kitchen-comments-input">This is ectra comments for the kitchen</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col kitchen-finishesl-check-box-column" id="kitchen-finishesl-check-box-column">
+                                <label id="kitchen-finishes-check-box-label" class="kitchen-finishes-check-box-label" for="kitchen-finishesl-check-box-label">Finishes</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-finishes-granite-check" name="kitchen-finishes-granite-check" checked="checked" /></div><label for="kitchen-finishes-granite-check" class="col-md-10 control-label">Granite</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-finishes-caesar-stone-check" name="kitchen-finishes-caesar-stone-check" /></div><label for="kitchen-finishes-caesar-stone-check" class="col-md-10 control-label">Caesor Stone</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-finishes-melamine-check" name="kitchen-finishes-melamine-check" /></div><label for="kitchen-finishes-melamine-check" class="col-md-10 control-label">Melamine</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-finishes-wood-check" name="kitchen-finishes-wood-check" /></div><label for="kitchen-finishes-wood-check" class="col-md-10 control-label">Wood</label>
+                                </div>
+                                <div class="form-group kitchen-type-of-wood-column" id="kitchen-type-of-wood-column">
+                                    <label id="kitchen-type-of-wood-label" class="kitchen-type-of-wood-label" for="kitchen-type-of-wood-label">Type Of Wood</label><textarea class="form-control kitchen-type-of-wood-input" id="kitchen-type-of-wood-input"
+                                                                                                                                                                             placeholder="Please explain " name="kitchen-type-of-wood-input">There is no wood</textarea>
+                                </div>
+                                <div class="form-group finishes-comments-column" id="finishes-comments-column">
+                                    <label id="finishes-comments-label" class="finishes-comments-label" for="finishes-comments-label">Comments</label><textarea class="form-control finishes-comments-input" id="finishes-comments-input" placeholder="Please explain "
+                                                                                                                                                                required="" minlength="1" name="finishes-comments-input">More comments for the finishes</textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col kitchen-appliances-check-box-column" id="kitchen-appliances-check-box-column">
+                                <label id="kitchen-appliances-check-box-label" class="kitchen-appliances-check-box-label" for="kitchen-appliances-check-box-label">Appliances</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-electric-stove-check" name="kitchen-appliances-electric-stove-check" /></div><label for="kitchen-appliances-electric-stove-check" class="col-md-10 control-label">Electric Stove</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-gas-stove-check" name="kitchen-appliances-gas-stove-check" checked="checked" /></div><label for="kitchen-appliances-gas-stove-check" class="col-md-10 control-label">Gas Stove</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-hob-check" name="kitchen-appliances-hob-check" /></div><label for="kitchen-appliances-hob-check" class="col-md-10 control-label">Hob</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-extractor-fan-check" name="kitchen-appliances-extractor-fan-check" checked="checked" /></div><label for="kitchen-appliances-extractor-fan-check" class="col-md-10 control-label">Extractor Fan</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-under-counter-oven-check" name="kitchen-appliances-under-counter-oven-check" /></div><label for="kitchen-appliances-under-counter-oven-check" class="col-md-10 control-label">Oven - under Counter</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-eye-level-oven-check" name="kitchen-appliances-eye-level-oven-check" /></div><label for="kitchen-appliances-eye-level-oven-check" class="col-md-10 control-label">Oven - Eye Level</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-microwave-check" name="kitchen-appliances-microwave-check" /></div><label for="kitchen-appliances-microwave-check" class="col-md-10 control-label">Microwave</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliances-coffee-machine-check" name="kitchen-appliances-coffee-machine-check" /></div><label for="kitchen-appliances-coffee-machine-check" class="col-md-10 control-label">Coffee Machine</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col kitchen-space-for-check-box-column" id="kitchen-space-for-check-box-column">
+                                <label id="kitchen-space-for-check-box-label" class="kitchen-space-for-check-box-label">Space For:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliance-space-double-door-fridge-check" name="kitchen-appliance-space-double-door-fridge-check" checked="checked" /></div><label for="kitchen-appliance-space-double-door-fridge-check" class="col-md-10 control-label">Double Door Fridge</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="kitchen-appliance-space-top-loader-check" name="kitchen-appliance-space-top-loader-check" /></div><label for="kitchen-appliance-space-top-loader-check" class="col-md-10 control-label">Top Loader</label>
+                                </div>
+                                <div class="row">
+                                    <label class="col-form-label kitchen-number-of-spaces-label" id="kitchen-number-of-spaces-label" for="kitchen-number-of-spaces-label">Number of Appliance Spaces</label>
+                                    <input class="form-control kitchen-number-of-spaces-input" type="number" id="kitchen-number-of-spaces-input" value="5">
+                                </div>
+                                <div class="row">
+                                    <label class="col-form-label kitchen-appliance-comments-label" id="kitchen-appliance-comments-label" for="kitchen-spaces-comments-input">Comments</label>
+                                    <input class="form-control kitchen-spaces-comments-input" type="text" id="kitchen-spaces-comments-input" name="kitchen-spaces-comments-input" value="More comments on appliances">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertKitchenInformation();
+
+        window.location.href = "/AdministrativeDetails/Entertainment";
+    });
+
+    function InsertKitchenInformation() {
+        var kitchen = {};
+
+        kitchen.ListingId = @TempData["listingId"];
+        kitchen.SeperateLaundry = $("#kitchen-seperate-laundry-check").is(":checked");
+        kitchen.SeperateScullery = $("#kitchen-seperate-scullery-check").is(":checked");
+        kitchen.WalkInPantry = $("#kitchen-walk-in-pantry-check").is(":checked");
+        kitchen.PantryCupboard = $("#kitchen-patry-cupboard-check").is(":checked");
+        kitchen.KitchenComments = $("#kitchen-comments-input").val();
+        kitchen.Granite = $("#kitchen-finishes-granite-check").is(":checked")
+        kitchen.CaeserStone = $("#kitchen-finishes-caesar-stone-check").is(":checked")
+        kitchen.Melamine = $("#kitchen-finishes-melamine-check").is(":checked")
+        kitchen.Wood = $("#kitchen-finishes-wood-check").is(":checked")
+        kitchen.TypeOfWood = $("#kitchen-type-of-wood-input").val();
+        kitchen.FinishesComments = $("#finishes-comments-input").val();
+        kitchen.ElectricStove = $("#kitchen-appliances-electric-stove-check").is(":checked")
+        kitchen.GasStove = $("#kitchen-appliances-gas-stove-check").is(":checked")
+        kitchen.Hob = $("#kitchen-appliances-hob-check").is(":checked")
+        kitchen.ExtractorFan = $("#kitchen-appliances-extractor-fan-check").is(":checked")
+        kitchen.OvenUnderCounter = $("#kitchen-appliances-under-counter-oven-check").is(":checked")
+        kitchen.OvenEyeLevel = $("#kitchen-appliances-eye-level-oven-check").is(":checked")
+        kitchen.Microwave = $("#kitchen-appliances-microwave-check").is(":checked")
+        kitchen.CoffeeMachine = $("#kitchen-appliances-coffee-machine-check").is(":checked")
+        kitchen.DoubleDoorFridge = $("#kitchen-appliance-space-double-door-fridge-check").is(":checked")
+        kitchen.TopLoader = $("#kitchen-appliance-space-top-loader-check").is(":checked")
+        kitchen.NumSpaces = $("#kitchen-number-of-spaces-input").val();
+        kitchen.KitchenSpacesComments = $("#kitchen-spaces-comments-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertKitchenInformation", "AdministrativeDetails")',
+                data: {kitchen:kitchen},
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

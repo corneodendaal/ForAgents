@@ -1,0 +1,418 @@
+﻿@using CorneTest.Models
+@model ForAgents.Models.Listing
+
+@{
+    //ViewData["Title"] = "Property Details";
+    ViewBag.Title = "Property Details";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div>
+                            <div class="form-row row-cols-1 Seller1_textheading_formgroup">
+                                <div class="col seller-1-details-heading-row" id="seller-1-details-heading-row"><label class="col-form-label seller-1-details-heading-text-area" id="seller-1-details-heading-text-area" for="seller-1-details-heading-row"><strong>SELLER 1 DETAILS</strong><br><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="hidden" id="seller-num-1" name="seller-num-1" value="1" />
+                            <div class="form-row row-cols-2">
+                                <div class="col legal-entity-seller-1-column" id="legal-entity-seller-1-column"><label id="legal-entity-seller-1-label" class="legal-entity-seller-1-label" for="legal-entity-seller-1-input">Legal Entity</label><input class="form-control legal-entity-seller-1-input" id="legal-entity-seller-1-input" name="legal-entity-seller-1-input" minlength="2" required="" value="Owner" /></div>
+                                <div class="col seller-1-first-name-column" id="seller-1-first-name-column">
+                                    <label id="seller-1-regsistration-number-label" class="seller-1-regsistration-number-label" for="seller-1-regsistration-number-label">Registration Number</label><input class="form-control seller-1-first-name-text-area-input" id="seller-1-registration-number-text-area-input" minlength="2" name="seller-1-registration-number-text-area-input" required="" value="123/2020/abc" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col surname-seller-1-column" id="surname-seller-1-column"><label id="surname-seller-1-label" class="surname-seller-1-label" for="surname-seller-1-label">Surname&nbsp;</label><input class="form-control surname-seller-1-input" id="surname-seller-1-input" name="surname-seller-1-input" minlength="2" required="" value="Meyer" /></div>
+                                <div class="col seller-1-first-name-column" id="seller-1-first-name-column"><label id="seller-1-first-name-text-area" class="seller-1-first-name-text-area" for="seller-1-first-name-text-area-input">First Name</label><input class="form-control seller-1-first-name-text-area-input" id="seller-1-first-name-text-area-input" minlength="2" name="seller-1-first-name-text-area-input" required="" value="Conrad" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col seller-1-cell-label-column" id="seller-1-cell-label-column"><label id="cell-seller-1-label" class="cell-seller-1-label" for="cell-seller-1-label">Mobile</label><input class="form-control cell-seller-1-input" type="tel" id="cell-seller-1-input" minlength="3" maxlength="15" name="cell-seller-1-input" required="" value="071-904-2585"></div>
+                                <div class="col tel-seller-1-column" id="tel-seller-1-column"><label id="tel-seller-1-label" class="tel-seller-1-label" for="tel-seller-1-label">Tel&nbsp;</label><input class="form-control tel-seller-1-input" type="tel" id="tel-seller-1-input" name="tel-seller-1-input" placeholder="Home phone or Office number" maxlength="15" minlength="3" required="" value="012-123-4567"></div>
+                            </div>
+                        </div>
+                        <div class="form-group e-mail-seller-1-column" id="e-mail-seller-1-column"><label id="e-mail-seller-1-label" class="e-mail-seller-1-label" for="e-mail-seller-1-label">e-mail</label><input class="form-control e-mail-seller-1-input" type="email" id="e-mail-seller-1-input" name="e-mail-seller-1-input" value="con.meyer@gmail.com"></div>
+                        <div class="form-group id-number-seller-1-column" id="id-number-seller-1-column">
+                            <label id="id-number-seller-1-label" class="id-number-seller-1-label" for="id-number-seller-1-label">ID&nbsp; Number / Social Security Number / Passport Number</label><input class="form-control id-number-seller-1-input nospin" type="number" id="id-number-seller-1-input" required="" name="id-number-seller-1-input" value="5606300123456">
+                        </div>
+                        <div class="form-group postal-address-seller-1-column" id="postal-address-seller-1-column"><label id="postal-address-seller-1-label-text-area" class="postal-address-seller-1-label">Postal Address</label><textarea class="form-control postal-address-seller-1-input" id="postal-address-seller-1-input" name="postal-address-seller-1-input" required="">PO Box 430, Derdepoort Park, 0030</textarea></div>
+                        @*==================*@
+                        @*CORNE: FILE UPLOAD STILL TO BE DONE*@
+                        @*ID DOCUMENT*@
+                        <div class="form-group copy-of-id-doc-or-passport-seller-1-column" id="copy-of-id-doc-or-passport-seller-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-id-doc-or-passport-seller-1-label-id" class="copy-of-id-doc-or-passport-seller-1-label" for="copy-of-id-doc-or-passport-seller-1-label">Copy of ID document (SA citizens) or Passport (Foreign Nationals)</label>
+                                <input class="form-control" id="fileIDDocument" name="fileIDDocument" type="file" multiple style="display:none" />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img id="selectFileIDDocument" src="~/Images/UploadFile.png" type="button" height="20" width="20" style="margin-top:7px;" />
+                                    </div>
+                                    <div class="col-md-10" id="divIDUploadIDDocument" style="display:none">
+                                        <div class="col-md-12">
+                                            ID Document
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" id="fileIDDocumentName" style="width:300px; border-radius:3px; text-align:center; border:2px solid lightgray" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <input id="UploadIDDocument" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+
+                        @*ID DOCUMENT*@
+                        @*<div class="form-group copy-of-id-doc-or-passport-seller-1-column" id="copy-of-id-doc-or-passport-seller-1-column" style="border:2px solid yellow">
+            <div class="col-md-12">
+                <label id="copy-of-id-doc-or-passport-seller-1-label-id" class="copy-of-id-doc-or-passport-seller-1-label" for="copy-of-id-doc-or-passport-seller-1-label">Copy of ID document (SA citizens) or Passport (Foreign Nationals)</label>
+                <input class="form-control" name="fileIDDocument" type="file" multiple />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input id="UploadIDDocument" class="btn btn-success" type="submit" value="Upload" hidden />
+            </div>
+        </div>*@
+                        @*PROOF OF RESIDENCE*@
+                        <div class="form-group proof-of-residence-seller-1-column" id="proof-of-residence-seller-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="proof-of-residence-seller-1-label-id" class="proof-of-residence-seller-1-label" for="fileProofOfResidence">Proof of residence (must be no older than 3 months)</label>
+                                <input class="form-control" id="fileProofOfResidence" name="fileProofOfResidence" type="file" multiple style="display:none" />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img id="selectFileProofOfResidence" src="~/Images/UploadFile.png" type="button" height="20" width="20" style="margin-top:7px;" />
+                                    </div>
+                                    <div class="col-md-10" id="divUploadProofOfResidence" style="display:none">
+                                        <div class="col-md-12">
+                                            Proof of Residence
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" id="fileProofOfResidenceName" style="width:300px; border-radius:3px; text-align:center; border:2px solid lightgray" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <input id="UploadProofOfResidence" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+
+
+
+                        @*<div class="form-group proof-of-residence-seller-1-column" id="proof-of-residence-seller-1-column" style="border:2px solid yellow">
+            <div class="col-md-12">
+                <label id="proof-of-residence-seller-1-label-id" class="proof-of-residence-seller-1-label" for="proof-of-residence-seller-1-label">Proof of residence (must be no older than 3 months)</label>
+                <input class="form-control" name="fileProofOfResidence" type="file" multiple />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input id="UploadProofOfResidence" class="btn btn-success" type="submit" value="Upload" hidden />
+            </div>
+        </div>*@
+                        @*COPY OF SARS DOCUMENT*@
+
+                        <div class="form-group copy-of-sars-doc-seller-1-column" id="copy-of-sars-doc-seller-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-sars-doc-seller-1-label-id" class="copy-of-sars-doc-seller-1-label label-italic" for="fileSARSDocument">Copy of SARS document confirming income tax number</label>
+                                <input class="form-control" id="fileSARSDocument" name="fileSARSDocument" type="file" multiple style="display:none" />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img id="selectFileSARSDocument" src="~/Images/UploadFile.png" type="button" height="20" width="20" style="margin-top:7px;" />
+                                    </div>
+                                    <div class="col-md-10" id="divUploadSARSDocument" style="display:none">
+                                        <div class="col-md-12">
+                                            SARS Document
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" id="fileSARSDocumentName" style="width:300px; border-radius:3px; text-align:center; border:2px solid lightgray" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <input id="UploadSARSDocument" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+
+
+                        @*<div class="form-group copy-of-sars-doc-seller-1-column" id="copy-of-sars-doc-seller-1-column" style="border:2px solid yellow">
+            <div class="col-md-12">
+                <label id="copy-of-sars-doc-seller-1-label-id" class="copy-of-sars-doc-seller-1-label" for="copy-of-sars-doc-seller-1-label">Copy of SARS document confirming income tax number</label>
+                <input class="form-control" name="fileCopyOfSARS" type="file" multiple />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-10">
+                <input id="UploadCopyOfSARS" class="btn btn-success" type="submit" value="Upload" hidden />
+            </div>
+        </div>*@
+                        @*COPY OF BANK DOC*@
+
+                        <div class="form-group copy-of-bank-doc-seller-1-column" id="copy-of-bank-doc-seller-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-bank-doc-seller-1-column-label-id" class="copy-of-bank-doc-seller-1-column-label label-italic" for="fileBankDocument">Copy of Bank document</label>
+                                <input class="form-control" id="fileBankDocument" name="fileBankDocument" type="file" multiple style="display:none" />
+                                <div class="row">
+                                    <div class="col-md-1">
+                                        <img id="selectFileBankDocument" src="~/Images/UploadFile.png" type="button" height="20" width="20" style="margin-top:7px;" />
+                                    </div>
+                                    <div class="col-md-10" id="divUploadBankDocument" style="display:none">
+                                        <div class="col-md-12">
+                                            Bank Document
+                                        </div>
+                                        <div class="col-md-12">
+                                            <input type="text" id="fileBankDocumentName" style="width:300px; border-radius:3px; text-align:center; border:2px solid lightgray" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-11">
+                                <input id="UploadBankDocument" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>
+
+
+                        @*<div class="form-group copy-of-bank-doc-seller-1-column" id="copy-of-bank-doc-seller-1-column" style="border:2px solid yellow">
+                            <div class="col-md-12">
+                                <label id="copy-of-bank-doc-seller-1-label-id" class="copy-of-bank-doc-seller-1-label" for="copy-of-bank-doc-seller-1-label">Copy of SARS document confirming income tax number</label>
+                                <input class="form-control" name="fileCopyOfBankDoc" type="file" multiple />
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input id="UploadCopyOfBankDoc" class="btn btn-success" type="submit" value="Upload" hidden />
+                            </div>
+                        </div>*@
+
+                        @*==================*@
+
+                        <div class="form-group building-information-reason-for-selling-column" id="building-information-reason-for-selling-column">
+                            <label id="building-information-reason-for-selling-label" class="building-information-reason-for-selling-label" for="building-information-reason-for-selling-label">Reason For Selling</label><textarea class="form-control building-information-reason-for-selling-input" id="building-information-reason-for-selling-input" placeholder="Please explain " required="" minlength="1" name="building-information-reason-for-selling-input">This is my reason for selling</textarea>
+                        </div>
+                        <hr />
+                        @*SELLER 2 DETAILS*@
+                        <div class="Seller2detailsdiv">
+                            <div class="form-row row-cols-1 seller2_detailstextheading">
+                                <div class="col seller-2-details-heading-column" id="seller-2-details-heading-column"><label class="col-form-label seller-2-details-heading-text-area" id="seller-2-details-heading-text-area" for="seller-2-details-heading-text-area"><strong>SELLER 2 DETAILS</strong><br><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col legal-entity-seller-2-label" id="legal-entity-seller-2-label">
+                                    <label id="legal-entity-seller-2-label" class="legal-entity-seller-2-label" for="legal-entity-seller-2-input">Legal Entity</label><input class="form-control legal-entity-seller-2-input" id="legal-entity-seller-2-input" name="legal-entity-seller-2-input" minlength="2" required="" value="Co-Owner" />
+                                </div>
+                                <div class="col seller-2-regsistration-number-column" id="seller-2-regsistration-number-column">
+                                    <label id="seller-2-regsistration-number-label" class="seller-2-regsistration-number-label" for="seller-2-regsistration-number-label">Registration Number</label><input class="form-control seller-2-regsistration-number-input" id="seller-2-regsistration-number-input" minlength="2" name="seller-2-regsistration-number-input" required="" value="123/2020/123abc" />
+                                </div>
+                            </div>
+                            <div class="form-row row-cols-2">
+                                <div class="col surname-seller-2-column-id" id="surname-seller-2-column"><label id="surname-seller-2-label" class="surname-seller-2-label" for="surname-seller-2-label">Surname&nbsp;</label><input class="form-control surname-seller-2-input" id="surname-seller-2-input" name="surname-seller-2-input" minlength="2" value="Odendaal" /></div>
+                                <div class="col first-name-seller-2-column" id="first-name-seller-2-column"><label id="first-name-seller-2-label" class="first-name-seller-2-label" for="first-name-seller-2-label">First Name</label><input class="form-control first-name-seller-2-input" id="first-name-seller-2-input" minlength="2" name="first-name-seller-2-input" value="Corne" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col cell-seller-2" id="cell-seller-2-column"><label id="cell-seller-2-label" class="cell-seller-2-label" for="cell-seller-2-label">Mobile</label><input class="form-control cell-seller-2-input" type="tel" id="cell-seller-2-input" minlength="3" maxlength="15" name="cell-seller-2-input" value="0835777737"></div>
+                                <div class="col tel-seller-2-column" id="tel-seller-2-column">
+                                    <label id="tel-seller-2-label" class="tel-seller-2-label" for="tel-seller-2-label">Tel (h+o)</label><input class="form-control tel-seller-2-input" type="tel" id="tel-seller-2-input" name="tel-seller-2-input" placeholder="Home phone or Office number" maxlength="15" minlength="3" value="0121231234">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group e-mail-seller-2-row" id="e-mail-seller-2-row"><label id="e-mail-seller-2-label" class="e-mail-seller-2-label" for="e-mail-seller-2-label">e-mail</label><input class="form-control e-mail-seller-2-input" type="email" id="e-mail-seller-2-input" name="e-mail-seller-2-input" value="corne.odendaal@gmail.com"></div>
+                        <div class="form-group id-number-seller-2-row" id="id-number-seller-2-row"><label id="id-number-seller-2-label" class="id-number-seller-2-label" for="id-number-seller-2-label">ID Number</label><input class="form-control id-number-seller-2-input nospin" type="number" id="id-number-seller-2-input" name="id-number-seller-2-input" value="6710120001011"></div>
+                        <div class="form-group postal-address-seller-2-row" id="postal-address-seller-2-row">
+                            <label id="postal-address-seller-2-label" class="postal-address-seller-2-label" for="postal-address-seller-2-label">Postal Address</label><textarea class="form-control postal-address-seller-2-input" id="postal-address-seller-2-input" name="postal-address-seller-2-input">PO Box 430, Derdepoort Park, 0035</textarea>
+                        </div>
+                    </div>
+
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-price-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-price-button").click(function () {
+        InsertSellerDetails();
+
+        //window.location.href = "/AdministrativeDetails/Price";
+
+        if ("@TempData["category"]" == "Sales") {
+            window.location.href = "/AdministrativeDetails/Price";
+            }
+            else if ("@TempData["category"]" == "Rental") {
+            window.location.href = "/AdministrativeDetails/PriceRental";
+        }
+
+    });
+
+    $("#selectFileIDDocument").click(function () {
+        $("#fileIDDocument").trigger('click');
+    });
+    $("#fileIDDocument").change(function () {
+        var length = $("#fileIDDocument").val().split("\\").length;
+        var IDDocumentName = $("#fileIDDocument").val().split("\\")[length - 1]
+        $("#fileIDDocumentName").val(IDDocumentName);
+        $("#divIDUploadIDDocument").css("display", "block");
+    });
+    $("#selectFileProofOfResidence").click(function () {
+        $("#fileProofOfResidence").trigger('click');
+    });
+    $("#fileProofOfResidence").change(function () {
+        var length = $("#fileProofOfResidence").val().split("\\").length;
+        var DocumentName = $("#fileProofOfResidence").val().split("\\")[length - 1]
+        $("#fileProofOfResidenceName").val(DocumentName);
+        $("#divUploadProofOfResidence").css("display", "block");
+    });
+    $("#selectFileSARSDocument").click(function () {
+        $("#fileSARSDocument").trigger('click');
+    });
+    $("#fileSARSDocument").change(function () {
+        var length = $("#fileSARSDocument").val().split("\\").length;
+        var DocumentName = $("#fileSARSDocument").val().split("\\")[length - 1]
+        $("#fileSARSDocumentName").val(DocumentName);
+        $("#divUploadSARSDocument").css("display", "block");
+    });
+    $("#selectFileBankDocument").click(function () {
+        $("#fileBankDocument").trigger('click');
+    });
+    $("#fileBankDocument").change(function () {
+        var length = $("#fileBankDocument").val().split("\\").length;
+        var DocumentName = $("#fileBankDocument").val().split("\\")[length - 1]
+        $("#fileBankDocumentName").val(DocumentName);
+        $("#divUploadBankDocument").css("display", "block");
+    });
+
+    function InsertSellerDetails() {
+        var seller = {};
+
+        seller.ListingId = @TempData["listingId"];
+        seller.SellerNum1 = 1;
+        seller.LegalEntitySeller1 = $("#legal-entity-seller-1-input").val();
+        seller.RegistrationNumberSeller1 = $("#seller-1-registration-number-text-area-input").val();
+        seller.SurnameSeller1 = $("#surname-seller-1-input").val();
+        seller.FirstNameSeller1 = $("#seller-1-first-name-text-area-input").val();
+        seller.MobileSeller1 = $("#cell-seller-1-input").val();
+        seller.PhoneSeller1 = $("#tel-seller-1-input").val();
+        seller.EmailSeller1 = $("#e-mail-seller-1-input").val();
+        seller.IdSeller1 = $("#id-number-seller-1-input").val();
+        seller.PostAddressSeller1 = $("#postal-address-seller-1-input").val();
+        seller.SellerNum2 = 2;
+        seller.LegalEntitySeller2 = $("#legal-entity-seller-2-input").val();
+        seller.RegistrationNumberSeller2 = $("#seller-2-regsistration-number-input").val();
+        seller.SurnameSeller2 = $("#surname-seller-2-input").val();
+        seller.FirstNameSeller2 = $("#first-name-seller-2-input").val();
+        seller.MobileSeller2 = $("#cell-seller-2-input").val();
+        seller.PhoneSeller2 = $("#tel-seller-2-input").val();
+        seller.EmailSeller2 = $("#e-mail-seller-2-input").val();
+        seller.IdSeller2 = $("#id-number-seller-2-input").val();
+        seller.PostAddressSeller2 = $("#postal-address-seller-2-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertSellerDetails", "AdministrativeDetails")',
+                data: { seller: seller },
+                success: function (result) {
+                    $("#UploadIDDocument").click();
+            },
+                error: function (xhr, status, error) {
+                    $("#UploadIDDocument").click();
+            }
+        });
+    };
+</script>

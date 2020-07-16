@@ -1,0 +1,161 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Garden";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Gardenheadingdiv">
+                            <div class="form-row row-cols-1 Gardenheadingrow">
+                                <div class="col garden-heading-column" id="garden-heading-column"><label class="col-form-label garden-heading-label" id="garden-heading-label"><strong>Garden</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col garden-please-select-all-check-box-column" id="garden-please-select-all-check-box-column">
+                                <label id="garden-please-select-all-check-box-label" class="garden-please-select-all-check-box-label" for="garden-please-select-all-check-box-label">Please select all that apply:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="garden-irrigation-check" name="garden-irrigation-check" /></div><label for="garden-irrigation-check" class="col-md-10 control-label">Irrigation</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="garden-computerized-check" name="garden-computerized-check" /></div><label for="garden-computerized-check" class="col-md-10 control-label">Computerized</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="garden-borehole-check" name="garden-borehole-check" checked="checked" /></div><label for="garden-borehole-check" class="col-md-10 control-label">Borehole</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="garden-jojo-tanks-check" name="garden-jojo-tanks-check" /></div><label for="garden-jojo-tanks-check" class="col-md-10 control-label">Jojo Tanks</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="garden-water-feature-check" name="garden-water-feature-check" /></div><label for="garden-water-feature-check" class="col-md-10 control-label">Water Feature</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertGardenInformation();
+
+        window.location.href = "/AdministrativeDetails/Pool";
+    });
+
+    function InsertGardenInformation() {
+        var garden = {};
+
+        garden.ListingId = @TempData["listingId"];
+        garden.Irrigation = $("#garden-irrigation-check").is(":checked");
+        garden.Computerized = $("#garden-computerized-check").is(":checked");
+        garden.Borehole = $("#garden-borehole-check").is(":checked");
+        garden.JojoTanks = $("#garden-jojo-tanks-check").is(":checked");
+        garden.WaterFeature = $("#garden-water-feature-check").is(":checked");
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertGardenInformation", "AdministrativeDetails")',
+                data: {garden:garden},
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+
+</script>

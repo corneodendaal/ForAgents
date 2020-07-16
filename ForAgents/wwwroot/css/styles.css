@@ -1,0 +1,6 @@
+﻿body {
+}
+#navbar-gradient-header {
+    background: linear-gradient(120deg,#7f70f5,#0ea0ff);
+    color: #fff;
+}

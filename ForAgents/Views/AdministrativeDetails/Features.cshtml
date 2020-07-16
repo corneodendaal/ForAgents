@@ -1,0 +1,251 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Features";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="featuresheading div">
+                            <div class="form-row row-cols-1 featuresheadingrow">
+                                <div class="col features-heading-column" id="features-heading-column"><label class="col-form-label features-heading-text-area" id="features-heading-text-area" for="features-heading-text-area"><strong>FEATURES</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col features-select-all-check-box-column" id="features-select-all-check-box-column">
+                                    <label id="features-select-all-check-box-label" class="features-select-all-check-box-label" for="features-select-all-check-box-label">Please select all the features that apply</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-office-check" name="building-information-features-office-check" checked="checked" /></div><label for="building-information-features-office-check" class="col-md-10 control-label">Office</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-open-plan-check" name="building-information-features-open-plan-check" /></div><label for="building-information-features-open-plan-check" class="col-md-10 control-label">Open Plan</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-entrance-hall-check" name="building-information-features-entrance-hall-check" checked="checked" /></div><label for="building-information-features-entrance-hall-check" class="col-md-10 control-label">Entrance Hall</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-covered-balcony-check" name="building-information-features-covered-balcony-check" /></div><label for="building-information-features-covered-balcony-check" class="col-md-10 control-label">Covered Balcony</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-open-balcony-check" name="building-information-features-open-balcony-check" /></div><label for="building-information-features-open-balcony-check" class="col-md-10 control-label">Open Balcony</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-loft" name="building-information-features-loft" /></div><label for="building-information-features-loft" class="col-md-10 control-label">Loft</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-home-automation-check" name="building-information-features-home-automation-check" /></div><label for="building-information-features-home-automation-check" class="col-md-10 control-label">Home Automation</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-view-check" name="building-information-features-view-check" /></div><label for="building-information-features-view-check" class="col-md-10 control-label">View</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-solar-heating-check" name="building-information-features-solar-heating-check" /></div><label for="building-information-features-solar-heating-check" class="col-md-10 control-label">Solar Heating</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-roof-insulation-check" name="building-information-features-roof-insulation-check" /></div><label for="building-information-features-roof-insulation-check" class="col-md-10 control-label">Roof Insulation</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-fire-hearth-gas-check" name="building-information-features-fire-hearth-gas-check" /></div><label for="building-information-features-fire-hearth-gas-check" class="col-md-10 control-label">Fire Hearth Gas</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-fire-hearth-wood-check" name="building-information-features-fire-hearth-wood-check" /></div><label for="building-information-features-fire-hearth-wood-check" class="col-md-10 control-label">Fire Hearth Wood</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-safe-check" name="building-information-features-safe-check" /></div><label for="building-information-features-safe-check" class="col-md-10 control-label">Safe</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-strongroom-check" name="building-information-features-strongroom-check" /></div><label for="building-information-features-strongroom-check" class="col-md-10 control-label">Strong Room</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-storeroom-check" name="building-information-features-storeroom-check" /></div><label for="building-information-features-storeroom-check" class="col-md-10 control-label">Store Room</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-prepaid-electricity-check" name="building-information-features-prepaid-electricity-check" /></div><label for="building-information-features-prepaid-electricity-check" class="col-md-10 control-label">Prepaid Electricity</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-generator-check" name="building-information-features-generator-check" /></div><label for="building-information-features-generator-check" class="col-md-10 control-label">Generator</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-wired-for-generator-check" name="building-information-features-wired-for-generator-check" /></div><label for="building-information-features-wired-for-generator-check" class="col-md-10 control-label">Wired for Generator</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-adsl-check" name="building-information-features-adsl-check" /></div><label for="building-information-features-adsl-check" class="col-md-10 control-label">ADSL</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-fibre-check" name="building-information-features-fibre-check" /></div><label for="building-information-features-fibre-check" class="col-md-10 control-label">Fibre</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-central-vacuum-check" name="building-information-features-central-vacuum-check" /></div><label for="building-information-features-central-vacuum-check" class="col-md-10 control-label">Central Vacuum</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-home-cinema-check" name="building-information-features-home-cinema-check" /></div><label for="building-information-features-home-cinema-check" class="col-md-10 control-label">Home Cinema</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-satellite-dish-check" name="building-information-features-satellite-dish-check" /></div><label for="building-information-features-satellite-dish-check" class="col-md-10 control-label">Satellite Dish</label>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-1 radio-inline"><input type="checkbox" id="building-information-features-solar-geyser-check" name="building-information-features-solar-geyser-check" /></div><label for="building-information-features-solar-geyser-check" class="col-md-10 control-label">Solar Geyser</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col features-other-information-column" id="features-other-information-column">
+                                    <label class="col-form-label features-other-information-label" id="features-other-information-label" for="features-number-of-geysers-label">Other Information</label>
+                                    <div class="col features-other-information-column"
+                                         id="features-other-information-column"><textarea class="form-control features-other-information-column-input" type="text" id="features-other-information-column-input" name="features-other-information-column-input">This is some other information</textarea></div>
+                                    <div class="col features-number-of-geysers-column" id="features-number-of-geysers-column"><label class="col-form-label features-number-of-geysers-label" id="features-number-of-geysers-label" for="features-number-of-geysers-label">Number of Geysers</label></div>
+                                    <div class="col features-number-of-geysers-column-input"
+                                         id="features-number-of-geysers-column-input"><input class="form-control features-number-of-geysers-input" type="number" id="features-number-of-geysers-input" name="features-number-of-geysers-input" value="2"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertFeatures();
+
+        window.location.href = "/AdministrativeDetails/Kitchen";
+    });
+
+    function InsertFeatures() {
+        var features = {};
+
+        features.ListingId = @TempData["listingId"];
+        features.Office = $("#building-information-features-office-check").is(":checked");
+        features.OpenPlan = $("#building-information-features-open-plan-check").is(":checked");
+        features.EntranceHall = $("#building-information-features-entrance-hall-check").is(":checked");
+        features.CoveredBalcony = $("#building-information-features-covered-balcony-check").is(":checked");
+        features.OpenBalcony = $("#building-information-features-open-balcony-check").is(":checked");
+        features.Loft = $("#building-information-features-loft").is(":checked");
+        features.HomeAutomation = $("#building-information-features-home-automation-check").is(":checked");
+        features.View = $("#building-information-features-view-check").is(":checked");
+        features.SolarHeating = $("#building-information-features-solar-heating-check").is(":checked");
+        features.rRoofInsulation = $("#building-information-features-roof-insulation-check").is(":checked");
+        features.FireHearthGas = $("#building-information-features-fire-hearth-gas-check").is(":checked");
+        features.FireHearthWood = $("#building-information-features-fire-hearth-wood-check").is(":checked");
+        features.Safe = $("#building-information-features-safe-check").is(":checked");
+        features.StrongRoom = $("#building-information-features-strongroom-check").is(":checked");
+        features.StoreRoom = $("#building-information-features-storeroom-check").is(":checked");
+        features.PrePaidElectricity = $("#building-information-features-prepaid-electricity-check").is(":checked");
+        features.Generator = $("#building-information-features-generator-check").is(":checked");
+        features.WiredForGenerator = $("#building-information-features-wired-for-generator-check").is(":checked");
+        features.ADSL = $("#building-information-features-adsl-check").is(":checked");
+        features.Fibre = $("#building-information-features-fibre-check").is(":checked");
+        features.CentralVacuum = $("#building-information-features-central-vacuum-check").is(":checked");
+        features.HomeCinema = $("#building-information-features-home-cinema-check").is(":checked");
+        features.SatelliteDish = $("#building-information-features-satellite-dish-check").is(":checked");
+        features.SolarGeyser = $("#building-information-features-solar-geyser-check").is(":checked");
+        features.OtherInformation = $("#features-other-information-column-input").val();
+        features.NumberOfGeysers = $("#features-number-of-geysers-input").val();
+
+        $.ajax(
+        {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertFeatures", "AdministrativeDetails")',
+            data: { features: features },
+            success: function (result) {
+            },
+            error: function (xhr, status, error) {
+            }
+        });
+    }
+
+
+
+
+</script>

@@ -1,0 +1,231 @@
+﻿@using CorneTest.Models
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewData["Title"] = "Property Details";
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page">
+                    <div id="show-form-body-div">
+                        <div>
+                            <div class="form-row row-cols-1 Seller1_textheading_formgroup">
+                                <div class="col property-details-heading-row" id="property-details-heading-row"><label class="col-form-label property-details-heading-text-area" id="property-details-heading-text-area" for="property-details-heading-row"><strong>Property Details</strong><br><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2" id="form-grouping-1-sequence-date-stand-street">
+                                <div class="col sequence-number-column" id="sequence-number-column"><label id="sequence-number-label" class="sequence-number-label" for="sequence-number-label">Agent/ Sequence Number</label><input class="form-control sequence-number-input nospin" type="number" id="sequence-number-input" name="sequence-number-input" value="12345"></div>
+                                <div class="form-group date-column" id="date-column" style="padding: 10px 5px;"><label id="date-label-1" class="date-label" for="date-label">Date:</label><input class="form-control date-input-1" id="listing-date-input" type="date" required="" name="listing-date-input" style="height: 40px;margin: 10px,0px,0px;" value="2020-01-31"></div>
+                                <div class="col stand-number-column" id="stand-number-column"><label id="stand-number-label" class="stand-number-label" for="stand-number-label">Stand Number</label><input class="form-control stand-number-input" type="text" id="stand-number-input" name="stand-number-input" value="756"></div>
+                                <div class="col street-address-1-column" id="street-address-1-column"><label id="street-address-1-label" class="street-address-1-label">Street Address</label><textarea class="form-control Street-address-1-input" id="Street-address-1-input" placeholder="Street and number, P.O. box, c/o" name="Street-address-1-input" required="" minlength="3">756 Sekelbos street, Kameeldrift East, 0030</textarea></div>
+                            </div>
+                        </div>
+                        <div class="form-group Address_1/2formgroup">
+                            <div class="form-row row-cols-2">
+                                <div class="col street-address-2-column" id="street-address-2-column"><label id="address-line-2-label" class="address-line-2-label" for="address-line-2-label">Address line 2</label><textarea class="form-control address-line-2-input" id="address-line-2-input" name="address-line-2-input" placeholder="Apartment, suite, unit, building, floor, etc" minlength="3" required="">Plot 756 Section 298</textarea></div>
+                            </div>
+                        </div>
+                        <div class="form-group City/state_formgroup">
+                            <div class="form-row row-cols-2">
+                                <div class="col city-column" id="city-column"><label id="city-label-text-area" class="city-label-text-area" for="city-label-text-area">City</label><input class="form-control city-input" id="city-input" required="" minlength="3" name="city-input" value="Pretoria" /></div>
+                                <div class="col state-province-region-column" id="state-province-region-column"> <label id="state-province-region-label" class="state-province-region-label" for="state-province-region-label">State / Province / Region</label><input class="form-control state-province-region-input" id="state-province-region-input" name="state-province-region-input" required="" minlength="3" value="Gauteng" /></div>
+                            </div>
+                        </div>
+                        <div class="form-group zip-code-form-group" id="zip-code-form-group"><label id="zip-code-label" class="zip-code-label" for="zip-code-label">Zip / Postal / Area Code</label><input class="form-control zip-code-input nospin" type="number" id="zip-code-input" name="zip-code-input" required="" value="0030"></div>
+                        @*<div><input type="hidden" id="listing-id-hidden" /></div>*@
+                        <div class="form-group">
+                            <div class="form-row row-cols-1">
+                                <div class="col type-checkbox-column" id="type-checkbox-column">
+                                    <label id="type-checkbox-label-heading" class="type-checkbox-label-heading" for="type-checkbox-label-heading">Type</label>
+                                    <div class="form-check type-house-tick" id="type-house-check"><input class="form-check-input" type="radio" id="chkHouse" value="House" name="typeProperty" checked="checked"><label class="form-check-label" for="chkHouse">House</label></div>
+                                    <div class="form-check type-duet-tick" id="type-duet-check"><input class="form-check-input" type="radio" id="chkDuet" value="Duet" name="typeProperty"><label class="form-check-label Duet tick" for="chkDuet">Duet</label></div>
+                                    <div class="form-check type-cluster-check" id="type-cluster-check"><input class="form-check-input" type="radio" id="chkCluster" value="Cluster" name="typeProperty"><label class="form-check-label type_Cluster / Prpr Simplex tick" for="chkCluster">Cluster&nbsp;</label></div>
+                                    <div class="form-check type-simplex-check" id="type-simplex-check"><input class="form-check-input" type="radio" id="chkSimplex" value="Simplex" name="typeProperty"><label class="form-check-label type_Cluster / Prpr Simplex tick" for="chkSimplex">Simplex&nbsp;</label></div>
+                                    <div class="form-check type-full-title-check" id="type-full-title-check"><input class="form-check-input" type="radio" id="chkFullTitle" value="Full Title" name="typeProperty"><label class="form-check-label Title-Full_tick" for="chkFullTitle">Full Title</label></div>
+                                    <div class="form-check type-sectional-title-check" id="type-sectional-title-check"><input class="form-check-input" type="radio" id="chkSectionalTitle" value="Sectional Title" name="typeProperty"><label class="form-check-label type_Title-Sectional_tick" for="chkSectionalTitle">Sectional Title</label></div>
+                                    <div class="form-check type-vacant-stand-check" id="type-vacant-stand-check"><input class="form-check-input" type="radio" id="chkVacantStand" value="Vacant Stand" name="typeProperty"><label class="form-check-label Stand-tick" for="chkVacantStand">Vacant Stand</label></div>
+                                    <input type="hidden" id="property-type-hidden" name="property-type-hidden" value="House" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col source-tick-box-column" id="source-tick-box-column">
+                                    <label id="source-tick-box-label" class="source-tick-box-label" for="source-tick-box-label">Source</label>
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="sourceAdvert" name="listingSource" value="Advert"><label class="form-check-label source-tick-ads" id="source-tick-ads" for="sourceAdvert">Adverts</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="sourceInternet" name="listingSource" value="Internet"><label class="form-check-label source-tick-internet" id="source-tick-internet" for="sourceInternet">Internet</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="sourceColdCalling" name="listingSource" value="Cold Calling"><label class="form-check-label source-tick-cold-calling" id="source-tick-cold-calling" for="sourceColdCalling">Cold Calling</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="sourcesSocialMedia" name="listingSource" value="Social Media"><label class="form-check-label source-tick-social-media" id="source-tick-social-media" for="sourcesSocialMedia">Social Media</label></div>
+                                    <div class="form-check"><input class="form-check-input" type="radio" id="sourceReferral" name="listingSource" value="Referral" checked="checked"><label class="form-check-label Source_Tick_Refferal" for="sourceReferral">Referral</label></div>
+                                </div>
+                                <div class="col specify-source-column" id="specify-source-column"><label id="specify-source-label" class="specify-source-label" for="specify-source-label">Specify</label><textarea class="form-control specify-source-input" id="specify-source-input" placeholder="Google, ad etc." name="specify-source-input">Referred by another agent</textarea></div>
+                                <input type="hidden" id="listing-source-hidden" name="listing-source-hidden" value="Referral" />
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-seller-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+                    <div><input type="hidden" id="listing-id-hidden" /></div>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $(document).ready(function () {
+        $('#next-seller-button').click(function () {
+            InsertListing();
+
+            GetLastListingID();
+            InsertListingType();
+
+
+            window.location.href = "/AdministrativeDetails/Seller";
+        });
+    });
+
+    $(document).ready(function () {
+        alert($("#category").val());
+    });
+
+    function InsertListing() {
+        var listing = {};
+
+        listing.AgentNumber = $("#sequence-number-input").val();
+        listing.DateListed = $("#listing-date-input").val();
+        listing.StandNumber = $("#stand-number-input").val();
+        listing.StreetAddress = $("#Street-address-1-input").val();
+        listing.AddressLine2 = $("#address-line-2-input").val();
+        listing.City = $("#city-input").val();
+        listing.StateProvinceRegion = $("#state-province-region-input").val();
+        listing.ZipPostalAreaCode = $("#zip-code-input").val();
+        listing.ReasonForSelling = $("#building-information-reason-for-selling-input").val();
+        listing.Category = "Rental";
+
+        $.ajax(
+            {
+                async: false,
+                type: "POST",
+                url: '@Url.Action("InsertListing", "AdministrativeDetails")',
+                data: { listing: listing },
+                success: function (result) {
+                    $("#UploadIDDocument").click();
+                },
+                error: function (xhr, status, error) {
+                    $("#UploadIDDocument").click();
+                }
+            });
+     };
+
+    function GetLastListingID() {
+        $.ajax(
+        {
+            async: false,
+            type: "GET",
+            url: '@Url.Action("GetLastListingID", "AdministrativeDetails")',
+            data: { },
+            success: function (result) {
+                $("#listing-id-hidden").val(result);
+                return result;
+            },
+                error: function () {
+            }
+        });
+    };
+
+    function InsertListingType() {
+        var propertyType = {};
+        propertyType.listingId = $("#listing-id-hidden").val();
+        propertyType.listingType = $("#property-type-hidden").val();
+        propertyType.source = $("#listing-source-hidden").val();
+        propertyType.sourceDetails = $("#specify-source-input").val();
+
+        $.ajax(
+            {
+                async: false,
+                type: "POST",
+                url: '@Url.Action("InsertListingType", "AdministrativeDetails")',
+                data: { propertyType: propertyType },
+                success: function (data) { },
+                error: function (error) {
+                }
+            });
+    };
+</script>

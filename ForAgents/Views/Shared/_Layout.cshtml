@@ -1,0 +1,215 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - CorneTest</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="~/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="~/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="~/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="~/fonts/ionicons.min.css" />
+    <link rel="stylesheet" href="~/fonts/typicons.min.css">
+    <link rel="stylesheet" href="~/fonts/fontawesome5-overrides.min.css">
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/css/Flare.css" />
+    <link rel="stylesheet" href="~/css/styles.css" />
+
+    <style>
+        #nav {
+            /*position: relative;*/
+            position:fixed;
+            margin: 0 auto;
+            padding-top: 1.2rem;
+            padding-bottom: 1.2rem;
+            padding-left: 50%;
+            background: linear-gradient(120deg,#7f70f5,#0ea0ff);
+            color: #fff;
+            height: 80px;
+            width: 100%;
+            z-index:1000;
+        }
+
+        ul#navigation {
+            margin: 0px auto;
+            position: relative;
+            border-left: 1px solid #c4dbe7;
+            border-right: 1px solid #c4dbe7;
+        }
+
+            ul#navigation li {
+                display: inline;
+                font-size: 16px;
+                font-weight: bold;
+                margin: 0;
+                padding: 0;
+                float: left;
+                position: relative;
+            }
+
+                ul#navigation li a {
+                    padding: 10px 25px;
+                    color: white;
+                    text-decoration: none;
+                    display: inline-block;
+                    border-right: 1px solid #fff;
+                    border-left: 1px solid #C2C2C2;
+                    -webkit-transition: color 0.2s linear, background 0.2s linear;
+                    -moz-transition: color 0.2s linear, background 0.2s linear;
+                    -o-transition: color 0.2s linear, background 0.2s linear;
+                    transition: color 0.2s linear, background 0.2s linear;
+                }
+
+                    ul#navigation li a:hover {
+                        color: blue;
+                    }
+
+                    ul#navigation li a.first {
+                        border-left: 0 none;
+                    }
+
+                    ul#navigation li a.last {
+                        border-right: 0 none;
+                    }
+
+                ul#navigation li:hover > a {
+                    background: #0ea0ff;
+                    color: blue;
+                }
+
+                ul#navigation li:hover > ul {
+                    visibility: visible;
+                    opacity: 1;
+                    background: #0ea0ff;
+                }
+
+            ul#navigation ul, ul#navigation ul li ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                z-index: 99999;
+                width: 180px;
+                background: #f8f8f8;
+                box-shadow: 1px 1px 3px #ccc;
+                -webkit-transition: opacity 0.2s linear, visibility 0.2s linear;
+                -moz-transition: opacity 0.2s linear, visibility 0.2s linear;
+                -o-transition: opacity 0.2s linear, visibility 0.2s linear;
+                transition: opacity 0.2s linear, visibility 0.2s linear;
+            }
+
+            ul#navigation ul {
+                top: 43px;
+                left: 1px;
+            }
+
+                ul#navigation ul li ul {
+                    top: 0;
+                    left: 181px; /* strong related to width:180px; from above */
+                }
+
+                ul#navigation ul li {
+                    clear: both;
+                    width: 100%;
+                    border: 0 none;
+                    border-bottom: 1px solid #c9c9c9;
+                }
+
+                    ul#navigation ul li a {
+                        background: none;
+                        padding: 7px 15px;
+                        color: white;
+                        text-decoration: none;
+                        display: inline-block;
+                        border: 0 none;
+                        float: left;
+                        clear: both;
+                        width: 150px;
+                    }
+    </style>
+</head>
+<body>
+    <nav id="nav">
+        <ul id="navigation">
+            <li><a href="#" class="first">Home</a></li>
+            <li>
+                <a href="#">Sales &raquo;</a>
+                <ul>
+                    <li>
+                        <a id="sell" name="SaleOrRental" href="@Url.Action("Index", "AdministrativeDetails", new { category = "Sales"})" class="elements">
+                            <span>Sales</span>
+                        </a>
+                    </li>
+                    <li><a href="#">List Properties for Sale</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Rental &raquo;</a>
+                <ul>
+                    <li>
+                        <a id="rent" name="SaleOrRental" href="@Url.Action("Index", "AdministrativeDetails", new { category = "Rental"})" class="elements">
+                            <span>Rental</span>
+                        </a>
+                    </li>
+                    <li><a href="#">List Properties for Rent</a></li>
+                </ul>
+            </li>
+            <li class="nav-item" role="presentation"><a class="nav-link" asp-area="" asp-controller="AdministrativeDetails" asp-action="LegalDisclaimer">Legal Disclaimer</a></li>
+            <li class="nav-item" role="presentation"><a class="nav-link" asp-area="" asp-controller="AdministrativeDetails" asp-action="POPIAct">POPI Act</a></li>
+        </ul>
+    </nav>
+    <div class="containerBody" style="border:2px solid purple;">
+        <main role="main" class="pb-3" style="margin-top: 80px; ">
+            <div><input type="hidden" id="listing-id-hidden" /></div>
+            @RenderBody()
+        </main>
+    </div>
+
+
+    @*<div id="main">
+            <input type="hidden" id="foo" name="foo" value="bar" />
+
+
+            <div id="navButton">
+                <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
+            </div>
+            <div><input type="hidden" id="listing-id-hidden" /></div>
+            @RenderBody()
+        </div>*@
+    <footer class="border-top footer text-muted" style="position:fixed; z-index:1000; background-color:white; opacity:1">
+        <div class="container">
+            &copy; 2020 - ForAgents - <a asp-area="" asp-controller="AdministrativeDetails" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "160px";
+            document.getElementById("navButton").style.display = "none";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft = "0";
+            document.getElementById("navButton").style.display = "block";
+        }
+
+        function expandSale() {
+            document.getElementById("sale").style.display = "block";
+            document.getElementById("rental").style.display = "none";
+        }
+        function expandRental() {
+            document.getElementById("rental").style.display = "block";
+            document.getElementById("sale").style.display = "none";
+        }
+
+    </script>
+
+</body>
+</html> 

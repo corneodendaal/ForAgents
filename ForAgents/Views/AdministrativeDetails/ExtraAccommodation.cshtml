@@ -1,0 +1,230 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Extra Accommodation";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="Defectsheadingdiv">
+                            <div class="form-row row-cols-1 Defectsheadingrow">
+                                <div class="col extra-accommodation-heading-column" id="extra-accommodation-heading-column"><label class="col-form-label extra-accommodation-heading-label" id="defects-heading-label" for="extra-accommodation-heading-label"><strong>Extra Accommodation</strong><br></label></div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col extra-please-select-all-accomodation-check-box-column" id="extra-please-select-all-accomodation-check-box-column">
+                                <label id="extra-please-select-all-accomodation-check-box-label" class="extra-please-select-all-accomodation-check-box-label" for="extra-please-select-all-accomodation-check-box-label">Please select all applicable to accomodation:</label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-toilet-check" name="extra-toilet-check" /></div><label for="extra-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-hand-wash-basin-check" name="extra-hand-wash-basin-check" /></div><label for="extra-hand-wash-basin-check" class="col-md-10 control-label">Hand wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-shower-check" name="extra-shower-check" /></div><label for="extra-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-bath-check" name="extra-bath-check" /></div><label for="extra-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-bedroom-check" name="extra-bedroom-check" /></div><label for="extra-bedroom-check" class="col-md-10 control-label">Bedroom</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-kitchen-check" name="extra-kitchen-check" /></div><label for="extra-kitchen-check" class="col-md-10 control-label">Kitchen</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-living-area-check" name="extra-living-area-check" /></div><label for="extra-living-area-check" class="col-md-10 control-label">Living Area</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-lu-garage-check" name="extra-lu-garage-check" /></div><label for="extra-lu-garage-check" class="col-md-10 control-label">LU Garage</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="extra-covered-parking-bay-check" name="extra-covered-parking-bay-check" /></div><label for="extra-covered-parking-bay-check" class="col-md-10 control-label">Covered Parking Bay</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="col extra-please-select-all-staff-check-box-column" id="extra-please-select-all-staff-check-box-column">
+                                <label id="extra-please-select-all-staff-check-box-label" class="extra-please-select-all-staff-check-box-label" for="extra-please-select-all-staff-check-box-label"><br>Please select all applicable to staff accommodation:<br><br></label>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-toilet-check" name="staff-toilet-check" /></div><label for="staff-toilet-check" class="col-md-10 control-label">Toilet</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-hand-wash-basin-check" name="staff-hand-wash-basin-check" /></div><label for="staff-hand-wash-basin-check" class="col-md-10 control-label">Hand wash Basin</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-shower-check" name="staff-shower-check" /></div><label for="staff-shower-check" class="col-md-10 control-label">Shower</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-bath-check" name="staff-bath-check" /></div><label for="staff-bath-check" class="col-md-10 control-label">Bath</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-bedroom-check" name="staff-bedroom-check" /></div><label for="staff-bedroom-check" class="col-md-10 control-label">Bedroom</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-kitchen-check" name="staff-kitchen-check" /></div><label for="staff-kitchen-check" class="col-md-10 control-label">Kitchen</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-living-area-check" name="staff-living-area-check" /></div><label for="staff-living-area-check" class="col-md-10 control-label">Living Area</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-lu-garage-check" name="staff-lu-garage-check" /></div><label for="staff-lu-garage-check" class="col-md-10 control-label">LU Garage</label>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-1 radio-inline"><input type="checkbox" id="staff-covered-parking-bay-check" name="staff-covered-parking-bay-check" /></div><label for="staff-covered-parking-bay-check" class="col-md-10 control-label">Covered Parking Bay</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group extras-explain-all-other-extras-column" id="extras-explain-all-other-extras-column">
+                            <label id="extras-explain-all-other-extras-label" class="extras-explain-all-other-extras-label" for="extras-explain-all-other-extras-input"><br>Explain all other extras:<br><br><br></label>
+                            <textarea class="form-control extras-explain-all-other-extras-input" id="extras-explain-all-other-extras-input" placeholder="Please explain "
+                                      minlength="2" name="extras-explain-all-other-extras-input"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script>
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#garages-number-input").change(function () {
+        var numberGarages = $("#garages-number-input").val();
+        $("#Listing_Information_LU_Garages_input").val(numberGarages);
+
+    });
+
+    $("#next-features-button").click(function () {
+        InsertExtraAccommodation();
+
+        window.location.href = "/AdministrativeDetails/LivingAreas";
+    });
+
+
+    function InsertExtraAccommodation() {
+        var extraAccommodation = {};
+
+        extraAccommodation.ListingId = @TempData["listingId"];
+        extraAccommodation.ExtraToilet = $("#extra-toilet-check").is(":checked");
+        extraAccommodation.ExtraHandWashBasin = $("#extra-hand-wash-basin-check").is(":checked");
+        extraAccommodation.ExtraShower = $("#extra-shower-check").is(":checked");
+        extraAccommodation.ExtraBath = $("#extra-bath-check").is(":checked");
+        extraAccommodation.ExtraBedroom = $("#extra-bedroom-check").is(":checked");
+        extraAccommodation.ExtraKitchen = $("#extra-kitchen-check").is(":checked");
+        extraAccommodation.ExtraLivingArea = $("#extra-living-area-check").is(":checked");
+        extraAccommodation.ExtraGarage = $("#extra-garage-check").is(":checked");
+        extraAccommodation.ExtraCoveredParkingBay = $("#extra-covered-parking-bay-check").is(":checked");
+
+        extraAccommodation.StaffToilet = $("#staff-toilet-check").is(":checked");
+        extraAccommodation.StaffHandWashBasin = $("#staff-hand-wash-basin-check").is(":checked");
+        extraAccommodation.StaffShower = $("#staff-shower-check").is(":checked");
+        extraAccommodation.StaffBath = $("#staff-bath-check").is(":checked");
+        extraAccommodation.StaffBedroom = $("#staff-bedroom-check").is(":checked");
+        extraAccommodation.StaffKitchen = $("#staff-kitchen-check").is(":checked");
+        extraAccommodation.StaffLivingArea = $("#staff-living-area-check").is(":checked");
+        extraAccommodation.StaffGarage = $("#staff-garage-check").is(":checked");
+        extraAccommodation.StaffCoveredParkingBay = $("#staff-covered-parking-bay-check").is(":checked");
+
+        extraAccommodation.ExtraAccommodationComments = $("#extras-explain-all-other-extras-input").val();
+
+        if (extraAccommodation.ExtraAccommodationComments == null) {
+            extraAccommodation.ExtraAccommodationComments = "";
+        }
+
+        $.ajax(
+            {
+                async: false,
+            type: "POST",
+            url: '@Url.Action("InsertExtraAccommodationInformation", "AdministrativeDetails")',
+                data: { extraAccommodation: extraAccommodation},
+            success: function (result) {
+            },
+                error: function (error) {
+            }
+        });
+    }
+
+
+
+
+</script>

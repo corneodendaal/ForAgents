@@ -1,0 +1,311 @@
+﻿@using CorneTest.Models
+
+@{
+    ViewBag.Title = "Bathrooms";
+
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Hire me - Brand</title>
+
+    <style>
+
+        .nospin::-webkit-inner-spin-button, .no-spin::-webkit-outer-spin-button {
+            -webkit-appearance: none !important;
+            margin: 0 !important;
+        }
+
+        .no-spin {
+            -moz-appearance: textfield !important;
+        }
+
+        /*        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }*/
+
+        .italic-label {
+            font-style: italic;
+        }
+
+        .Labels {
+            font-style: italic;
+        }
+
+        input[type='radio'] {
+            transform: scale(1.5);
+        }
+
+        input[type='checkbox'] {
+            transform: scale(1.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <main class="page hire-me-page" data-target="#modal1" data-toggle="modal">
+        <section class="portfolio-block hire-me">
+            <div class="container" id="container-form-page">
+                <form class="page hire-me-page smart-form-form-page" id="smart-form-form-page" method="post" enctype="multipart/form-data" asp-controller="AdministrativeDetails" asp-action="Sale">
+                    <div id="show-form-body-div" class="sellerAllDetails">
+                        <input type="hidden" value="@TempData["listingId"]" class="hiddenPost" id="listing-id-hidden" name="listing-id-hidden" />
+                        <div class="form-row row-cols-1">
+                            <div class="col listings-information-heading-column"
+                                 id="listings-information-heading-column">
+                                <div>
+                                    <div class="col listings-information-heading-text-area"
+                                         id="listings-information-heading-text-area">
+                                        <label class="col-form-label Listings Information"
+                                               id="listing-summary-label"><strong>LISTING SUMMARY</strong><br></label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-bedroom-column"
+                                     id="listing-information-bedroom-column">
+                                    <label class="col-form-label listings-information-bedrooms-label-and-icon"
+                                           id="listings-information-bedrooms-label-and-icon"><i class="fa fa-bed" id="icon"></i>&nbsp; &nbsp; Bedrooms</label>
+                                </div>
+                                <div class="col listings-information-bedrooms-input-column"
+                                     id="listings-information-bedrooms-input-column">
+                                    <input class="form-control listing-information-bedroom-input"
+                                           type="number"
+                                           id="listing-information-bedroom-input"
+                                           name="totalbedroomcount"
+                                           min="1"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col study-column"
+                                     id="study-column">
+                                    <label class="col-form-label listings-information-study-label-and-icon"
+                                           id="listings-information-study-label-and-icon"><i class="fa fa-book listing-information-study-icon" id="listing-information-study-icon"></i>&nbsp; &nbsp; &nbsp;Study</label>
+                                </div>
+                                <div class="col listings-information-study-or-column"
+                                     id="listings-information-study-or-column">
+                                    <input class="form-control listings-information-study-column-input"
+                                           type="number"
+                                           id="listings-information-study-column-input"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col study-nook-column"
+                                     id="study-nook-column">
+                                    <label class="col-form-label listings-information-study-nook-label-icon"
+                                           id="listings-information-study-nook-label-icon"><i class="fas fa-book-reader listing-information-study-nook-icon" id="listing-information-study-nook-icon"></i>&nbsp; &nbsp; &nbsp;Study Nook</label>
+                                </div>
+                                <div class="col listings-information-study-or-nook-column"
+                                     id="listings-information-study-or-nook-column">
+                                    <input class="form-control listings-information-study-nook-column-input"
+                                           type="number"
+                                           id="listings-information-study-nook-column-input"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-bathrooms-column"
+                                     id="listing-information-bathrooms-column">
+                                    <label class="col-form-label listing-information-bathrooms-label-and-icon"
+                                           id="listing-information-bathrooms-label-and-icon"><i class="fa fa-bath listing-information-bathrooms-icon"></i>&nbsp; &nbsp; &nbsp;Bathrooms</label>
+                                </div>
+                                <div class="col listing-information-bathrooms-column"
+                                     id="listing-information-bathrooms-column">
+                                    <input class="form-control listing-information-bathrooms-input"
+                                           type="number"
+                                           id="listing-information-bathrooms-input"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-living-area-label-column"
+                                     id="listing-information-living-area-label-column">
+                                    <label class="col-form-label listing-information-living-area-label-and-icon"
+                                           id="listing-information-living-area-label-and-icon"
+                                           for="listing-information-living-area-label-column"><i class="fas fa-couch"></i>&nbsp; &nbsp; &nbsp;Living Areas</label>
+                                </div>
+                                <div class="col listing-information-living-area-input-column"
+                                     id="listing-information-living-area-input-column">
+                                    <input class="form-control Listing_Information_Living_Areas_inplisting-information-living-area-input"
+                                           type="number"
+                                           id="listing-information-living-area-input"
+                                           required=""
+                                           name="listing-information-living-area-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-lu-garages-label-column"
+                                     id="listing-information-lu-garages-label-column">
+                                    <label class="col-form-label listing-information-lu-garages-label-and-icon"
+                                           id="listing-information-lu-garages-label-and-icon"
+                                           for="listing-information-lu-garages-label-and-icon"><i class="fas fa-warehouse"></i>&nbsp; &nbsp; &nbsp;LU Garages</label>
+                                </div>
+                                <div class="col">
+                                    <input class="form-control Listing_Information_LU_Garages_input"
+                                           id="Listing_Information_LU_Garages_input"
+                                           type="number"
+                                           required="">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-covered-bays-label-and-icon-column"
+                                     id="listing-information-covered-bays-label-and-icon-column">
+                                    <label class="col-form-label listing-information-covered-bays-label-and-icon"
+                                           id="listing-information-covered-bays-label-and-icon"
+                                           for="listing-information-covered-bays-label-and-icon"><i class="fas fa-store"></i>&nbsp; &nbsp; &nbsp;Covered Bays</label>
+                                </div>
+                                <div class="col listing-information-covered-bays-input-column"
+                                     id="listing-information-covered-bays-input-column">
+                                    <input class="form-control listing-information-covered-bays-input"
+                                           type="number"
+                                           id="listing-information-covered-bays-input"
+                                           required=""
+                                           name="listing-information-covered-bays-input">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="form-row row-cols-2">
+                                <div class="col listing-information-open-p-bays-label-column"
+                                     id="listing-information-open-p-bays-label-column">
+                                    <label class="col-form-label listing-information-open-p-bays-label-and-icon"
+                                           id="listing-information-open-p-bays-label-and-icon"
+                                           for="listing-information-open-p-bays-label-and-icon"><i class="fa fa-car"></i>&nbsp; &nbsp; &nbsp;Open P-Bays</label>
+                                </div>
+                                <div class="col listing-information-open-p-bays-input-column"
+                                     id="listing-information-open-p-bays-input-column">
+                                    <input class="form-control listing-information-open-p-bays-input"
+                                           type="number"
+                                           id="listing-information-open-p-bays-input"
+                                           required=""
+                                           name="listing-information-open-p-bays-input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col text-center"><a class="btn btn-primary text-center" role="button" id="next-features-button" style="padding: 6px 50px; color:white;">>></a></div>
+
+
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
+<script src="~/js/jquery.min.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+
+    window.onload = alert(localStorage.getItem("numBathrooms"));
+    $("#listing-information-bedroom-input").val(localStorage.getItem("numBedrooms"));
+    $("#listings-information-study-column-input").val(localStorage.getItem("study"));
+    $("#listing-information-bathrooms-input").val(localStorage.getItem("numBathrooms"));
+    $("#listing-information-living-area-input").val(localStorage.getItem("numLivingAreas"))
+    $("#Listing_Information_LU_Garages_input").val(localStorage.getItem("numGarages"))
+
+    $('input[type=radio][name=typeProperty]').change(function () {
+        var radios = document.getElementsByName('typeProperty');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-type-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=listingSource]').change(function () {
+        var radios = document.getElementsByName('listingSource');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#listing-source-hidden').val(radios[i].value);
+            }
+        }
+    });
+    $('input[type=radio][name=typeFacing]').change(function () {
+        var radios = document.getElementsByName('typeFacing');
+        for (var i = 0, length = radios.length; i < length; i++) {
+            if (radios[i].checked) {
+                $('#property-facing-hidden').val(radios[i].value);
+            }
+        }
+    });
+
+    $("#next-features-button").click(function () {
+        InsertSummary();
+
+        window.location.href = "/AdministrativeDetails/History";
+    });
+
+    //function readCookie(name) {
+    //    var nameEQ = encodeURIComponent(name) + "=";
+    //    var ca = document.cookie.split(';');
+    //    for (var i = 0; i < ca.length; i++) {
+    //        var c = ca[i];
+    //        while (c.charAt(0) === ' ')
+    //            c = c.substring(1, c.length);
+    //        if (c.indexOf(nameEQ) === 0)
+    //            return decodeURIComponent(c.substring(nameEQ.length, c.length));
+    //    }
+    //    return null;
+    //}
+
+    //$(document).ready(function () {
+
+    //});
+
+    function InsertSummary() {
+        var summary = {}
+
+        //var value = $.cookie("numBedrooms");
+        //var value = readCookie('numBedrooms')
+        //alert("NB: " + value);
+
+        summary.ListingId = @TempData["listingId"];
+        summary.Bedrooms = $("#listing-information-bedroom-input").val();
+        summary.Study = $("#listings-information-study-column-input").val();
+        summary.StudyNook = $("#listings-information-study-nook-column-input").val();
+        summary.Bathrooms = $("#listing-information-bathrooms-input").val();
+        summary.LivingAreas = $("#listing-information-living-area-input").val();
+        summary.LUGarages = $("#Listing_Information_LU_Garages_input").val();
+        summary.CoveredBays = $("#listing-information-covered-bays-input").val();
+        summary.OpenBays = $("#listing-information-open-p-bays-input").val();
+         $.ajax(
+            {
+            async: false,
+            type: "POST",
+            url: '@Url.Action("InsertSummary", "AdministrativeDetails")',
+                data: { summary: summary },
+            success: function (result) {
+            },
+            error: function (error) {
+            }
+        });
+
+    }
+
+
+
+
+
+</script>
